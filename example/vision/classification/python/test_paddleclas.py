@@ -1,0 +1,30 @@
+from lockzhiner_vision_module.cv2 import VideoCapture
+from lockzhiner_vision_module.vision import PaddleClas
+import time
+
+if __name__ == "__main__":
+    model = PaddleClas()
+    if model.initialize("LZ-MobileNetV2_x0_25.rknn") is False:
+        print("Failed to initialize PaddleClas")
+        exit(1)
+
+    video_capture = VideoCapture()
+    if video_capture.open(0) is False:
+        print("Failed to open capture")
+        exit(1)
+
+    while True:
+        read_index = 0
+        total_time_ms = 0
+        for i in range(30):
+            start_time = time.time()
+            ret, mat = video_capture.read()
+            if ret is False:
+                continue
+
+            result = model.predict(mat)
+            end_time = time.time()
+            total_time_ms += (end_time - start_time)
+            read_index += 1
+            print(result.label_id, result.confidence)
+        print(f"FPS is {1.0 / (total_time_ms/read_index)}")
