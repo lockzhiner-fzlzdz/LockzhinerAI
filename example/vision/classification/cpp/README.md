@@ -303,4 +303,4 @@ chmod +x ./Test-PaddleClas
 
 ## 5 其他
 
-如果你需要使用 Python 来部署 PaddleClas 请参考 [凌智视觉模块分类模型 Python 部署指南](../python/README.md)。
+如果你需要使用 Python 来部署 PaddleClas 请参考[凌智视觉模块分类模型 Python 部署指南](../python/README.md)。

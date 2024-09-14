@@ -178,4 +178,4 @@ python test_paddleclas.py
 
 ## 5 其他
 
-如果你需要使用 C++ 来部署 PaddleClas 请参考 [凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。
+如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。

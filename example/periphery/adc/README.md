@@ -32,7 +32,24 @@
 
 作为连接模拟世界与数字世界的桥梁，ADC 能够将连续的模拟信号（如温度、压力、声音等）转换为离散的数字信号，使得主控芯片能够处理和分析这些信号。本章节中，我们将教会你如何使用凌智视觉模块读取 ADC 数据。
 
-## 2 在凌智视觉模块上部署 ADC 例程
+## 2 正确连接设备
+
+> 注意: Lockzhiner Vision Module ADC 引脚最大可承载电压是 1.8V 切忌不要输入超过 1.8V 的电压，否则可能烧板子！！！！
+
+为了方便调试，我们这里使用 **信号源** 进行调试，请正确的将 Lockzhiner Vision Module 的引脚按照以下方式连接
+
+* LockzhinerVisionModule ADC <-> Output IO
+* LockzhinerVisionModule GND <-> Output GND
+
+板子上的引脚丝印较小，如果看不清引脚信息，可以参考下图
+
+![](../../../images/periphery.png)
+
+信号源我们配置了 100mV 的电压，如下图所示
+
+![](images/100mV.png)
+
+## 3 在凌智视觉模块上部署 ADC 例程
 
 请参考以下教程使用 C++ 或 Python 在凌智视觉模块上部署 ADC 例程：
 

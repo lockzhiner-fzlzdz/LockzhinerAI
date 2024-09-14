@@ -30,20 +30,11 @@
 
 ## 1 简介
 
-作为连接模拟世界与数字世界的桥梁，ADC 能够将连续的模拟信号（如温度、压力、声音等）转换为离散的数字信号，使得主控芯片能够处理和分析这些信号。本章节中，我们将教会你如何使用凌智视觉模块读取 ADC 数据。
+接下来让我们基于 C++ 来部署 ADC 例程。在开始本章节前：
 
-## 2 在凌智视觉模块上部署 ADC 例程
+- 请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/cpp_development_environment.md) 正确配置了开发环境。
 
-请参考以下教程使用 C++ 或 Python 在凌智视觉模块上部署 ADC 例程：
-
-* [凌智视觉模块 ADC C++ 部署指南](./cpp/README.md)
-* [凌智视觉模块 ADC Python 部署指南](./python/README.md)
-
-## 2 前期准备
-
-在开始这个章节前，请确保你已经按照 [开发环境搭建指南](../../../docs/introductory_tutorial/development_environment.md) 正确配置了开发环境。
-
-## 3 API 文档
+## 2 API 文档
 
 ```c++
 /**
@@ -92,7 +83,7 @@ class ADC {
 };
 ```
 
-## 4 项目介绍
+## 3 项目介绍
 
 为了方便大家入手，我们做了一个简易的 ADC 例程。该例程可以输出当前的 ADC 数值。
 
@@ -139,22 +130,22 @@ int main() {
 }
 ```
 
-## 5 编译项目
+## 4 编译项目
 
 使用 Docker Destop 打开 LockzhinerVisionModule 容器并执行以下命令来编译项目
 
 ```bash
 # 进入 Demo 目录
-cd /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModule/example/periphery/adc
+cd /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModule/example/periphery/adc/cpp
 
 # 创建编译目录
 rm -rf build && mkdir build && cd build
 
 # 配置交叉编译工具链
-export TOOLCHAIN_ROOT_PATH=${PWD}/../../../../../arm-rockchip830-linux-uclibcgnueabihf
+export TOOLCHAIN_ROOT_PATH=${PWD}/../../../../../../arm-rockchip830-linux-uclibcgnueabihf
 
 # 使用 cmake 配置项目
-cmake -DCMAKE_TOOLCHAIN_FILE=../../../../toolchains/arm-rockchip830-linux-uclibcgnueabihf.toolchain.cmake \
+cmake -DCMAKE_TOOLCHAIN_FILE=../../../../../toolchains/arm-rockchip830-linux-uclibcgnueabihf.toolchain.cmake \
       -DCMAKE_BUILD_TYPE=Release \
       ..
 
@@ -164,28 +155,11 @@ make -j8
 
 ![](images/build_example.png)
 
-## 6 正确连接设备
+## 5 执行 ADC 测试程序
 
-> 注意: Lockzhiner Vision Module ADC 引脚最大可承载电压是 1.8V 切忌不要输入超过 1.8V 的电压，否则可能烧板子！！！！
+参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
 
-为了方便调试，我们这里使用 **信号源** 进行调试，请正确的将 Lockzhiner Vision Module 的引脚按照以下方式连接
-
-* LockzhinerVisionModule ADC <-> Output IO
-* LockzhinerVisionModule GND <-> Output GND
-
-板子上的引脚丝印较小，如果看不清引脚信息，可以参考下图
-
-![](../../../images/periphery.png)
-
-信号源我们配置了 100mV 的电压，如下图所示
-
-![](images/100mV.png)
-
-## 7 执行 ADC 测试程序
-
-参考 [连接设备指南](../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
-
-![](../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
+![](../../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
 
 使用 SFTP 功能将软件上传到 Lockzhiner Vision Module
 
@@ -201,3 +175,7 @@ chmod +x ./Test-ADC
 ![](images/result.png)
 
 可以看到有一定的误差，误差一般在10mv以内
+
+## 6 其他
+
+如果你需要使用 Python 来部署 ADC 例程请参考[凌智视觉模块分类模型 Python 部署指南](../python/README.md)。
