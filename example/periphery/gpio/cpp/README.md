@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块 GPIO 使用指南</h1>
+<h1 align="center">凌智视觉模块 GPIO C++ 部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -124,7 +124,7 @@ using GPIO2A5 = GPIOBase<2, 'A', 5>;
 
 ## 3 项目介绍
 
-为了方便大家入手，我们将项目拆分为 GPIO 输出电平和 GPIO 输入电平两个部分，他们共用一个 CMake 文件。
+为了方便大家入手，我们将项目拆分为**测试 GPIO 输出模式**和**测试 GPIO 输入模式**两个例程，他们共用一个 CMake 文件。
 
 ```cmake
 # CMake最低版本要求  
