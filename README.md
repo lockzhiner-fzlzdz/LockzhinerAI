@@ -1,6 +1,6 @@
-<h1 align="center">Lockzhiner Vision Module</h1>
+<h1 align="center">凌智视觉模块(Lockzhiner Vision Module)</h1>
 
-Lockzhiner Vision Module 是福州市凌睿智捷电子有限公司倾力打造的一款高集成度人工智能视觉模块，专为边端人工智能和机器视觉应用而设计，其特色包括：
+凌智视觉模块(Lockzhiner Vision Module) 是福州市凌睿智捷电子有限公司倾力打造的一款高集成度人工智能视觉模块，专为边端人工智能和机器视觉应用而设计，其特色包括：
 
 * 卓越的计算能力：Lockzhiner Vision Module 搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU，以更出色地处理 SIMD 和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU，足以应对绝大多数的视觉应用场景。
 * 广泛的开源适配：Lockzhiner Vision Module 与 PaddleClas、PaddleDetection、PaddleSeg、PaddleOCR 等基于 Paddle 框架的视觉场景库完美适配，并内置了一键启动脚本。配合 AIStudio，用户可以实现一键训练、一键部署，从而极大地减轻了部署负担。
@@ -12,8 +12,8 @@ Lockzhiner Vision Module 是福州市凌睿智捷电子有限公司倾力打造�
 
 这一部分教程旨在为你提供一个系统化的学习路径，帮助你快速上手 Lockzhiner Vision Module。通过一系列详细的教程，你将学会如何烧录镜像、连接设备、搭建开发环境和编写简单的程序。
 
-* [烧录镜像指南](./docs/introductory_tutorial/burn_image.md)
-* [连接设备指南](./docs/introductory_tutorial/connect_device_using_ssh.md)
+* [凌智视觉模块烧录镜像指南](./docs/introductory_tutorial/burn_image.md)
+* [凌智视觉模块连接设备指南](./docs/introductory_tutorial/connect_device_using_ssh.md)
 
 如果你需要开发 Python 程序，请参考以下教程搭建开发环境:
 
