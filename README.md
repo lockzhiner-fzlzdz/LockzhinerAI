@@ -17,11 +17,11 @@ Lockzhiner Vision Module 是福州市凌睿智捷电子有限公司倾力打造�
 
 如果你需要开发 Python 程序，请参考以下教程搭建开发环境:
 
-* [Python 开发环境搭建指南](./docs/introductory_tutorial/python_development_environment.md)
+* [凌智视觉模块 Python 开发环境搭建指南](./docs/introductory_tutorial/python_development_environment.md)
 
 如果你需要开发 C++ 程序，请参考以下教程搭建开发环境:
 
-* [C++ 开发环境搭建指南](./docs/introductory_tutorial/cpp_development_environment.md)
+* [凌智视觉模块 C++ 开发环境搭建指南](./docs/introductory_tutorial/cpp_development_environment.md)
 * [基于 C++ 编写 Hello World 程序](./example/hello_world/README.md)
 
 ## 🔌 外设控制教程
@@ -32,11 +32,11 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 为了帮助你快速上手教程，我们提供了一系列的外设控制例程，你可以点击链接快速学习
 
-* [串口使用指南](./example/periphery/usart/README.md)
-* [ADC 使用指南](./example/periphery/adc/README.md)
-* [PWM 使用指南](./example/periphery/pwm/README.md)
-* [GPIO 使用指南](./example/periphery/gpio/README.md)
-* [摄像头使用指南](./example/periphery/capture/README.md)
+* [凌智视觉模块串口使用指南](./example/periphery/usart/README.md)
+* [凌智视觉模块 ADC 使用指南](./example/periphery/adc/README.md)
+* [凌智视觉模块 PWM 使用指南](./example/periphery/pwm/README.md)
+* [凌智视觉模块 GPIO 使用指南](./example/periphery/gpio/README.md)
+* [凌智视觉模块摄像头使用指南](./example/periphery/capture/README.md)
 
 ## 🧠 深度学习视觉部署教程
 
