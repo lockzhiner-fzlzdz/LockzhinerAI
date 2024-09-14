@@ -37,50 +37,43 @@
 ## 2 API 文档
 
 ```c++
-/**
- * @class ADC
- * @brief 这是一个模数转换器（ADC）的抽象类，用于从模拟源读取数据。
- *
- * 该类提供基本的ADC操作接口，包括打开ADC设备以及从ADC读取数据。
- * 注意：该ADC不得接入超过1.8V的电压，否则可能会损坏设备。
- */
-class ADC {
+/// \class ADCBase
+/// \brief ADCBase
+/// 类是一个模板类，用于处理特定设备和引脚的模拟数字转换器（ADC）的基础操作。
+///
+/// \template<uint8_t device_index, uint8_t in_voltage_index>
+/// \param device_index ADC 设备编号。
+/// \param in_voltage_index ADC 引脚编号。
+template <uint8_t device_index, uint8_t in_voltage_index>
+class ADCBase {
  public:
-  /**
-   * @brief 默认构造函数。
-   *
-   * 初始化ADC类的实例。
-   */
-  ADC() = default;
+  /// \brief 构造函数，初始化 ADC 设备。
+  ADCBase();
 
-  /**
-   * @brief 默认析构函数。
-   *
-   * 清理ADC类实例使用的资源。
-   */
-  ~ADC() = default;
+  /// \brief 析构函数，默认实现。
+  ~ADCBase() = default;
 
-  /**
-   * @brief 打开ADC设备。
-   *
-   * 初始化ADC硬件并准备进行读取操作。
-   * @return bool 如果设备成功打开则返回true，否则返回false。
-   */
-  bool Open();
-
-  /**
-   * @brief 从ADC读取数据。
-   *
-   * 从ADC读取当前的模拟值（mV），并将其转换为浮点数形式。
-   * 注意：确保ADC未接入超过1.8V的电压。
-   * @param[out] adc_data 存储读取到的ADC数据的变量（以浮点数形式）。
-   * @return bool 如果成功读取数据则返回true，否则返回false。
-   */
+  /// \brief 从 ADC 读取数据，并将结果存储在提供的引用中。
+  ///
+  /// \param[out] adc_data 存储读取数据的浮点数引用。
+  /// \return 读取成功返回 true，否则返回 false。
   bool Read(float& adc_data);
 
+  /// \brief 从 ADC 读取数据，并返回结果。
+  ///
+  /// \return 读取到的 ADC 数据值（mV），如果读取失败则返回 0。
+  float Read();
+
  private:
-  float scale_ = 0.0;
+  // clang-format off
+  inline const static std::string scale_file_path_ = fmt::format("/sys/bus/iio/devices/iio:device{}/in_voltage_scale", device_index);
+  inline static float scale_ = 0.0;
+  inline const static std::string raw_file_path_ = fmt::format("/sys/bus/iio/devices/iio:device{}/in_voltage{}_raw", device_index, in_voltage_index);
+  // clang-format on
 };
+
+/// \brief 定义 ADCIN1 别名。
+using ADCIN1 = ADCBase<0, 1>;
 ```
 
 ## 3 项目介绍
@@ -94,7 +87,7 @@ cmake_minimum_required(VERSION 3.10)
 project(test_adc)
 
 # 定义项目根目录路径
-set(PROJECT_ROOT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../..")
+set(PROJECT_ROOT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../..")
 # 定义 LockzhinerVisionModule SDK 路径
 set(LockzhinerVisionModule_ROOT_PATH "${PROJECT_ROOT_PATH}/third_party/lockzhiner_vision_module_sdk")
 set(LockzhinerVisionModule_DIR "${LockzhinerVisionModule_ROOT_PATH}/lib/cmake/lockzhiner_vision_module")
@@ -114,18 +107,13 @@ target_link_libraries(Test-ADC PRIVATE ${LOCKZHINER_VISION_MODULE_LIBRARIES})
 #include <iostream>
 
 int main() {
-  lockzhiner_vision_module::periphery::ADC adc;
-  if (!adc.Open()) {
-    std::cout << "Failed to open adc." << std::endl;
-    return 1;
-  }
-
+  lockzhiner_vision_module::periphery::ADCIN1 adc;
   float adc_data;
   if (!adc.Read(adc_data)) {
     std::cout << "Failed to read adc data." << std::endl;
     return 1;
   }
-  std::cout << "adc_data is " << adc_data << "mv" << std::endl;
+  std::cout << "adc_data is " << adc_data << "mV" << std::endl;
   return 0;
 }
 ```
