@@ -1,4 +1,4 @@
-<h1 align="center">C++ 开发环境搭建指南</h1>
+<h1 align="center">凌智视觉模块 C++ 开发环境搭建指南</h1>
 
 发布版本：V0.0.2
 
@@ -220,6 +220,7 @@ unzip -qo opencv-mobile-4.10.0-lockzhiner-vision-module.zip -d third_party
 
 ```bash
 cd /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModule
+rm -rf third_party/lockzhiner_vision_module_sdk
 rm -rf lockzhiner_vision_module_sdk.zip
 wget https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/lockzhiner_vision_module_sdk.zip
 unzip -qo lockzhiner_vision_module_sdk.zip -d third_party

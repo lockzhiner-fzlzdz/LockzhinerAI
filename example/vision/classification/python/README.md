@@ -1,6 +1,5 @@
 <h1 align="center">凌智视觉模块分类模型 Python 部署指南</h1>
 
-
 发布版本：V0.0.0
 
 日期：2024-09-11
@@ -28,14 +27,14 @@
 | :--------- | -------- | -------- | ------------ |
 | 2024/09/11 | 0.0.0    | 郑必城     | 初始版本     |
 
-
 ## 1 简介
 
-接下来让我们基于 Python 来部署 PaddleClas 分类模型。在开始本章节前，请确保你已经参考 [凌智视觉模块分类模型部署指南](../README.md) 对模型进行了充分训练。如果你需要使用 C++ 来部署 PaddleClas 请参考 [凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。
+接下来让我们基于 Python 来部署 PaddleClas 分类模型。在开始本章节前：
 
+- 请确保你已经参考 [凌智视觉模块分类模型部署指南](../README.md) 对模型进行了充分训练。
+- 请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
 
 ## 2 Python API 文档
-
 
 ```python
 class ClassificationResult:
@@ -154,20 +153,14 @@ if __name__ == "__main__":
 
 ## 4 上传并测试 Python 程序
 
-### 4.1 准备工作
-
-在开始这个章节前，请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
-
-### 4.2 连接设备并测试模型
-
 参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
 
 ![](../../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
-* 进入存放 **test_paddleclas.py** 脚本文件的目录，将 **test_paddleclas.py** 上传到 Lockzhiner Vision Module
-* 进入存放 **LZ-MobileNetV2_x0_25.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-MobileNetV2_x0_25.rknn** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_paddleclas.py** 脚本文件的目录，将 **test_paddleclas.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **LZ-MobileNetV2_x0_25.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-MobileNetV2_x0_25.rknn** 上传到 Lockzhiner Vision Module
 
 ![](images/stfp_0.png)
 
@@ -182,3 +175,7 @@ python test_paddleclas.py
 运行程序后，屏幕上开始打印标签索引，分类置信度，并在一段时间后输出 FPS 值
 
 ![alt text](result_0.png)
+
+## 5 其他
+
+如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。

@@ -1,4 +1,4 @@
-<h1 align="center">Python 开发环境搭建指南</h1>
+<h1 align="center">凌智视觉模块 Python 开发环境搭建指南</h1>
 
 发布版本：V0.0.0
 

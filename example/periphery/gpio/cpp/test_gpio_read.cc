@@ -4,15 +4,15 @@
 #include <thread>
 
 int main() {
-  lockzhiner_vision_module::periphery::GPIO_0A0 gpio_0A0;
+  lockzhiner_vision_module::periphery::GPIO0A0 gpio;
 
-  if (!gpio_0A0.Config(lockzhiner_vision_module::periphery::GPIOMode::IN)) {
+  if (!gpio.Config(lockzhiner_vision_module::periphery::GPIOMode::IN)) {
     std::cout << "Failed to config gpio mode" << std::endl;
     return 1;
   }
 
   lockzhiner_vision_module::periphery::GPIOState state;
-  if (!gpio_0A0.Read(state)) {
+  if (!gpio.Read(state)) {
     std::cout << "Failed to read gpio mode" << std::endl;
     return 1;
   }

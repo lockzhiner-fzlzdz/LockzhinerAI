@@ -4,14 +4,14 @@
 #include <thread>
 
 int main() {
-  lockzhiner_vision_module::periphery::GPIO_0A0 gpio_0A0;
+  lockzhiner_vision_module::periphery::GPIO0A0 gpio;
 
-  if (!gpio_0A0.Config(lockzhiner_vision_module::periphery::GPIOMode::OUT)) {
+  if (!gpio.Config(lockzhiner_vision_module::periphery::GPIOMode::OUT)) {
     std::cout << "Failed to config gpio mode" << std::endl;
     return 1;
   }
 
-  if (!gpio_0A0.Write(lockzhiner_vision_module::periphery::GPIOState::HIGH)) {
+  if (!gpio.Write(lockzhiner_vision_module::periphery::GPIOState::HIGH)) {
     std::cout << "Failed to config gpio mode" << std::endl;
     return 1;
   }
@@ -21,7 +21,7 @@ int main() {
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 
-  if (!gpio_0A0.Write(lockzhiner_vision_module::periphery::GPIOState::LOW)) {
+  if (!gpio.Write(lockzhiner_vision_module::periphery::GPIOState::LOW)) {
     std::cout << "Failed to config gpio mode" << std::endl;
     return 1;
   }
