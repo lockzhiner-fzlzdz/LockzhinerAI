@@ -3,12 +3,7 @@
 #include <iostream>
 
 int main() {
-  lockzhiner_vision_module::periphery::ADC adc;
-  if (!adc.Open()) {
-    std::cout << "Failed to open adc." << std::endl;
-    return 1;
-  }
-
+  lockzhiner_vision_module::periphery::ADCIN1 adc;
   float adc_data;
   if (!adc.Read(adc_data)) {
     std::cout << "Failed to read adc data." << std::endl;
