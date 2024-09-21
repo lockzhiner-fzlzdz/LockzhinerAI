@@ -169,7 +169,7 @@ if __name__ == "__main__":
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_paddleclas.py
+python test_paddleclas.py LZ-MobileNetV3.rknn
 ```
 
 运行程序后，屏幕上开始打印标签索引，分类置信度，并在一段时间后输出 FPS 值

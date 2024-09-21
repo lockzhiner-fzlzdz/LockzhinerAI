@@ -1,10 +1,15 @@
 from lockzhiner_vision_module.cv2 import VideoCapture
 from lockzhiner_vision_module.vision import PaddleClas
 import time
+import sys
 
 if __name__ == "__main__":
+    args = sys.argv
+    if len(args) != 1:
+        print("Need model path. Example: python test_paddleclas.py LZ-MobileNetV3.rknn")
+    
     model = PaddleClas()
-    if model.initialize("LZ-MobileNetV2_x0_25.rknn") is False:
+    if model.initialize(args[0]) is False:
         print("Failed to initialize PaddleClas")
         exit(1)
 
