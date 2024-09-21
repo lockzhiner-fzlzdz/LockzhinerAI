@@ -292,9 +292,9 @@ make -j8
 ```bash
 chmod +x ./Test-PaddleClas
 # ./Test-PaddleClas 模型路径 FPS -> 测试模型运行 FPS
-./Test-PaddleClas ./LZ-MobileNetV2_x0_25.rknn FPS
+./Test-PaddleClas ./LZ-MobileNetV3.rknn FPS
 # ./Test-PaddleClas 模型路径 Capture -> 测试摄像头获取数据时的模型运行 FPS 
-./Test-PaddleClas ./LZ-MobileNetV2_x0_25.rknn Capture
+./Test-PaddleClas ./LZ-MobileNetV3.rknn Capture
 ```
 
 程序将读取摄像头数据，使用神经网络检测后输出置信度和类别:
