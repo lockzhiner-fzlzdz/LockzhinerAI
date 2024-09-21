@@ -1,4 +1,4 @@
-<h1 align="center">摄像头使用指南</h1>
+<h1 align="center">凌智视觉模块摄像头使用指南</h1>
 
 发布版本：V0.0.0
 
@@ -60,17 +60,21 @@ Lockzhiner Vision Module 上自带了一个摄像头，该摄像头可以支持�
 在开始这个章节前，请确保:
 
 - 你已经按照 [开发环境搭建指南](../../../docs/introductory_tutorial/development_environment.md) 正确配置了开发环境。
-- 点击 [Lockzhiner Vision Module 图片获取助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher_v0.0.0.exe) 下载 Lockzhiner Vision Module 图片获取助手。
+- 点击 [凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher_v0.0.0.exe) 下载凌智视觉模块图片传输助手。
 
 ## 4 API 文档
 
-关于摄像头读取，请参考传统的 OpenCV 摄像头 API 来实现，需要注意的是:
+### 4.1 读取摄像头文档
+
+凌智视觉模块使用 opencv-mobile 来读取摄像头数据。关于摄像头读取，请参考传统的 OpenCV 摄像头 API 来实现，需要注意的是:
 
 - 受限于运行内存，请使用我们编译的 [OpenCV Mobile](https://gitee.com/LockzhinerAI/opencv-mobile) 库来代替传统的 OpenCV 库
 - LockzhinerVisionModule 只有一个摄像头，因此在打开摄像头时，不管输入什么参数，都只会打开这个摄像头
 - 配置摄像头长宽时，请保证长和宽都是 8 的倍数
 
-关于 Lockzhiner Vision Module 中的图片获取 API，请参考以下文档:
+### 4.2 传输摄像头数据文档
+
+为了让大家直观的看到摄像头获取的数据，我们编写了凌智视觉模块图片传输助手。关于 Lockzhiner Vision Module 中的图片发送 API，请参考以下文档:
 
 ```cpp
 /**
