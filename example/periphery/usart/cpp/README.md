@@ -37,8 +37,7 @@
 接下来让我们基于串口来部署 GPIO 例程。在开始本章节前：
 
 - 在开始这个章节前，请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/cpp_development_environment.md) 正确配置了开发环境。
-
-- 请确保你已经按照 [凌智视觉模块 GPIO 使用指南](../README.md) 正确将信号连接到开发板。
+- 请确保你已经按照 [凌智视觉模块 GPIO 使用指南](../README.md) 正确将信号连接到开发板并打开了串口工具。
 
 ## 3 API 文档
 
@@ -207,7 +206,7 @@ make -j8
 
 ![](images/sftp.png)
 
-### 6.1 测试串口发送程序
+### 6.1 测试串口发送例程
 
 在 Lockzhiner Vision Module 上运行以下代码来执行串口发送程序
 
@@ -223,7 +222,7 @@ vofa+ 上显示发送的字符串（Hello World）
 
 ![](../images/usart_write_voft.png)
 
-### 6.2 测试串口接收程序
+### 6.2 测试串口接收例程
 
 在 Lockzhiner Vision Module 上运行以下代码来执行串口接收程序
 
