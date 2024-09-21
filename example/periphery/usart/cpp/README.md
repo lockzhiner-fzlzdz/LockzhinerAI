@@ -83,7 +83,7 @@ class USART {
 
 ## 4 项目介绍
 
-为了方便大家入手，我们将项目拆分为串口接受数据和串口发送数据两个部分，他们共用一个 CMake 文件。
+为了方便大家入手，我们将项目拆分为串口接受数据和串口发送数据两个例程，他们共用一个 CMake 文件。
 
 ```cmake
 # CMake最低版本要求  
@@ -109,7 +109,7 @@ target_include_directories(Test-USART-Read PRIVATE ${LOCKZHINER_VISION_MODULE_IN
 target_link_libraries(Test-USART-Read PRIVATE ${LOCKZHINER_VISION_MODULE_LIBRARIES})
 ```
 
-串口接受数据的核心代码如下:
+串口接受例程的核心代码如下:
 
 ```cpp
 #include <lockzhiner_vision_module/periphery/usart/usart.h>  // 串口类头文件
@@ -144,7 +144,7 @@ int main() {
 }
 ```
 
-串口发送数据的核心代码如下:
+串口发送例程的核心代码如下:
 
 ```cpp
 #include <lockzhiner_vision_module/periphery/usart/usart.h>  // 引入串口类头文件

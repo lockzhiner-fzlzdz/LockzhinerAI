@@ -41,7 +41,105 @@
 
 ## 3 API 文档
 
+```python
+class USARTBase:
+    """
+    @class USARTBase
+    @brief USART 基础类，用于管理 USART （串行通信）模块的初始化和基本操作。
+
+    此类提供了一个接口来打开、关闭、写入和读取USART模块。它依赖于一个具体的USART类实例来实现这些操作。
+    """
+
+    def __init__(self, usart_class):
+        """
+        @fn __init__(self, usart_class)
+        @brief 构造函数，初始化 USARTBase 对象。
+
+        @param usart_class 一个 USART 类，用于实际的 USART 模块操作。
+        """
+        self.usart = usart_class()
+
+    def open(self, baud_rate=115200):
+        """
+        @fn open(self, baud_rate=115200)
+        @brief 打开 USART 模块，设置波特率。
+
+        @param baud_rate 波特率，默认为 115200。
+
+        @return 打开操作的结果，通常由具体的 USART 类决定。
+        """
+        return self.usart.open(baud_rate)
+
+    def close(self):
+        """
+        @fn close(self)
+        @brief 关闭 USART 模块。
+
+        @return 关闭操作的结果，通常由具体的 USART 类决定。
+        """
+        return self.usart.close()
+
+    def write(self, data):
+        """
+        @fn write(self, data)
+        @brief 向 USART 模块写入数据。
+
+        @param data 要写入的数据。
+
+        @return 写入操作的结果，通常由具体的 USART 类决定。
+        """
+        return self.usart.write(data)
+
+    def read(self, data_size):
+        """
+        @fn read(self, data_size)
+        @brief 从 USART 模块读取数据。
+
+        @param data_size 要读取的数据大小。
+
+        @return 读取到的数据，通常由具体的 USART 类决定。
+        """
+        return self.usart.read(data_size)
+```
+
 ## 4 项目介绍
+
+为了方便大家入手，我们将项目拆分为串口接受数据和串口发送数据两个部分。
+
+串口接受例程的核心代码如下:
+
+```python
+from lockzhiner_vision_module.periphery import USART1
+
+
+if __name__ == "__main__":
+    usart = USART1()
+    if usart.open(115200) is False:
+        print("Failed to open usart.")
+        exit(1)
+
+    print("Start receiving serial port data.")
+
+    while True:
+        print(usart.read(1024))
+```
+
+串口发送例程的核心代码如下:
+
+```python
+from lockzhiner_vision_module.periphery import USART1
+
+
+if __name__ == "__main__":
+    usart = USART1()
+    if usart.open(115200) is False:
+        print("Failed to open usart.")
+        exit(1)
+
+    if usart.write("Hello World") is False:
+        print("Failed to send data.")
+        exit(0)
+```
 
 ## 5 执行串口测试程序
 
