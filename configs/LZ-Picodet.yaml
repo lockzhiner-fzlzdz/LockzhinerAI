@@ -1,6 +1,6 @@
 config:
   mean:
-    - 0.406 
+    - 0.406
     - 0.485
     - 0.456
   std:
@@ -10,7 +10,7 @@ config:
 
 load_onnx:
   inputs:
-    - x
+    - image
   input_size_list:
     -
       - 1
@@ -18,7 +18,14 @@ load_onnx:
       - 320
       - 320
   outputs:
-    - p2o.DequantizeLinear.881
+    - p2o.DequantizeLinear.1705
+    - p2o.DequantizeLinear.1707
+    - p2o.DequantizeLinear.1619
+    - p2o.DequantizeLinear.1621
+    - p2o.DequantizeLinear.1533
+    - p2o.DequantizeLinear.1535
+    - p2o.DequantizeLinear.1445
+    - p2o.DequantizeLinear.1447
 
 build:
   do_quantization: false
