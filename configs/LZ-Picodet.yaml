@@ -1,0 +1,25 @@
+config:
+  mean:
+    - 0.406 
+    - 0.485
+    - 0.456
+  std:
+    - 0.225
+    - 0.224
+    - 0.229
+
+load_onnx:
+  inputs:
+    - x
+  input_size_list:
+    -
+      - 1
+      - 3
+      - 320
+      - 320
+  outputs:
+    - p2o.DequantizeLinear.881
+
+build:
+  do_quantization: false
+  dataset:

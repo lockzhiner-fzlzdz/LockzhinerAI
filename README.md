@@ -14,7 +14,9 @@
 
 * [凌智视觉模块烧录镜像指南](./docs/introductory_tutorial/burn_image.md)
 * [凌智视觉模块连接设备指南](./docs/introductory_tutorial/connect_device_using_ssh.md)
+* [凌智视觉模块 Python 开发环境搭建指南](./docs/introductory_tutorial/python_development_environment.md)
 
+<!-- 
 如果你需要开发 Python 程序，请参考以下教程搭建开发环境:
 
 * [凌智视觉模块 Python 开发环境搭建指南](./docs/introductory_tutorial/python_development_environment.md)
@@ -22,7 +24,8 @@
 如果你需要开发 C++ 程序，请参考以下教程搭建开发环境:
 
 * [凌智视觉模块 C++ 开发环境搭建指南](./docs/introductory_tutorial/cpp_development_environment.md)
-* [基于 C++ 编写 Hello World 程序](./example/hello_world/README.md)
+* [基于 C++ 编写 Hello World 程序](./example/hello_world/README.md) 
+-->
 
 ## 🔌 外设控制教程
 
@@ -43,7 +46,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 这一部分教程将引导你从零开始训练并部署各种深度学习模型，包括分类模型、检测模型、分割模型和 OCR 模型。通过这些实战教程，你将学习到如何利用 Lockzhiner Vision Module 的高性能计算能力以及借助 Paddle 生态系统的丰富资源，轻松实现视觉任务的训练和部署。
 
 * [分类模型部署指南](./example/vision/classification/README.md)
-* [检测模型部署指南(支持中)]()
+* [检测模型部署指南](./example/vision/detetcion/README.md)
 * [分割模型部署指南(支持中)]()
 * [OCR 模型部署指南(支持中)]()
 

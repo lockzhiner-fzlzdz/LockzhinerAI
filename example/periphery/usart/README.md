@@ -51,5 +51,5 @@
 
 请参考以下教程使用 C++ 或 Python 在凌智视觉模块上部署串口例程：
 
-- [凌智视觉模块串口 C++ 部署指南](./cpp/README.md)
+<!-- - [凌智视觉模块串口 C++ 部署指南](./cpp/README.md) -->
 - [凌智视觉模块串口 Python 部署指南](./python/README.md)
