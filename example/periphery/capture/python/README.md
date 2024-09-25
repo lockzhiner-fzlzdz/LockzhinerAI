@@ -38,9 +38,9 @@ Lockzhiner Vision Module 上自带了一个摄像头，该摄像头可以支持�
 - 你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
 - 点击 [凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher_v0.0.0.exe) 下载凌智视觉模块图片传输助手。
 
-## 4 API 文档
+## 3 API 文档
 
-### 4.1 读取摄像头文档
+### 3.1 读取摄像头文档
 
 读取摄像头的 API 对齐了 OpenCV，具体 API 文档如下:
 
@@ -91,7 +91,7 @@ class VideoCapture:
         return self.video_capture.release()
 ```
 
-### 4.2 传输摄像头数据文档
+### 3.2 传输摄像头数据文档
 
 为了让大家直观的看到摄像头获取的数据，我们编写了凌智视觉模块图片传输助手。关于 Lockzhiner Vision Module 中的图片发送 API，请参考以下文档:
 
@@ -122,14 +122,14 @@ class Edit:
         return self.edit.print(mat)
 ```
 
-## 5 项目介绍
+## 4 项目介绍
 
 为了方便大家入手，我们做了一个简易的图片传输例程。该例程接收 Lockzhiner Vision Module 图片获取助手的连接并向其传输图片数据。
 
 ```cpp
 ```
 
-## 6 执行摄像头测试程序
+## 5 执行摄像头测试程序
 
 参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
 
