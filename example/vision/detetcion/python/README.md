@@ -45,12 +45,18 @@
 
 ```python
 from lockzhiner_vision_module.cv2 import VideoCapture
-from lockzhiner_vision_module.vision import PaddleClas
+from lockzhiner_vision_module.vision import PaddleDetection
 import time
+import sys
 
 if __name__ == "__main__":
-    model = PaddleClas()
-    if model.initialize("LZ-MobileNetV2_x0_25.rknn") is False:
+    args = sys.argv
+    if len(args) != 2:
+        print("Need model path. Example: python test_detection.py LZ-MobileNetV3.rknn")
+        exit(1)
+
+    model = PaddleDetection()
+    if model.initialize(args[1]) is False:
         print("Failed to initialize PaddleClas")
         exit(1)
 
@@ -70,9 +76,17 @@ if __name__ == "__main__":
             start_time = time.time()
             result = model.predict(mat)
             end_time = time.time()
-            total_time_ms += (end_time - start_time)
+            total_time_ms += end_time - start_time
             read_index += 1
-            print(result.label_id, result.confidence)
+
+            print(f"result size is {result.size()}")
+            for i in range(result.size()):
+                box = result.boxes[i]
+                score = result.scores[i]
+                label_id = result.label_ids[i]
+                print(
+                    f"(x,y,w,h,score,label_id)[{i}]: [{box.x},{box.y},{box.width},{box.height},{score},{label_id}]"
+                )
         print(f"FPS is {1.0 / (total_time_ms/read_index)}")
 ```
 

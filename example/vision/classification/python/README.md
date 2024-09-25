@@ -64,14 +64,14 @@ class ClassificationResult:
         return self.classification_result.label_id
 
     @property
-    def confidence(self):
+    def score(self):
         """
         获取分类结果的标签 ID。
 
         Returns:
             float: 分类结果的置信度，表示识别结果的可靠程度，范围为 0 到 1。
         """
-        return self.classification_result.confidence
+        return self.classification_result.score
 
 
 class PaddleClas:
@@ -122,10 +122,16 @@ class PaddleClas:
 from lockzhiner_vision_module.cv2 import VideoCapture
 from lockzhiner_vision_module.vision import PaddleClas
 import time
+import sys
 
 if __name__ == "__main__":
+    args = sys.argv
+    if len(args) != 2:
+        print("Need model path. Example: python test_classification.py LZ-MobileNetV3.rknn")
+        exit(1)
+
     model = PaddleClas()
-    if model.initialize("LZ-MobileNetV2_x0_25.rknn") is False:
+    if model.initialize(args[1]) is False:
         print("Failed to initialize PaddleClas")
         exit(1)
 
@@ -145,9 +151,9 @@ if __name__ == "__main__":
             start_time = time.time()
             result = model.predict(mat)
             end_time = time.time()
-            total_time_ms += (end_time - start_time)
+            total_time_ms += end_time - start_time
             read_index += 1
-            print(result.label_id, result.confidence)
+            print(result.label_id, result.score)
         print(f"FPS is {1.0 / (total_time_ms/read_index)}")
 ```
 
