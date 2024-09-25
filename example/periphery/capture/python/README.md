@@ -45,7 +45,50 @@ Lockzhiner Vision Module 上自带了一个摄像头，该摄像头可以支持�
 读取摄像头的 API 对齐了 OpenCV，具体 API 文档如下:
 
 ```python
+class VideoCapture:
+    """
+    OpenCV 摄像头类
+    """
+    def __init__(self):
+        self.video_capture = cv2.VideoCapture()
 
+    def open(self, index=0):
+        """
+        打开摄像头
+        
+        Returns:
+            bool: 摄像头打开过程过是否出现逻辑错误
+        """
+        return self.video_capture.open(index)
+
+    def isOpened(self):
+        """
+        判断摄像头是否打开成功
+        
+        Returns:
+            bool: 摄像头是否打开成功
+        """
+        return self.video_capture.isOpened()
+
+    def read(self):
+        """
+        读取摄像头数据
+        
+        Returns:
+            bool: 摄像头是否成功读取到数据
+            cv::Mat: 摄像头读取的图像数据
+        """
+        mat = self.video_capture.read()
+        return not mat.empty(), mat
+
+    def release(self):
+        """
+        关闭摄像头
+        
+        Returns:
+            bool: 是否释放成功
+        """
+        return self.video_capture.release()
 ```
 
 ### 4.2 传输摄像头数据文档
@@ -53,7 +96,30 @@ Lockzhiner Vision Module 上自带了一个摄像头，该摄像头可以支持�
 为了让大家直观的看到摄像头获取的数据，我们编写了凌智视觉模块图片传输助手。关于 Lockzhiner Vision Module 中的图片发送 API，请参考以下文档:
 
 ```python
+class Edit:
+    """
+    图片数据传输类，用于传输 CV::Mat 到凌智图片传输助手
+    """
+    def __init__(self):
+        self.edit = edit.Edit()
 
+    def start_and_accept_connection(self):
+        """
+        阻塞等待凌智图片传输助手的连接请求
+        """
+        return self.edit.start_and_accept_connection()
+
+    def print(self, mat):
+        """
+        传输图片到凌智图片传输助手
+
+        Args:
+            mat (cv::Mat): OpenCV 图片 Array
+
+        Returns:
+            bool: 传输是否成功
+        """
+        return self.edit.print(mat)
 ```
 
 ## 5 项目介绍

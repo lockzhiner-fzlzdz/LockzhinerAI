@@ -37,6 +37,160 @@
 ## 2 Python API 文档
 
 ```python
+class Rect:
+    def __init__(self):
+        self.rect = cv2.Rect()
+
+    def empty(self):
+        return self.rect.empty()
+
+    @property
+    def x(self):
+        """
+        获取矩形左上角坐标点的 x 坐标
+
+        Returns:
+            int: 获取矩形左上角坐标点的 x 坐标
+        """
+        return self.rect.x
+
+    @property
+    def y(self):
+        """
+        获取矩形左上角坐标点的 y 坐标
+
+        Returns:
+            int: 获取矩形左上角坐标点的 y 坐标
+        """
+        return self.rect.y
+
+    @property
+    def width(self):
+        """
+        获取矩形的宽
+
+        Returns:
+            int: 获取矩形的宽
+        """
+        return self.rect.width
+
+    @property
+    def height(self):
+        """
+        获取矩形的高
+
+        Returns:
+            int: 获取矩形的高
+        """
+        return self.rect.height
+
+
+class DetectionResult:
+    """
+    分类结果类，用于封装和处理目标检测结果数据。
+
+    该类主要提供了一个包装层，用于访问和管理由视觉模块产生的分类结果。
+    """
+
+    def __init__(self):
+        self.detection_result = vision.DetectionResult()
+
+    def empty(self):
+        """
+        判断结果类中是否存在结果（是否为空）
+
+        Returns:
+            bool: 结果类中是否存在结果（是否为空）
+        """
+        return self.detection_result.empty()
+
+    @property
+    def size(self):
+        """
+        获取目标检测模型检测出来的目标总数
+
+        Returns:
+            size_t: 目标检测模型检测出来的目标总数
+        """
+        return self.detection_result.size()
+
+    @property
+    def boxes(self):
+        """
+        获取目标检测模型检测出来的矩形框信息
+
+        Returns:
+            Rect: 矩形框信息
+        """
+        return self.detection_result.boxes
+
+    @property
+    def scores(self):
+        """
+        获取目标检测模型检测出来的得分信息
+
+        Returns:
+            float: 得分信息
+        """
+        return self.detection_result.scores
+
+    @property
+    def label_ids(self):
+        """
+        获取目标检测模型检测出来的分类标签信息
+
+        Returns:
+            int: 分类标签信息
+        """
+        return self.detection_result.label_ids
+
+class PaddleDetection:
+    """
+    PaddleDetection 类 - 用于目标检测的 PaddlePaddle 模型封装。
+
+    该类封装了 PaddleDetection 框架下的目标检测模型，提供了初始化和预测的方法。
+    """
+
+    def __init__(self):
+        """
+        构造函数 - 初始化 PaddleDetection 对象。
+        """
+        self.model = vision.PaddleDetection()
+
+    def initialize(self, model_path):
+        """
+        初始化模型 - 加载预训练的 PaddlePaddle 模型。
+
+        Args:
+            model_path (str): 模型文件的路径。
+
+        Returns:
+            bool: 初始化是否成功。
+        """
+        return self.model.initialize(model_path)
+
+    def set_threshold(self, score_threshold=0.5, nms_threshold=0.5):
+        """
+        设置目标检测阈值
+
+        Args:
+            score_threshold (float): 目标检测得分阈值，默认为 0.5
+            nms_threshold (float): 目标检测 NMS 阈值，默认为 0.5
+
+        """
+        self.model.initialize(score_threshold, nms_threshold)
+
+    def predict(self, input_mat):
+        """
+        进行预测 - 使用加载的模型对输入数据进行分类预测。
+
+        Args:
+            input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
+
+        Returns:
+            DetectionResult: 预测结果对象，包含了分类的标签、置信度等信息。
+        """
+        return self.model.predict(input_mat)
 ```
 
 ## 3 项目介绍
