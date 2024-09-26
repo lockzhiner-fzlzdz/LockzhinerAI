@@ -1,11 +1,5 @@
 <h1 align="center">凌智视觉模块(Lockzhiner Vision Module)</h1>
 
-<p align="center">  
-    <a href="./LICENSE">  
-        <img src="./images/pp.png">  
-    </a>  
-</p>
-
 <p align="center">
     <a href="./LICENSE">
         <img src="https://img.shields.io/badge/license-Apache%202-dfd.svg">
@@ -21,7 +15,11 @@
     </a>
 </p>
 
-
+<p align="center">  
+    <a href="./LICENSE">  
+        <img src="./images/pp.png">  
+    </a>  
+</p>
 
 凌智视觉模块(Lockzhiner Vision Module) 是福州市凌睿智捷电子有限公司倾力打造的一款高集成度人工智能视觉模块，专为边端人工智能和机器视觉应用而设计，其特色包括：
 
