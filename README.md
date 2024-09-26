@@ -2,7 +2,7 @@
 
 <p align="center">  
     <a href="./LICENSE">  
-        <img src="./images/pp.png" style="width: 25%; height: auto;">  
+        <img src="./images/pp.png">  
     </a>  
 </p>
 
