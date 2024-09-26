@@ -7,7 +7,6 @@
 
 ## 🔄 最新日志
 
-
 ## 💡 入门学习教程
 
 这一部分教程旨在为你提供一个系统化的学习路径，帮助你快速上手 Lockzhiner Vision Module。通过一系列详细的教程，你将学会如何烧录镜像、连接设备、搭建开发环境和编写简单的程序。
@@ -24,7 +23,7 @@
 如果你需要开发 C++ 程序，请参考以下教程搭建开发环境:
 
 * [凌智视觉模块 C++ 开发环境搭建指南](./docs/introductory_tutorial/cpp_development_environment.md)
-* [基于 C++ 编写 Hello World 程序](./example/hello_world/README.md) 
+* [基于 C++ 编写 Hello World 程序](./example/hello_world) 
 -->
 
 ## 🔌 外设控制教程
@@ -35,26 +34,26 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 为了帮助你快速上手教程，我们提供了一系列的外设控制例程，你可以点击链接快速学习
 
-* [凌智视觉模块串口使用指南](./example/periphery/usart/README.md)
-* [凌智视觉模块 ADC 使用指南](./example/periphery/adc/README.md)
-* [凌智视觉模块 PWM 使用指南](./example/periphery/pwm/README.md)
-* [凌智视觉模块 GPIO 使用指南](./example/periphery/gpio/README.md)
-* [凌智视觉模块摄像头使用指南](./example/periphery/capture/README.md)
+* [凌智视觉模块串口使用指南](./example/periphery/usart)
+* [凌智视觉模块 ADC 使用指南](./example/periphery/adc)
+* [凌智视觉模块 PWM 使用指南](./example/periphery/pwm)
+* [凌智视觉模块 GPIO 使用指南](./example/periphery/gpio)
+* [凌智视觉模块摄像头使用指南](./example/periphery/capture)
 
 ## 🧠 深度学习视觉部署教程
 
 这一部分教程将引导你从零开始训练并部署各种深度学习模型，包括分类模型、检测模型、分割模型和 OCR 模型。通过这些实战教程，你将学习到如何利用 Lockzhiner Vision Module 的高性能计算能力以及借助 Paddle 生态系统的丰富资源，轻松实现视觉任务的训练和部署。
 
-* [分类模型部署指南](./example/vision/classification/README.md)
-* [检测模型部署指南](./example/vision/detetcion/README.md)
-* [分割模型部署指南(支持中)]()
-* [OCR 模型部署指南(支持中)]()
+* [凌智视觉模块分类模型部署指南](./example/vision/classification)
+* [凌智视觉模块检测模型部署指南](./example/vision/detetcion)
+<!-- * [分割模型部署指南(支持中)]() -->
+<!-- * [OCR 模型部署指南(支持中)]() -->
 
-## 👍 特色模型部署教程
+## 👍 特色部署教程
 
-* [手写数字检测部署指南(支持中)]()
-* [人脸佩戴口罩检测部署指南(支持中)]()
-* [二维码识别与检测部署指南(支持中)]()
+* [凌智视觉模块手写数字识别部署指南]()
+<!-- * [人脸佩戴口罩检测部署指南(支持中)]() -->
+<!-- * [二维码识别与检测部署指南(支持中)]() -->
 
 ## 🐛 Bug反馈
 

@@ -47,7 +47,7 @@ Labelme 是一个 python 语言编写，带有图形界面的图像标注软件�
 
 ### 2.2 标注前的准备
 
-首先，请参考 [摄像头使用指南](./example/periphery/capture/README.md) 利用 **Lockzhiner Vision Module 图片获取助手** 拍摄你需要进行标注的图片，如下图所示：
+首先，请参考 [摄像头使用指南](./example/periphery/capture) 利用 **Lockzhiner Vision Module 图片获取助手** 拍摄你需要进行标注的图片，如下图所示：
 
 ![](images/capture_images.png)
 
@@ -211,8 +211,8 @@ AI Studio 是基于百度深度学习开源平台飞桨的人工智能学习与�
 
 训练完模型后，请参考以下教程使用 C++ 或 Python 在凌智视觉模块上部署分类模型例程：
 
-<!-- * [凌智视觉模块分类模型 C++ 部署指南](./cpp/README.md) -->
-* [凌智视觉模块分类模型 Python 部署指南](./python/README.md)
+<!-- * [凌智视觉模块分类模型 C++ 部署指南](./cpp) -->
+- [凌智视觉模块分类模型 Python 部署指南](./python)
 
 ## 5 各模型性能指标
 
@@ -220,6 +220,4 @@ AI Studio 是基于百度深度学习开源平台飞桨的人工智能学习与�
 
 | 分类模型 | FPS(帧/s) | 精度(%) |
 |:-------:|:----:|:----:|
-|LZ-MobileNetV2_x0_25|70.57|53.21|
-|LZ-MobileNetV2_x0_5|63.48|65.03|
-|LZ-MobileNetV2_x1_0|49.44|72.15|
+|LZ-MobileNetV3|40|75.32|
