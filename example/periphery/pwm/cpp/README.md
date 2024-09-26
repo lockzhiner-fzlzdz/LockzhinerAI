@@ -211,17 +211,17 @@ make -j8
 
 ![](../../../images/periphery.png)
 
-## 7 执行 ADC 测试程序
+## 7 执行 PWM 测试程序
 
-参考 [连接设备指南](../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
+参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
 
-![](../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
+![](../../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
 
 使用 SFTP 功能将软件上传到 Lockzhiner Vision Module
 
 ![](images/sftp.png)
 
-在 Lockzhiner Vision Module 上运行以下代码来执行 ADC 测试程序
+在 Lockzhiner Vision Module 上运行以下代码来执行 PWM 测试程序
 
 ```bash
 chmod +x ./Test-PWM
@@ -232,9 +232,9 @@ chmod +x ./Test-PWM
 程序运行开始后，屏幕上打印配置的频率和占空比并开始每隔一秒显示当前进度
 
 ![](images/pwm_start.png)
-![](images/show_start.png)
+![](../images/show_start.png)
 
 程序运行 10s 后，程序退出 PWM 停止
 
 ![](images/pwm_end.png)
-![](images/show_end.png)
+![](../images/show_end.png)
