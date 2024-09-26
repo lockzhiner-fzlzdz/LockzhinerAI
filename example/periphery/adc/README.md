@@ -51,7 +51,7 @@
 
 ## 3 在凌智视觉模块上部署 ADC 例程
 
-请参考以下教程使用 C++ 或 Python 在凌智视觉模块上部署 ADC 例程：
+请参考以下教程在凌智视觉模块上部署 ADC 例程：
 
 <!-- * [凌智视觉模块 ADC C++ 部署指南](./cpp/README.md) -->
 * [凌智视觉模块 ADC Python 部署指南](./python/README.md)
