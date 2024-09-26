@@ -1,5 +1,28 @@
 <h1 align="center">凌智视觉模块(Lockzhiner Vision Module)</h1>
 
+<p align="center">  
+    <a href="./LICENSE">  
+        <img src="./images/pp.png" style="width: 25%; height: auto;">  
+    </a>  
+</p>
+
+<p align="center">
+    <a href="./LICENSE">
+        <img src="https://img.shields.io/badge/license-Apache%202-dfd.svg">
+    </a>
+    <a href="https://gitee.com/Lockzhiner-Electronics/DAQ122-IPC/releases">
+        <img src="https://img.shields.io/badge/release-release%2F0.0.0-yellow">
+    </a>
+    <a href="">
+        <img src="https://img.shields.io/badge/python-3.11-aff.svg">
+    </a>
+    <a href="">
+        <img src="https://img.shields.io/badge/os-linux-pink.svg">
+    </a>
+</p>
+
+
+
 凌智视觉模块(Lockzhiner Vision Module) 是福州市凌睿智捷电子有限公司倾力打造的一款高集成度人工智能视觉模块，专为边端人工智能和机器视觉应用而设计，其特色包括：
 
 * 卓越的计算能力：Lockzhiner Vision Module 搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU，以更出色地处理 SIMD 和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU，足以应对绝大多数的视觉应用场景。
