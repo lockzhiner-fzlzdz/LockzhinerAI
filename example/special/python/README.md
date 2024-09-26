@@ -44,33 +44,65 @@
 为了方便大家入手，我们做了一个简易的手写数字识别例程。该程序可以使用摄像头进行端到端推理，并可视化推理结果到凌智视觉模块图片传输助手。
 
 ```python
+from lockzhiner_vision_module.cv2 import VideoCapture
+from lockzhiner_vision_module.vision import PaddleClas, visualize
+from lockzhiner_vision_module.edit import Edit
+import sys
+
+if __name__ == "__main__":
+    args = sys.argv
+    if len(args) != 2:
+        print("Need model path. Example: python test_digit_handwritten_rec.py LZ-DigitHandRecog.rknn")
+        exit(1)
+        
+    edit = Edit()
+    edit.start_and_accept_connection()
+
+    model = PaddleClas()
+    if model.initialize(args[1]) is False:
+        print("Failed to initialize PaddleClas")
+        exit(1)
+
+    video_capture = VideoCapture()
+    if video_capture.open(0) is False:
+        print("Failed to open capture")
+        exit(1)
+
+    while True:
+        ret, mat = video_capture.read()
+        if ret is False:
+            continue
+
+        result = model.predict(mat)
+        print(f"The label_id is {result.label_id} and the score is {result.score}")
+
+        vis_mat = visualize(mat, result)
+        edit.print(vis_mat)
 ```
 
 ## 4 上传并测试 Python 程序
 
 参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
 
-![](../../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
+![](../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
-- 进入存放 **test_paddleclas.py** 脚本文件的目录，将 **test_paddleclas.py** 上传到 Lockzhiner Vision Module
-- 进入存放 **LZ-MobileNetV2_x0_25.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-MobileNetV2_x0_25.rknn** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_digit_handwritten_rec.py** 脚本文件的目录，将 **test_digit_handwritten_rec.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **LZ-DigitHandRecog.rknn** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-DigitHandRecog.rknn** 上传到 Lockzhiner Vision Module
 
-![](images/stfp_0.png)
-
-![](images/stfp_1.png)
+![](images/stfp.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_classification.py LZ-MobileNetV3.rknn
+python test_digit_handwritten_rec.py LZ-DigitHandRecog.rknn
 ```
 
-运行程序后，屏幕上开始打印标签索引，分类置信度，并在一段时间后输出 FPS 值
+运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印标签索引和置信度，凌智视觉模块图片传输助手出现可视化的结果
 
-![alt text](result_0.png)
+![alt text](images/result_0.png)
 
-## 5 其他
+<!-- ## 5 其他 -->
 
-如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。
+<!-- 如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。 -->

@@ -165,8 +165,8 @@ if __name__ == "__main__":
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
-- 进入存放 **test_paddleclas.py** 脚本文件的目录，将 **test_paddleclas.py** 上传到 Lockzhiner Vision Module
-- 进入存放 **LZ-MobileNetV2_x0_25.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-MobileNetV2_x0_25.rknn** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_classification.py** 脚本文件的目录，将 **test_classification.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **LZ-MobileNetV3.rknn** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-MobileNetV3.rknn** 上传到 Lockzhiner Vision Module
 
 ![](images/stfp_0.png)
 
@@ -180,8 +180,8 @@ python test_classification.py LZ-MobileNetV3.rknn
 
 运行程序后，屏幕上开始打印标签索引，分类置信度，并在一段时间后输出 FPS 值
 
-![alt text](result_0.png)
+![alt text](images/result_0.png)
 
-## 5 其他
+<!-- ## 5 其他
 
-如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。
+如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。 -->
