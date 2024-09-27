@@ -32,12 +32,12 @@
 接下来让我们基于 Python 来部署手写数字模型。在开始本章节前：
 
 - 请确保你已经参考 [凌智视觉模块手写数字识别部署指南](../README.md) 正确下载了模型。
-- 请确保你已经参考 [凌智视觉模块摄像头部署指南](../../periphery/capture/README.md) 正确下载了凌智视觉模块图片传输助手。
+- 请确保你已经参考 [凌智视觉模块摄像头部署指南](../../../periphery/capture/README.md) 正确下载了凌智视觉模块图片传输助手。
 - 请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
 
 ## 2 Python API 文档
 
-同[分类模型 Python 部署 API 文档](../../vision/classification/python/README.md)
+同[分类模型 Python 部署 API 文档](../../../vision/classification/python/README.md)
 
 ## 3 项目介绍
 
@@ -84,7 +84,7 @@ if __name__ == "__main__":
 
 参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
 
-![](../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
+![](../../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
