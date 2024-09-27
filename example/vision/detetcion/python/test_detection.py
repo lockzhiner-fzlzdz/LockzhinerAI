@@ -28,17 +28,17 @@ if __name__ == "__main__":
                 continue
 
             start_time = time.time()
-            result = model.predict(mat)
+            results = model.predict(mat)
             end_time = time.time()
             total_time_ms += end_time - start_time
             read_index += 1
 
-            print(f"result size is {result.size()}")
-            for i in range(result.size()):
-                box = result.boxes[i]
-                score = result.scores[i]
-                label_id = result.label_ids[i]
+            print(f"result size is {len(results)}")
+            for result in results:
+                box = result.box
+                score = result.score
+                label_id = result.label_id
                 print(
-                    f"(x,y,w,h,score,label_id)[{i}]: [{box.x},{box.y},{box.width},{box.height},{score},{label_id}]"
+                    f"(x,y,w,h,score,label_id): [{box.x},{box.y},{box.width},{box.height},{score},{label_id}]"
                 )
         print(f"FPS is {1.0 / (total_time_ms/read_index)}")

@@ -84,65 +84,45 @@ class Rect:
         """
         return self.rect.height
 
-
 class DetectionResult:
     """
-    分类结果类，用于封装和处理目标检测结果数据。
+    检测结果类，用于封装和处理目标检测结果数据。
 
-    该类主要提供了一个包装层，用于访问和管理由视觉模块产生的分类结果。
+    该类主要提供了一个包装层，用于访问和管理由视觉模块产生的检测结果。
     """
 
     def __init__(self):
         self.detection_result = vision.DetectionResult()
 
-    def empty(self):
-        """
-        判断结果类中是否存在结果（是否为空）
-
-        Returns:
-            bool: 结果类中是否存在结果（是否为空）
-        """
-        return self.detection_result.empty()
-
     @property
-    def size(self):
+    def box(self):
         """
-        获取目标检测模型检测出来的目标总数
-
-        Returns:
-            size_t: 目标检测模型检测出来的目标总数
-        """
-        return self.detection_result.size()
-
-    @property
-    def boxes(self):
-        """
-        获取目标检测模型检测出来的矩形框信息
+        获取目标检测模型检测结果的矩形框信息
 
         Returns:
             Rect: 矩形框信息
         """
-        return self.detection_result.boxes
+        return self.detection_result.box
 
     @property
-    def scores(self):
+    def score(self):
         """
-        获取目标检测模型检测出来的得分信息
+        获取目标检测模型检测结果的得分信息
 
         Returns:
             float: 得分信息
         """
-        return self.detection_result.scores
+        return self.detection_result.score
 
     @property
-    def label_ids(self):
+    def label_id(self):
         """
-        获取目标检测模型检测出来的分类标签信息
+        获取目标检测模型检测结果的分类标签信息
 
         Returns:
             int: 分类标签信息
         """
-        return self.detection_result.label_ids
+        return self.detection_result.label_id
 
 class PaddleDetection:
     """
@@ -169,13 +149,13 @@ class PaddleDetection:
         """
         return self.model.initialize(model_path)
 
-    def set_threshold(self, score_threshold=0.5, nms_threshold=0.5):
+    def set_threshold(self, score_threshold=0.5, nms_threshold=0.3):
         """
         设置目标检测阈值
 
         Args:
             score_threshold (float): 目标检测得分阈值，默认为 0.5
-            nms_threshold (float): 目标检测 NMS 阈值，默认为 0.5
+            nms_threshold (float): 目标检测 NMS 阈值，默认为 0.3
 
         """
         self.model.initialize(score_threshold, nms_threshold)
@@ -188,9 +168,14 @@ class PaddleDetection:
             input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
 
         Returns:
-            DetectionResult: 预测结果对象，包含了分类的标签、置信度等信息。
+            list(DetectionResult): 预测结果对象列表，每一个预测结果包含了分类的标签、置信度等信息。
         """
         return self.model.predict(input_mat)
+
+
+class Picodet(PaddleDetection):
+    def __init__(self):
+        super().__init__()
 ```
 
 ## 3 项目介绍
@@ -228,18 +213,18 @@ if __name__ == "__main__":
                 continue
 
             start_time = time.time()
-            result = model.predict(mat)
+            results = model.predict(mat)
             end_time = time.time()
             total_time_ms += end_time - start_time
             read_index += 1
 
-            print(f"result size is {result.size()}")
-            for i in range(result.size()):
-                box = result.boxes[i]
-                score = result.scores[i]
-                label_id = result.label_ids[i]
+            print(f"result size is {len(results)}")
+            for result in results:
+                box = result.box
+                score = result.score
+                label_id = result.label_id
                 print(
-                    f"(x,y,w,h,score,label_id)[{i}]: [{box.x},{box.y},{box.width},{box.height},{score},{label_id}]"
+                    f"(x,y,w,h,score,label_id): [{box.x},{box.y},{box.width},{box.height},{score},{label_id}]"
                 )
         print(f"FPS is {1.0 / (total_time_ms/read_index)}")
 ```

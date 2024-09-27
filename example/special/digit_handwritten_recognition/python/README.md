@@ -29,7 +29,7 @@
 
 ## 1 简介
 
-接下来让我们基于 Python 来部署手写数字模型。在开始本章节前：
+接下来让我们基于 Python 来部署手写数字识别案例，在开始本章节前：
 
 - 请确保你已经参考 [凌智视觉模块手写数字识别部署指南](../README.md) 正确下载了模型。
 - 请确保你已经参考 [凌智视觉模块摄像头部署指南](../../../periphery/capture/README.md) 正确下载了凌智视觉模块图片传输助手。
@@ -96,7 +96,7 @@ if __name__ == "__main__":
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_digit_handwritten_rec.py LZ-DigitHandRecog.rknn
+python test_digit_handwritten_recognition.py LZ-DigitHandRecog.rknn
 ```
 
 运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印标签索引和置信度，凌智视觉模块图片传输助手出现可视化的结果
