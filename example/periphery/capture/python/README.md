@@ -36,7 +36,7 @@ Lockzhiner Vision Module 上自带了一个摄像头，该摄像头可以支持�
 在开始这个章节前，请确保:
 
 - 你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
-- 点击 [凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher_v0.0.0.exe) 下载凌智视觉模块图片传输助手。
+- 参考 [凌智视觉模块摄像头部署指南](../README.md) 下载凌智视觉模块图片传输助手。
 
 ## 3 API 文档
 
