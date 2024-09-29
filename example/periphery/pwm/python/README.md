@@ -94,6 +94,26 @@ class PWM9(PWMBase):
 
 为了方便大家入手，我们准备了 PWM 使用的最小例程，执行程序后 PWM 引脚将输出 10s 的 PWM 波形，代码如下:
 
+```python
+from lockzhiner_vision_module.periphery import PWM9
+import time
+
+
+if __name__ == "__main__":
+    pwm = PWM9()
+    pwm.config(1000000, 0.5)
+    pwm.open()
+
+    time_index = 0
+    total_time = 10
+    while time_index < total_time:
+        print(f"Wait: {time_index}/{total_time}")
+        time_index += 1
+        time.sleep(1)
+
+    pwm.close()
+```
+
 ## 4 执行 PWM 测试程序
 
 参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
@@ -107,9 +127,7 @@ class PWM9(PWMBase):
 在 Lockzhiner Vision Module 上运行以下代码来执行 PWM 测试程序
 
 ```bash
-chmod +x ./Test-PWM
-# ./Test-PWM 频率(默认为1MHZ) 占空比(默认为0.5)
-./Test-PWM 100000 0.5
+python test_pwm.py
 ```
 
 程序运行开始后，屏幕上打印配置的频率和占空比并开始每隔一秒显示当前进度
