@@ -45,6 +45,10 @@ Labelme 是一个 python 语言编写，带有图形界面的图像标注软件�
 
 ![image-20240906175913060](images/download.png)
 
+> 注:
+> 
+> 如果网速太慢，我们也提供了百度网盘的下载链接，点击链接 [Labelme 标注工具(提取码:cyqc)](https://pan.baidu.com/s/1ssdBXxhoE1tME3nh-xqNzQ) 即可下载
+
 ### 2.2 标注前的准备
 
 首先，请参考 [摄像头使用指南](./example/periphery/capture) 利用 **Lockzhiner Vision Module 图片获取助手** 拍摄你需要进行标注的图片，如下图所示：
