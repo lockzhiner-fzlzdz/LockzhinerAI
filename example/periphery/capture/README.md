@@ -59,7 +59,7 @@ Lockzhiner Vision Module 上自带了一个摄像头，该摄像头可以支持�
 
 在开始这个章节前，请确保:
 
-- 点击 [凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher_v0.0.0.exe) 下载凌智视觉模块图片传输助手。
+- 点击 [凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher.exe) 下载凌智视觉模块图片传输助手。
 
 ## 4 在凌智视觉模块上部署摄像头例程
 

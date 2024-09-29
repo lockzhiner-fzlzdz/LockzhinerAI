@@ -67,6 +67,12 @@
 
 ![](images/burn_image/create_sd.png)
 
-## 4 验证是否烧录成功
+## 4 插入 SD 卡
+
+将 SD 卡插入 Lockzhiner Vision Module
+
+![](images/burn_image/insert_sd.png)
+
+## 5 验证是否烧录成功
 
 烧录完成后，请将 SD 卡插入 Lockzhiner Vision Module，并参考 [连接设备指南](./connect_device_using_ssh.md) 来连接设备并输出 Hello World

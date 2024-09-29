@@ -57,8 +57,6 @@ Lockzhiner Vision Module 的 C++ 开发依赖 Ubuntu 系统，但是大多数用
 
 ![](images/development_environment/Snipaste_2024-08-29_09-58-31.png)
 
-![](images/development_environment/Snipaste_2024-08-29_09-59-40.png)
-
 安装完成后将会自动打开 Docker Destop，如下图
 
 ![](images/development_environment/docker_destop.png)
