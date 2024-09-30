@@ -63,7 +63,7 @@ class ADCBase:
 
         该方法调用具体的 ADC 实例的 read 方法，返回读取到的 ADC 数据。
 
-        @return 读取到的 ADC 数据
+        @return 读取到的 ADC 数据，单位为 mV
         """
         return self.adc.read()
 
@@ -99,14 +99,13 @@ if __name__ == "__main__":
 在 Lockzhiner Vision Module 上运行以下代码来执行 ADC 测试程序
 
 ```bash
-chmod +x ./Test-ADC
-./Test-ADC
+python test_adc.py
 ```
 
 ![](images/result.png)
 
 可以看到有一定的误差，误差一般在10mv以内
 
-## 5 其他
+<!-- ## 5 其他 -->
 
-如果你需要使用 C++ 来部署 ADC 例程请参考[凌智视觉模块 ADC C++ 部署指南](../cpp/README.md)。
+<!-- 如果你需要使用 C++ 来部署 ADC 例程请参考[凌智视觉模块 ADC C++ 部署指南](../cpp/README.md) -->

@@ -64,14 +64,14 @@ class ClassificationResult:
         return self.classification_result.label_id
 
     @property
-    def confidence(self):
+    def score(self):
         """
         获取分类结果的标签 ID。
 
         Returns:
             float: 分类结果的置信度，表示识别结果的可靠程度，范围为 0 到 1。
         """
-        return self.classification_result.confidence
+        return self.classification_result.score
 
 
 class PaddleClas:
@@ -122,10 +122,16 @@ class PaddleClas:
 from lockzhiner_vision_module.cv2 import VideoCapture
 from lockzhiner_vision_module.vision import PaddleClas
 import time
+import sys
 
 if __name__ == "__main__":
+    args = sys.argv
+    if len(args) != 2:
+        print("Need model path. Example: python test_classification.py LZ-MobileNetV3.rknn")
+        exit(1)
+
     model = PaddleClas()
-    if model.initialize("LZ-MobileNetV2_x0_25.rknn") is False:
+    if model.initialize(args[1]) is False:
         print("Failed to initialize PaddleClas")
         exit(1)
 
@@ -145,9 +151,9 @@ if __name__ == "__main__":
             start_time = time.time()
             result = model.predict(mat)
             end_time = time.time()
-            total_time_ms += (end_time - start_time)
+            total_time_ms += end_time - start_time
             read_index += 1
-            print(result.label_id, result.confidence)
+            print(result.label_id, result.score)
         print(f"FPS is {1.0 / (total_time_ms/read_index)}")
 ```
 
@@ -159,8 +165,8 @@ if __name__ == "__main__":
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
-- 进入存放 **test_paddleclas.py** 脚本文件的目录，将 **test_paddleclas.py** 上传到 Lockzhiner Vision Module
-- 进入存放 **LZ-MobileNetV2_x0_25.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-MobileNetV2_x0_25.rknn** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_classification.py** 脚本文件的目录，将 **test_classification.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **LZ-MobileNetV3.rknn** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-MobileNetV3.rknn** 上传到 Lockzhiner Vision Module
 
 ![](images/stfp_0.png)
 
@@ -169,13 +175,13 @@ if __name__ == "__main__":
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_paddleclas.py LZ-MobileNetV3.rknn
+python test_classification.py LZ-MobileNetV3.rknn
 ```
 
 运行程序后，屏幕上开始打印标签索引，分类置信度，并在一段时间后输出 FPS 值
 
-![alt text](result_0.png)
+![alt text](images/result_0.png)
 
-## 5 其他
+<!-- ## 5 其他
 
-如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。
+如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。 -->
