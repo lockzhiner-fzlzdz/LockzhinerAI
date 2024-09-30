@@ -260,11 +260,11 @@ chmod +x ./Test-GPIO-Write
 
 查看示波器可以看到，GPIO_0A0 输出了 3.4V 左右的电压
 
-![](images/show_0.png)
+![](../images/show_0.png)
 
 电压持续 10S 后恢复了正常
 
-![](images/show_1.png)
+![](../images/show_1.png)
 
 ### 6.2 测试 GPIO 输入模式（输入高电平）
 
@@ -277,7 +277,7 @@ chmod +x ./Test-GPIO-Read
 
 可以看到，在接高电平引脚的情况下，引脚的状态信息为 1
 
-![](images/show_2.png)
+![](../images/show_2.png)
 
 ### 6.3 测试 GPIO 输入模式（输入低电平）
 
@@ -291,7 +291,7 @@ chmod +x ./Test-GPIO-Read
 
 可以看到，在低电平引脚的情况下，引脚的状态信息为 0
 
-![](images/show_3.png)
+![](../images/show_3.png)
 
 ## 7 其他
 

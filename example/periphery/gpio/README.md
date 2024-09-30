@@ -58,9 +58,9 @@ GPIO（General Purpose Input/Output，通用输入/输出）是一种在嵌入�
 
 在 Lockzhiner Vision Module 上运行以下代码来执行 GPIO 接收程序
 
-## 3 在凌智视觉模块上部署 ADC 例程
+## 3 在凌智视觉模块上部署 GPIO 例程
 
-请参考以下教程使用 C++ 或 Python 在凌智视觉模块上部署 GPIO 例程：
+请参考以下教程在凌智视觉模块上部署 GPIO 例程：
 
-- [凌智视觉模块 GPIO C++ 部署指南](./cpp/README.md)
+<!-- - [凌智视觉模块 GPIO C++ 部署指南](./cpp/README.md) -->
 - [凌智视觉模块 GPIO Python 部署指南](./python/README.md)
