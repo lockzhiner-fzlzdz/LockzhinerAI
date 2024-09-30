@@ -75,7 +75,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 ## 👍 特色部署教程
 
 * [凌智视觉模块手写数字识别部署指南](./example/special/digit_handwritten_recognition)
-* [凌智视觉模块二维码识别与检测部署指南](。/example/special/qr_code_recognition)
+* [凌智视觉模块二维码识别与检测部署指南](./example/special/qr_code_recognition)
 <!-- * [人脸佩戴口罩检测部署指南(支持中)]() -->
 
 ## 🐛 Bug反馈
