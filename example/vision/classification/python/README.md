@@ -153,7 +153,7 @@ if __name__ == "__main__":
             end_time = time.time()
             total_time_ms += end_time - start_time
             read_index += 1
-            print(result.label_id, result.confidence)
+            print(result.label_id, result.score)
         print(f"FPS is {1.0 / (total_time_ms/read_index)}")
 ```
 
