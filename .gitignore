@@ -1,9 +1,7 @@
 # IDE
-.idea
 .vscode
-
-# System
 .DS_Store
+.idea
 
 # Build Temp
 build

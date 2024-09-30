@@ -144,11 +144,11 @@ if __name__ == "__main__":
         read_index = 0
         total_time_ms = 0
         for i in range(30):
+            start_time = time.time()
             ret, mat = video_capture.read()
             if ret is False:
                 continue
 
-            start_time = time.time()
             result = model.predict(mat)
             end_time = time.time()
             total_time_ms += end_time - start_time
