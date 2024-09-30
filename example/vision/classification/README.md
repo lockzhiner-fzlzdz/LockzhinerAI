@@ -59,7 +59,7 @@ Labelme 是一个 python 语言编写，带有图形界面的图像标注软件�
 
 ![](images/Labelme_Dataset.png)
 
-进入 **Dataset** 文件夹，创建 **images** 文件夹、**annocations** 文件夹、**flags.txt** 文件，如下图:
+进入 **Dataset** 文件夹，创建 **images** 文件夹、**annotations** 文件夹、**flags.txt** 文件，如下图:
 
 ![](images/images_annocations_flags.png)
 
