@@ -174,7 +174,7 @@ python test_paddleclas.py LZ-MobileNetV3.rknn
 
 运行程序后，屏幕上开始打印标签索引，分类置信度，并在一段时间后输出 FPS 值
 
-![alt text](result_0.png)
+![alt text](images/result_0.png)
 
 ## 5 其他
 

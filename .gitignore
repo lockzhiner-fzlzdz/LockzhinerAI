@@ -1,8 +1,10 @@
-# Build Temp
+# IDE
+.vscode
+.DS_Store
+.idea
 
+# Build Temp
 build
 lockzhiner_vision_module_sdk*
 opencv-mobile-4.10.0-lockzhiner-vision-module*
-.vscode
 Temp
-.DS_Store
