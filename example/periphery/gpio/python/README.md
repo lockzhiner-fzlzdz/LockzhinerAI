@@ -37,11 +37,6 @@
 ## 2 API 文档
 
 ```python
-from ..lockzhiner_vision_module_wapper import periphery
-
-from enum import Enum
-
-
 class GPIOMode(Enum):
     """
     @class GPIOMode
@@ -163,9 +158,91 @@ class GPIO2A5(GPIOBase):
 测试 GPIO 输入模式的核心代码如下:
 
 ```python
+from lockzhiner_vision_module.periphery import GPIO0A0, GPIOMode, GPIOState
+
+
+if __name__ == "__main__":
+    gpio = GPIO0A0()
+
+    if gpio.config(GPIOMode.IN) is False:
+        print("Failed to config gpio mode")
+        exit(1)
+
+    state = gpio.read()
+    if state == GPIOState.ERROR:
+        print("Failed to read gpio mode")
+        exit(1)
+
+    print(f"state is {state}")
 ```
 
 测试 GPIO 输出模式的核心代码如下:
 
 ```python
+from lockzhiner_vision_module.periphery import GPIO0A0, GPIOMode, GPIOState
+import time
+
+if __name__ == "__main__":
+    gpio = GPIO0A0()
+
+    if gpio.config(GPIOMode.OUT) is False:
+        print("Failed to config gpio mode")
+        exit(1)
+
+    if gpio.write(GPIOState.HIGH) is False:
+        print("Failed to write gpio state")
+        exit(1)
+
+    time_index = 0
+    total_time = 10
+    while time_index < total_time:
+        print(f"Wait: {time_index}/{total_time}")
+        time_index += 1
+        time.sleep(1)
+
+    if gpio.write(GPIOState.LOW) is False:
+        print("Failed to write gpio state")
+        exit(1)
 ```
+
+## 4 执行 GPIO 测试程序
+
+### 4.1 测试 GPIO 输出模式
+
+在 Lockzhiner Vision Module 上运行以下代码来执行 GPIO 输出电平程序
+
+```bash
+python test_gpio_read.py
+```
+
+查看示波器可以看到，GPIO_0A0 输出了 3.4V 左右的电压
+
+![](../images/show_0.png)
+
+电压持续 10S 后恢复了正常
+
+![](../images/show_1.png)
+
+### 4.2 测试 GPIO 输入模式（输入高电平）
+
+在 Lockzhiner Vision Module 上运行以下代码来执行 GPIO 接收程序
+
+```bash
+python test_gpio_write.py
+```
+
+可以看到，在接高电平引脚的情况下，引脚的状态信息为 GPIOState.LOW
+
+![](images/show_2.png)
+
+### 4.3 测试 GPIO 输入模式（输入低电平）
+
+在 Lockzhiner Vision Module 上运行以下代码来执行 GPIO 接收程序
+
+```bash
+python test_gpio_write.py
+```
+
+可以看到，在低电平引脚的情况下，引脚的状态信息为 GPIOState.HIGH
+
+![](images/show_3.png)

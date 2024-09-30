@@ -35,7 +35,7 @@
 
 ## 2 正确连接设备
 
-为了方便调试，我们这里使用 **CH340 USB 转串口模块（以下简称 CH340）**进行调试，请正确的将模型的引脚按照以下方式连接
+为了方便调试，我们这里使用 **CH340 USB 转串口模块（以下简称 CH340）** 进行调试，请正确的将模型的引脚按照以下方式连接
 
 * LockzhinerVisionModule RX1 <-> CH340 TXD
 * LockzhinerVisionModule TX1 <-> CH340 RXD
@@ -43,13 +43,17 @@
 
 > Lockzhiner 也提供官方的 [CH340 USB 转串口模块](http://e.tb.cn/h.gMbjEDBRiaOutkO?tk=kBlS35jFQOE)，如果有需要可以前往购买。
 
+板子上的引脚丝印较小，如果看不清引脚信息，可以参考下图
+
+![](../../../images/periphery.png)
+
 打开串口工具，我这里选择的是 [vofa+](https://www.vofa.plus/)，配置波特率为 115200 并打开串口
 
 ![](images/vofa.png)
 
 ## 3 在凌智视觉模块上部署串口例程
 
-请参考以下教程使用 C++ 或 Python 在凌智视觉模块上部署串口例程：
+请参考以下教程在凌智视觉模块上部署串口例程：
 
-- [凌智视觉模块串口 C++ 部署指南](./cpp/README.md)
+<!-- - [凌智视觉模块串口 C++ 部署指南](./cpp/README.md) -->
 - [凌智视觉模块串口 Python 部署指南](./python/README.md)
