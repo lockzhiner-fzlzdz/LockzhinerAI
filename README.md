@@ -21,16 +21,16 @@
     </a>  
 </p>
 
-凌智视觉模块(Lockzhiner Vision Module) 是福州市凌睿智捷电子有限公司联合百度 PaddlePaddle 倾力打造的一款高集成度人工智能视觉模块，专为边缘端人工智能和机器视觉应用而设计，其特色包括：
+凌智视觉模块(Lockzhiner Vision Module) 是福州市凌睿智捷电子有限公司联合百度飞桨倾力打造的一款高集成度人工智能视觉模块，专为边缘端人工智能和机器视觉应用而设计，其特色包括：
 
 * 计算能力：凌智视觉模块搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU，以更出色地处理 SIMD 和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU，足以应对绝大多数的视觉应用场景。
-* 开源适配：凌智视觉模块与 PaddleClas, PaddleDetection, PaddleSeg 和 PaddleOCR 等基于飞桨框架的视觉套件完美适配。
-* 简单易用：配合星河社区 AI Studio，用户可以实现一键训练、一键部署，从而极大地减轻了部署负担。
+* 开源适配：凌智视觉模块与飞桨一站式全流程开发工具 PaddleX 以及基于飞桨框架的视觉套件 PaddleClas, PaddleDetection, PaddleSeg 和 PaddleOCR 完美适配。
+* 简单易用：配合星河社区 AI Studio + 凌智视觉算法部署库，用户可以实现一键训练，一键部署，极大地减轻了部署负担。
 
 > 注：
 > 
-> 针对 Paddle 视觉套件，凌智视觉模块目前已经支持了 PaddleClas 和 PaddleDetection, 其余的 PaddleSeg 和 PaddleOCR 套件正在适配中，未来会陆续上线。
-> 针对 PaddleX 套件，凌智视觉模块目前已经适配了 PaddleClas 模型，其余的 PaddleDetection, PaddleSeg 和 PaddleOCR 套件正在适配中，未来会陆续上线。
+> 凌智视觉模块目前已经支持了 PaddleClas 和 PaddleDetection, 其余的 PaddleSeg 和 PaddleOCR 套件正在适配中，未来会陆续上线。
+> 针对飞桨一站式全流程开发工具 PaddleX，凌智视觉模块目前已经适配了其中的通用图像分类模型产线，其余任务场景正在适配中，未来会陆续上线。
 > 针对星河社区 PaddleX 模型产线，凌智视觉模块暂未适配，未来会陆续上线。
 > 更详细的参数请参考 [凌智视觉模块设备详细参数文档](./docs/device_parameters.md)
 
@@ -71,7 +71,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 ## 🧠 深度学习视觉部署教程
 
-这一部分教程将引导你从零开始训练并部署各种深度学习模型，包括分类模型、检测模型、分割模型和 OCR 模型。通过这些实战教程，你将学习到如何利用 Lockzhiner Vision Module 的高性能计算能力以及借助 Paddle 生态系统的丰富资源，轻松实现视觉任务的训练和部署。
+这一部分教程将引导你从零开始训练并部署各种深度学习模型，包括分类模型、检测模型、分割模型和 OCR 模型。通过这些实战教程，你将学习到如何利用 Lockzhiner Vision Module 的高性能计算能力以及借助飞桨生态系统的丰富资源，轻松实现视觉任务的训练和部署。
 
 * [凌智视觉模块分类模型部署指南](./example/vision/classification)
 * [凌智视觉模块检测模型部署指南](./example/vision/detetcion)
@@ -112,8 +112,8 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 凌智视觉模块(Lockzhiner Vision Module) 离不开社区的支持，特别感谢以下个人（或团体）：
 
-* 感谢 Rockchip NPU 团队帮忙调试 Paddle 模型到 RKNN 模型的推理和优化
-* 感谢 PaddlePaddle 团队在适配 PaddleX 等套件上提供的帮助
+* 感谢 Rockchip NPU 团队帮忙调试 PaddlePaddle 模型到 RKNN 模型的推理和优化
+* 感谢飞桨团队在适配 PaddleX 等套件上提供的帮助
 * 感谢 nihui 大佬帮忙审核并将 Lockzhiner Vision Module 的 ISP 代码合入到 opencv-mobile
 
 ## 📜 开源协议
