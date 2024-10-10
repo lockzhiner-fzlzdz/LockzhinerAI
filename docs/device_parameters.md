@@ -36,7 +36,7 @@
 - 卓越的计算能力：Lockzhiner Vision Module 搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU，以更出色地处理 SIMD
   和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU，足以应对绝大多数的视觉应用场景。
 - 广泛的开源适配：Lockzhiner Vision Module 与 PaddleClas、PaddleDetection、PaddleSeg、PaddleOCR 等基于 Paddle
-  框架的视觉场景库完美适配。配合 AIStudio，用户可以实现一键训练、一键部署，从而极大地减轻了部署负担。
+  框架的视觉场景库完美适配。配合 星河社区 AI Studio ，用户可以实现一键训练、一键部署，从而极大地减轻了部署负担。
 
 ## 2 主控芯片参数
 

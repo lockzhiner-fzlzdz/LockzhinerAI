@@ -23,9 +23,15 @@
 
 凌智视觉模块(Lockzhiner Vision Module) 是福州市凌睿智捷电子有限公司联合百度 PaddlePaddle 倾力打造的一款高集成度人工智能视觉模块，专为边缘端人工智能和机器视觉应用而设计，其特色包括：
 
-* 卓越的计算能力：Lockzhiner Vision Module 搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU，以更出色地处理 SIMD 和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU，足以应对绝大多数的视觉应用场景。
-* 广泛的开源适配：Lockzhiner Vision Module 与 PaddleClas、PaddleDetection、PaddleSeg、PaddleOCR 等基于 Paddle 框架的视觉场景库完美适配。配合 AIStudio，用户可以实现一键训练、一键部署，从而极大地减轻了部署负担。
+* 计算能力：凌智视觉模块搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU，以更出色地处理 SIMD 和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU，足以应对绝大多数的视觉应用场景。
+* 开源适配：凌智视觉模块与 PaddleClas, PaddleDetection, PaddleSeg 和 PaddleOCR 等基于飞桨框架的视觉套件完美适配。
+* 简单易用：配合星河社区 AI Studio，用户可以实现一键训练、一键部署，从而极大地减轻了部署负担。
 
+> 注：
+> 
+> 针对 Paddle 视觉套件，凌智视觉模块目前已经支持了 PaddleClas 和 PaddleDetection, 其余的 PaddleSeg 和 PaddleOCR 套件正在适配中，未来会陆续上线。
+> 针对 PaddleX 套件，凌智视觉模块目前已经适配了 PaddleClas 模型，其余的 PaddleDetection, PaddleSeg 和 PaddleOCR 套件正在适配中，未来会陆续上线。
+> 针对星河社区 PaddleX 模型产线，凌智视觉模块暂未适配，未来会陆续上线。
 > 更详细的参数请参考 [凌智视觉模块设备详细参数文档](./docs/device_parameters.md)
 
 ## 🔄 最新日志
