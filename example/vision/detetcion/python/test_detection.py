@@ -1,5 +1,5 @@
 from lockzhiner_vision_module.cv2 import VideoCapture
-from lockzhiner_vision_module.vision import PaddleDetection
+from lockzhiner_vision_module.vision import PaddleDet
 import time
 import sys
 
@@ -9,7 +9,7 @@ if __name__ == "__main__":
         print("Need model path. Example: python test_detection.py LZ-MobileNetV3.rknn")
         exit(1)
 
-    model = PaddleDetection()
+    model = PaddleDet()
     if model.initialize(args[1]) is False:
         print("Failed to initialize PaddleClas")
         exit(1)
