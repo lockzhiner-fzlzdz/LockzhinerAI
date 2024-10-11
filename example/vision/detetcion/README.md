@@ -55,30 +55,30 @@ Labelme 是一个 python 语言编写，带有图形界面的图像标注软件�
 
 ![](images/capture_images.png)
 
-选择一个你想存放数据集的位置，将 Labelme.exe 移动到文件夹下同时创建一个空的文件夹并命名为 Dataset，如下图
+选择一个你想存放数据集的位置，将 **Labelme.exe** 移动到文件夹下同时创建一个空的文件夹并命名为 **Dataset**，如下图
 
 ![](images/move.png)
 
-将 LockzhinerVisionModulelmages 文件移动到 Dataset 文件夹内，如下图：
-
-![](images/move_feil.png)
-
-进入 Dataset 文件夹，创建 annotations 文件夹、label.txt 文件，如下图:
+进入 **Dataset** 文件夹，创建 **images** 文件夹、**annotations** 文件夹、**flags.txt** 文件，如下图:
 
 ![](images/creatre.png)
 
-然后打开 label.txt ，并在 label.txt 中按行写入待标注数据集的类别。如下图所示：
+然后打开 **flags.txt** ，并在 **flags.txt** 中按行写入待标注数据集的类别。如下图所示：
 
-![](images/label.png)
+![](images/flags.png)
 
 #### 2.2.2 启动 Labelme
 
-终端进入到带标注数据集根目录，并启动 labelme 标注工具
+进入 Dataset 文件夹所在的目录，按住键盘Shift键后，单击鼠标右键，点击 在此处打开 Powershell 窗口
+
+![](images/open_powershll.png)
+
+弹出 Powershell 窗口后，输入以下命令来打开 Labelme，如下图
 
 ```bash
-Labelme.exe .\Dataset\LockzhinerVisionModulelmages --labels label.txt --nodata --autosave --output .\Dataset\annotations --flags .\Dataset\flags.txt
+.\Labelme.exe .\Dataset\images --labels .\Dataset\flags.txt --nodata --autosave --output .\Dataset\annotations  
 ```
-![](images/terminal.png)
+![](images/open_labelme.png)
 
 参数意义如下：
 
@@ -89,7 +89,7 @@ Labelme.exe .\Dataset\LockzhinerVisionModulelmages --labels label.txt --nodata -
 
 #### 2.2.3 开始图片标注
 
-1、启动 labelme 后如图所示：
+1、启动 **labelme** 后如图所示：
 
 ![](images/labelme.png)
 
@@ -109,7 +109,7 @@ Labelme.exe .\Dataset\LockzhinerVisionModulelmages --labels label.txt --nodata -
 
 ![](images/labelme_category.png)
 
-6、标注好后点击存储。（若在启动 labelme 时未指定 --output 字段，会在第一次存储时提示选择存储路径，若指定 --autosave 字段使用自动保存，则无需点击存储按钮）
+6、标注好后点击存储。（若在启动 **labelme** 时未指定 --output 字段，会在第一次存储时提示选择存储路径，若指定 --autosave 字段使用自动保存，则无需点击存储按钮）
 
 ![](images/labelme_save.png)
 
@@ -123,7 +123,7 @@ Labelme.exe .\Dataset\LockzhinerVisionModulelmages --labels label.txt --nodata -
 
 ### 2.3 打包文件
 
-进入 Dataset 文件夹所在的目录，将 Dataset 目录压缩为文件夹。注意，压缩包的最外层需要有 Dataset 目录。这里我们建议你使用 Bandzip 压缩软件进行压缩，具体的操作步骤如下：
+进入 **Dataset** 文件夹所在的目录，将 **Dataset** 目录压缩为文件夹。注意，压缩包的最外层需要有 **Dataset** 目录。这里我们建议你使用 **Bandzip** 压缩软件进行压缩，具体的操作步骤如下：
 
 ![](images/compress.png)
 
