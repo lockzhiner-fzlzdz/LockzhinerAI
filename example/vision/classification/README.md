@@ -105,13 +105,13 @@ Labelme 是一个 python 语言编写，带有图形界面的图像标注软件�
 
 ![](images/bandzip_3.png)
 
-## 3 使用 AIStudio 训练分类模型
+## 3 使用星河社区 AI Studio 训练分类模型
 
 ### 3.1 简介
 
 AI Studio 是基于百度深度学习开源平台飞桨的人工智能学习与实训社区，为开发者提供了功能强大的线上训练环境、免费GPU算力及存储资源。Lockzhiner Vision Module 默认使用 AI Studio 进行快速训练。
 
-### 3.2 登录 AIStudio
+### 3.2 登录星河社区 AI Studio
 
 进入 [AI Studio](https://aistudio.baidu.com)，点击右上角的登录按钮，输入你的百度账号进行登录。
 

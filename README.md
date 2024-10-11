@@ -21,18 +21,30 @@
     </a>  
 </p>
 
-凌智视觉模块(Lockzhiner Vision Module) 是福州市凌睿智捷电子有限公司联合百度 PaddlePaddle 倾力打造的一款高集成度人工智能视觉模块，专为边缘端人工智能和机器视觉应用而设计，其特色包括：
+凌智视觉模块(Lockzhiner Vision Module) 是福州市凌睿智捷电子有限公司联合百度飞桨倾力打造的一款高集成度人工智能视觉模块，专为边缘端人工智能和机器视觉应用而设计，其特色包括：
 
-* 卓越的计算能力：Lockzhiner Vision Module 搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU，以更出色地处理 SIMD 和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU，足以应对绝大多数的视觉应用场景。
-* 广泛的开源适配：Lockzhiner Vision Module 与 PaddleClas、PaddleDetection、PaddleSeg、PaddleOCR 等基于 Paddle 框架的视觉场景库完美适配。配合 AIStudio，用户可以实现一键训练、一键部署，从而极大地减轻了部署负担。
+* 计算能力：凌智视觉模块搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU, 以更出色地处理 SIMD 和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU, 足以应对绝大多数的视觉应用场景。
+* 开源适配：凌智视觉模块与飞桨一站式全流程开发工具 PaddleX 以及基于飞桨框架的视觉套件 PaddleClas, PaddleDetection, PaddleSeg 和 PaddleOCR 完美适配。
+* 简单易用：配合飞桨星河社区 Al Studio, 用户可以实现一键训练；配合凌智视觉算法部署库，用户可以实现一键部署，极大地减轻了用户的使用成本。
 
-> 更详细的参数请参考 [凌智视觉模块设备详细参数文档](./docs/device_parameters.md)
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://ai-studio-static-online.cdn.bcebos.com/2662d3e51d1645e7a444807f261d9eae3ecdd8cc34fa424e9c903687cdf9c819" alt="Image 3" style="width: 30%;">
+  <img src="https://ai-studio-static-online.cdn.bcebos.com/a3e7acf99e7247baa7b44b832aff40b67fe7b94c01fa498782e6b0406575310f" alt="Image 2" style="width: 30%;">
+  <img src="https://ai-studio-static-online.cdn.bcebos.com/206ee286b7e94899a5f29e09965244587e1a27a6f32742b1bb1a7888554ad6f6" alt="Image 1" style="width: 30%;">
+</div>
+
+> 注：
+> 
+> * 凌智视觉模块目前已经支持了 PaddleClas 和 PaddleDetection, 其余的 PaddleSeg 和 PaddleOCR 套件正在适配中，未来会陆续上线。
+> * 针对飞桨一站式全流程开发工具 Paddle, 凌智视觉模块目前已经适配了其中的通用图像分类模型产线, 其余任务场景正在适配中, 未来会陆续上线。
+> * 针对星河社区 PaddleX 模型产线，凌智视觉模块暂未适配，未来会陆续上线。
+> * 更详细的参数请参考 [凌智视觉模块设备详细参数文档](./docs/device_parameters.md)
 
 ## 🔄 最新日志
 
 ## 💡 入门学习教程
 
-这一部分教程旨在为你提供一个系统化的学习路径，帮助你快速上手 Lockzhiner Vision Module。通过一系列详细的教程，你将学会如何烧录镜像、连接设备、搭建开发环境和编写简单的程序。
+这一部分教程旨在为你提供一个系统化的学习路径，帮助你快速上手 Lockzhiner Vision Module。通过一系列详细的教程, 你将学会如何烧录镜像、连接设备、搭建开发环境和编写简单的程序。
 
 * [凌智视觉模块烧录镜像指南](./docs/introductory_tutorial/burn_image.md)
 * [凌智视觉模块连接设备指南](./docs/introductory_tutorial/connect_device_using_ssh.md)
@@ -65,7 +77,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 ## 🧠 深度学习视觉部署教程
 
-这一部分教程将引导你从零开始训练并部署各种深度学习模型，包括分类模型、检测模型、分割模型和 OCR 模型。通过这些实战教程，你将学习到如何利用 Lockzhiner Vision Module 的高性能计算能力以及借助 Paddle 生态系统的丰富资源，轻松实现视觉任务的训练和部署。
+这一部分教程将引导你从零开始训练并部署各种深度学习模型，包括分类模型、检测模型、分割模型和 OCR 模型。通过这些实战教程，你将学习到如何利用 Lockzhiner Vision Module 的高性能计算能力以及借助飞桨生态系统的丰富资源，轻松实现视觉任务的训练和部署。
 
 * [凌智视觉模块分类模型部署指南](./example/vision/classification)
 * [凌智视觉模块检测模型部署指南](./example/vision/detetcion)
@@ -84,7 +96,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 ![](images/issues_completed.png)
 
-如果查找不到对应的解决方案，可点击新建 Issues 来反馈您的 Bug，我们将尽快与您沟通并及时解决 Bug。
+如果查找不到对应的解决方案，可点击新建 Issues 来反馈您的 Bug, 我们将尽快与您沟通并及时解决 Bug。
 
 ![](images/issues_feedback.png)
 
@@ -106,8 +118,8 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 凌智视觉模块(Lockzhiner Vision Module) 离不开社区的支持，特别感谢以下个人（或团体）：
 
-* 感谢 Rockchip NPU 团队帮忙调试 Paddle 模型到 RKNN 模型的推理和优化
-* 感谢 PaddlePaddle 团队在适配 PaddleX 等套件上提供的帮助
+* 感谢 Rockchip NPU 团队帮忙调试 PaddlePaddle 模型到 RKNN 模型的推理和优化
+* 感谢飞桨团队在适配 PaddleX 等套件上提供的帮助
 * 感谢 nihui 大佬帮忙审核并将 Lockzhiner Vision Module 的 ISP 代码合入到 opencv-mobile
 
 ## 📜 开源协议

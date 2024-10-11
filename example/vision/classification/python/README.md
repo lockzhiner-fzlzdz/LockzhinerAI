@@ -78,7 +78,7 @@ class PaddleClas:
     """
     PaddleClas 类 - 用于图像分类的 PaddlePaddle 模型封装。
 
-    该类封装了 PaddlePaddle 框架下的图像分类模型，提供了初始化和预测的方法。
+    该类封装了飞桨框架下的图像分类模型，提供了初始化和预测的方法。
     """
 
     def __init__(self):
