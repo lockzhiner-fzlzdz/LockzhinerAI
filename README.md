@@ -23,7 +23,7 @@
 
 凌智视觉模块(Lockzhiner Vision Module) 是福州市凌睿智捷电子有限公司联合百度飞桨倾力打造的一款高集成度人工智能视觉模块，专为边缘端人工智能和机器视觉应用而设计，其特色包括：
 
-* 计算能力：凌智视觉模块搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU，以更出色地处理 SIMD 和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU，足以应对绝大多数的视觉应用场景。
+* 计算能力：凌智视觉模块搭载单核 ARM Cortex-A7 处理器，并集成了 NEON 和 FPU, 以更出色地处理 SIMD 和浮点计算。同时，该模块支持 Int8 量化，内置 0.5 TOPs 的 NPU, 足以应对绝大多数的视觉应用场景。
 * 开源适配：凌智视觉模块与飞桨一站式全流程开发工具 PaddleX 以及基于飞桨框架的视觉套件 PaddleClas, PaddleDetection, PaddleSeg 和 PaddleOCR 完美适配。
 * 简单易用：配合飞桨星河社区 Al Studio, 用户可以实现一键训练；配合凌智视觉算法部署库，用户可以实现一键部署，极大地减轻了用户的使用成本。
 
@@ -38,7 +38,7 @@
 
 ## 💡 入门学习教程
 
-这一部分教程旨在为你提供一个系统化的学习路径，帮助你快速上手 Lockzhiner Vision Module。通过一系列详细的教程，你将学会如何烧录镜像、连接设备、搭建开发环境和编写简单的程序。
+这一部分教程旨在为你提供一个系统化的学习路径，帮助你快速上手 Lockzhiner Vision Module。通过一系列详细的教程, 你将学会如何烧录镜像、连接设备、搭建开发环境和编写简单的程序。
 
 * [凌智视觉模块烧录镜像指南](./docs/introductory_tutorial/burn_image.md)
 * [凌智视觉模块连接设备指南](./docs/introductory_tutorial/connect_device_using_ssh.md)
@@ -90,7 +90,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 ![](images/issues_completed.png)
 
-如果查找不到对应的解决方案，可点击新建 Issues 来反馈您的 Bug，我们将尽快与您沟通并及时解决 Bug。
+如果查找不到对应的解决方案，可点击新建 Issues 来反馈您的 Bug, 我们将尽快与您沟通并及时解决 Bug。
 
 ![](images/issues_feedback.png)
 
