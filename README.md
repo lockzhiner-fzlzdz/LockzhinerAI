@@ -28,9 +28,15 @@
 * 简单易用：配合飞桨星河社区 Al Studio, 用户可以实现一键训练；配合凌智视觉算法部署库，用户可以实现一键部署，极大地减轻了用户的使用成本。
 
 <p align="center">
-    <img src="https://ai-studio-static-online.cdn.bcebos.com/2662d3e51d1645e7a444807f261d9eae3ecdd8cc34fa424e9c903687cdf9c819" alt="Image 3" style="width: 30%">
-    <img src="https://ai-studio-static-online.cdn.bcebos.com/a3e7acf99e7247baa7b44b832aff40b67fe7b94c01fa498782e6b0406575310f" alt="Image 2" style="width: 30%">
-    <img src="https://ai-studio-static-online.cdn.bcebos.com/206ee286b7e94899a5f29e09965244587e1a27a6f32742b1bb1a7888554ad6f6" alt="Image 1" style="width: 30%">
+    <a href="https://ai-studio-static-online.cdn.bcebos.com/2662d3e51d1645e7a444807f261d9eae3ecdd8cc34fa424e9c903687cdf9c819">
+        <img src="https://ai-studio-static-online.cdn.bcebos.com/2662d3e51d1645e7a444807f261d9eae3ecdd8cc34fa424e9c903687cdf9c819" style="width: 30%">
+    </a>
+    <a href="https://ai-studio-static-online.cdn.bcebos.com/a3e7acf99e7247baa7b44b832aff40b67fe7b94c01fa498782e6b0406575310f">
+        <img src="https://ai-studio-static-online.cdn.bcebos.com/a3e7acf99e7247baa7b44b832aff40b67fe7b94c01fa498782e6b0406575310f" style="width: 30%">
+    </a>
+    <a href="https://ai-studio-static-online.cdn.bcebos.com/206ee286b7e94899a5f29e09965244587e1a27a6f32742b1bb1a7888554ad6f6">
+        <img src="https://ai-studio-static-online.cdn.bcebos.com/206ee286b7e94899a5f29e09965244587e1a27a6f32742b1bb1a7888554ad6f6" style="width: 30%">
+    </a>
 </p>
 
 > 注：
