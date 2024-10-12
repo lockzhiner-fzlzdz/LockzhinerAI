@@ -49,13 +49,26 @@ class VideoCapture:
     """
     OpenCV 摄像头类
     """
+
     def __init__(self):
         self.video_capture = cv2.VideoCapture()
+        
+    def set_width(self, width):
+        """
+        设置摄像头宽度
+        """
+        self.video_capture.set_width(width)
+        
+    def set_height(self, height):
+        """
+        设置摄像头高度
+        """
+        self.video_capture.set_height(height)
 
     def open(self, index=0):
         """
         打开摄像头
-        
+
         Returns:
             bool: 摄像头打开过程过是否出现逻辑错误
         """
@@ -64,7 +77,7 @@ class VideoCapture:
     def isOpened(self):
         """
         判断摄像头是否打开成功
-        
+
         Returns:
             bool: 摄像头是否打开成功
         """
@@ -73,7 +86,7 @@ class VideoCapture:
     def read(self):
         """
         读取摄像头数据
-        
+
         Returns:
             bool: 摄像头是否成功读取到数据
             cv::Mat: 摄像头读取的图像数据
@@ -84,7 +97,7 @@ class VideoCapture:
     def release(self):
         """
         关闭摄像头
-        
+
         Returns:
             bool: 是否释放成功
         """

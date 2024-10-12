@@ -124,18 +124,18 @@ class DetectionResult:
         """
         return self.detection_result.label_id
 
-class PaddleDetection:
+class PaddleDet:
     """
-    PaddleDetection 类 - 用于目标检测的 PaddlePaddle 模型封装。
+    PaddleDet 类 - 用于目标检测的 PaddlePaddle 模型封装。
 
-    该类封装了 PaddleDetection 框架下的目标检测模型，提供了初始化和预测的方法。
+    该类封装了 PaddleDet 框架下的目标检测模型，提供了初始化和预测的方法。
     """
 
     def __init__(self):
         """
-        构造函数 - 初始化 PaddleDetection 对象。
+        构造函数 - 初始化 PaddleDet 对象。
         """
-        self.model = vision.PaddleDetection()
+        self.model = vision.PaddleDet()
 
     def initialize(self, model_path):
         """
@@ -173,7 +173,7 @@ class PaddleDetection:
         return self.model.predict(input_mat)
 
 
-class Picodet(PaddleDetection):
+class Picodet(PaddleDet):
     def __init__(self):
         super().__init__()
 ```
@@ -184,7 +184,8 @@ class Picodet(PaddleDetection):
 
 ```python
 from lockzhiner_vision_module.cv2 import VideoCapture
-from lockzhiner_vision_module.vision import PaddleDetection
+from lockzhiner_vision_module.vision import PaddleDet, visualize
+from lockzhiner_vision_module.edit import Edit
 import time
 import sys
 
@@ -193,8 +194,11 @@ if __name__ == "__main__":
     if len(args) != 2:
         print("Need model path. Example: python test_detection.py LZ-MobileNetV3.rknn")
         exit(1)
+        
+    edit = Edit()
+    edit.start_and_accept_connection()
 
-    model = PaddleDetection()
+    model = PaddleDet()
     if model.initialize(args[1]) is False:
         print("Failed to initialize PaddleClas")
         exit(1)
@@ -226,6 +230,8 @@ if __name__ == "__main__":
                 print(
                     f"(x,y,w,h,score,label_id): [{box.x},{box.y},{box.width},{box.height},{score},{label_id}]"
                 )
+            vis_mat = visualize(mat, results)
+            edit.print(vis_mat)
         print(f"FPS is {1.0 / (total_time_ms/read_index)}")
 ```
 
