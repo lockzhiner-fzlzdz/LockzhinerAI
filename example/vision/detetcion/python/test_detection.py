@@ -1,5 +1,6 @@
 from lockzhiner_vision_module.cv2 import VideoCapture
-from lockzhiner_vision_module.vision import PaddleDet
+from lockzhiner_vision_module.vision import PaddleDet, visualize
+from lockzhiner_vision_module.edit import Edit
 import time
 import sys
 
@@ -8,6 +9,9 @@ if __name__ == "__main__":
     if len(args) != 2:
         print("Need model path. Example: python test_detection.py LZ-MobileNetV3.rknn")
         exit(1)
+        
+    edit = Edit()
+    edit.start_and_accept_connection()
 
     model = PaddleDet()
     if model.initialize(args[1]) is False:
@@ -41,4 +45,6 @@ if __name__ == "__main__":
                 print(
                     f"(x,y,w,h,score,label_id): [{box.x},{box.y},{box.width},{box.height},{score},{label_id}]"
                 )
+            vis_mat = visualize(mat, results)
+            edit.print(vis_mat)
         print(f"FPS is {1.0 / (total_time_ms/read_index)}")
