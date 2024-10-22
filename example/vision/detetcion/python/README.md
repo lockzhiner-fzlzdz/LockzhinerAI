@@ -124,18 +124,18 @@ class DetectionResult:
         """
         return self.detection_result.label_id
 
-class PaddleDetection:
+class PaddleDet:
     """
-    PaddleDetection 类 - 用于目标检测的 PaddlePaddle 模型封装。
+    PaddleDet 类 - 用于目标检测的 PaddlePaddle 模型封装。
 
-    该类封装了 PaddleDetection 框架下的目标检测模型，提供了初始化和预测的方法。
+    该类封装了 PaddleDet 框架下的目标检测模型，提供了初始化和预测的方法。
     """
 
     def __init__(self):
         """
-        构造函数 - 初始化 PaddleDetection 对象。
+        构造函数 - 初始化 PaddleDet 对象。
         """
-        self.model = vision.PaddleDetection()
+        self.model = vision.PaddleDet()
 
     def initialize(self, model_path):
         """
@@ -173,7 +173,7 @@ class PaddleDetection:
         return self.model.predict(input_mat)
 
 
-class Picodet(PaddleDetection):
+class Picodet(PaddleDet):
     def __init__(self):
         super().__init__()
 ```
@@ -184,7 +184,8 @@ class Picodet(PaddleDetection):
 
 ```python
 from lockzhiner_vision_module.cv2 import VideoCapture
-from lockzhiner_vision_module.vision import PaddleDetection
+from lockzhiner_vision_module.vision import PaddleDet, visualize
+from lockzhiner_vision_module.edit import Edit
 import time
 import sys
 
@@ -193,8 +194,11 @@ if __name__ == "__main__":
     if len(args) != 2:
         print("Need model path. Example: python test_detection.py LZ-MobileNetV3.rknn")
         exit(1)
+        
+    edit = Edit()
+    edit.start_and_accept_connection()
 
-    model = PaddleDetection()
+    model = PaddleDet()
     if model.initialize(args[1]) is False:
         print("Failed to initialize PaddleClas")
         exit(1)
@@ -226,6 +230,8 @@ if __name__ == "__main__":
                 print(
                     f"(x,y,w,h,score,label_id): [{box.x},{box.y},{box.width},{box.height},{score},{label_id}]"
                 )
+            vis_mat = visualize(mat, results)
+            edit.print(vis_mat)
         print(f"FPS is {1.0 / (total_time_ms/read_index)}")
 ```
 
@@ -237,8 +243,8 @@ if __name__ == "__main__":
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
-- 进入存放 **test_paddleclas.py** 脚本文件的目录，将 **test_paddleclas.py** 上传到 Lockzhiner Vision Module
-- 进入存放 **LZ-MobileNetV2_x0_25.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-MobileNetV2_x0_25.rknn** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_detection.py** 脚本文件的目录，将 **test_detection.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **LZ-Picodet.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-Picodet.rknn** 上传到 Lockzhiner Vision Module
 
 ![](images/stfp_0.png)
 
@@ -247,13 +253,13 @@ if __name__ == "__main__":
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_paddleclas.py LZ-MobileNetV3.rknn
+python test_detection.py LZ-Picodet.rknn
 ```
 
 运行程序后，屏幕上开始打印标签索引，分类置信度，并在一段时间后输出 FPS 值
 
 ![alt text](result_0.png)
 
-## 5 其他
+<!-- ## 5 其他 -->
 
-如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。
+<!-- 如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。 -->
