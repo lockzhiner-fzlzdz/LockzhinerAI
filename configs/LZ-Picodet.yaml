@@ -18,14 +18,14 @@ load_onnx:
       - 320
       - 320
   outputs:
-    - p2o.DequantizeLinear.1705
-    - p2o.DequantizeLinear.1707
-    - p2o.DequantizeLinear.1619
-    - p2o.DequantizeLinear.1621
-    - p2o.DequantizeLinear.1533
-    - p2o.DequantizeLinear.1535
-    - p2o.DequantizeLinear.1445
-    - p2o.DequantizeLinear.1447
+    - DequantizeLinear.1705
+    - DequantizeLinear.1707
+    - DequantizeLinear.1619
+    - DequantizeLinear.1621
+    - DequantizeLinear.1533
+    - DequantizeLinear.1535
+    - DequantizeLinear.1445
+    - DequantizeLinear.1447
 
 build:
   do_quantization: false

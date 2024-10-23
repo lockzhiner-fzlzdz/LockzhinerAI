@@ -136,7 +136,105 @@ Labelme 是一个 python 语言编写，带有图形界面的图像标注软件�
 
 ## 3 使用星河社区 AI Studio 训练检测模型
 
+### 3.1 简介
 
+AI Studio 是基于百度深度学习开源平台飞桨的人工智能学习与实训社区，为开发者提供了功能强大的线上训练环境、免费GPU算力及存储资源。Lockzhiner Vision Module 默认使用 AI Studio 进行快速训练。
+
+### 3.2 登录星河社区 AI Studio
+
+进入 [AI Studio](https://aistudio.baidu.com)，点击右上角的登录按钮，输入你的百度账号进行登录。
+
+![](../images/ai_studio_0.png)
+
+![](../images/ai_studio_1.png)
+
+### 3.3 上传数据集文件
+
+点击**数据**，点击**创建数据集**来打开数据集创建界面，如下图:
+
+![](../images/ai_studio_2.png)
+
+正确填入合适的内容，如下图：
+
+![](../images/ai_studio_3.png)
+
+耐心等待数据集上传完成，完成后点击 **确定**，如下图：
+
+![](../images/ai_studio_4.png)
+
+### 3.4 Fork 项目
+
+进入 [在凌智视觉模块上部署 PaddleDetection 模型](https://aistudio.baidu.com/projectdetail/8235625) 项目，点击右上角的 **Fork** 图标来创建自己的项目，如下图：
+
+![](images/fork_0.png)
+
+正确填入合适的内容，如下图：
+
+![](images/fork_1.png)
+
+点击取消按钮，如下图：
+
+![](images/fork_2.png)
+
+### 3.5 配置项目数据集
+
+点击最左侧**项目**按钮，然后点击中间**项目**按钮，找到刚才 Fork 的项目，如下图：
+
+![](images/config_dataset_0.png)
+
+点击右上角 **修改**，点击**添加数据集**，点击**个人数据集**，找到刚才创建的数据集并点击**添加**，点击**保存**按钮，如下图：
+
+![](images/config_dataset_1.png)
+
+![](images/config_dataset_2.png)
+
+![](images/config_dataset_3.png)
+
+![](images/config_dataset_4.png)
+
+### 3.6 启动项目
+
+点击**启动环境**，选择 **V100 16GB**，点击**确定**，如下图
+
+![](images/start_project_0.png)
+
+![](images/start_project_1.png)
+
+耐心等待一段时间来启动项目，点击**进入**到项目中，如下图:
+
+![](images/start_project_2.png)
+
+![](images/start_project_3.png)
+
+### 3.7 配置项目训练参数
+
+点击 **data**，查看并复制数据集保存目录（右键数据集保存目录，点击重命名来复制），如下图：
+
+![](images/config_project_0.png)
+
+![](images/config_project_1.png)
+
+找到**项目全局配置项**，配置数据集路径，我这里是 **data293536**，如下图:
+
+![](images/config_project_2.png)
+
+### 3.8 开始训练
+
+点击**运行全部 Cell** 开启训练，耐心等待训练完成，如下图：
+
+![](images/run_project_0.png)
+
+训练完成后，主目录下会出现 **output** 文件夹，文件夹内包含了一个 ONNX 模型和一个 RKNN 模型，如下图：
+
+![](images/run_project_1.png)
+
+![](images/run_project_2.png)
+
+选中 **output** 文件夹，右键鼠标，点击 **打包选中文件夹**。打包完成后，出现 **output.zip** 文件，右键该文件，点击**下载**。
+
+![](images/run_project_3.png)
+
+![](images/run_project_4.png)
 
 ## 4 在凌智视觉模块上部署模型
 
