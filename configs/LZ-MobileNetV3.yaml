@@ -18,7 +18,7 @@ load_onnx:
       - 224
       - 224
   outputs:
-    - p2o.DequantizeLinear.881
+    - DequantizeLinear.881
 
 build:
   do_quantization: false
