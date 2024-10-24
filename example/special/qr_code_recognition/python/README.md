@@ -61,50 +61,50 @@ class Point:
         """
         return self.rect.y
 
-class QRCodeResult:
+class CodeResult:
     """
-    二维码识别检测结果类，用于封装和处理二维码识别结果数据。
+    条码识别检测结果类，用于封装和处理条码识别结果数据。
 
-    该类主要提供了一个包装层，用于访问和管理由视觉模块产生的二维码识别结果。
+    该类主要提供了一个包装层，用于访问和管理由视觉模块产生的条码识别结果。
     """
-    
+
     def __init__(self):
-        self.qr_code_result = vision.QRCodeResult()
+        self.qr_code_result = vision.CodeResult()
 
     @property
     def top_left(self):
         """
-        获取二维码识别结果的左上角坐标
+        获取条码识别结果的左上角坐标
 
         Returns:
             Point: 左上角坐标
         """
         return self.qr_code_result.top_left
-    
+
     @property
     def top_right(self):
         """
-        获取二维码识别结果的右上角坐标
+        获取条码识别结果的右上角坐标
 
         Returns:
             Point: 右上角坐标
         """
         return self.qr_code_result.top_right
-    
+
     @property
     def bottom_left(self):
         """
-        获取二维码识别结果的左下角坐标
+        获取条码识别结果的左下角坐标
 
         Returns:
             Point: 左下角坐标
         """
         return self.qr_code_result.bottom_left
-    
+
     @property
     def bottom_right(self):
         """
-        获取二维码识别结果的右下角坐标
+        获取条码识别结果的右下角坐标
 
         Returns:
             Point: 右下角坐标
@@ -114,10 +114,10 @@ class QRCodeResult:
     @property
     def text(self):
         """
-        获取二维码识别结果的文本数据
+        获取条码识别结果的文本数据
 
         Returns:
-            Point: 二维码识别结果的文本数据
+            Point: 条码识别结果的文本数据
         """
         return self.qr_code_result.text
 
@@ -136,7 +136,7 @@ class QRCodeDetector:
             input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
 
         Returns:
-            list(QRCodeResult): 预测结果对象列表，每一个预测结果包含了二维码坐标和文本。
+            list(CodeResult): 预测结果对象列表，每一个预测结果包含了二维码坐标和文本。
         """
         return self.model.predict(input_mat)
 ```
