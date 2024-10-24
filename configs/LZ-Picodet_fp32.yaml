@@ -18,15 +18,15 @@ load_onnx:
       - 320
       - 320
   outputs:
-    - split_0.tmp_1
-    - split_1.tmp_1
-    - split_2.tmp_1
-    - split_3.tmp_1
     - sigmoid_0.tmp_0
+    - split_0.tmp_1
     - sigmoid_1.tmp_0
+    - split_1.tmp_1
     - sigmoid_2.tmp_0
+    - split_2.tmp_1
     - sigmoid_3.tmp_0
+    - split_3.tmp_1
 
 build:
-  do_quantization: false
-  dataset:
+  do_quantization: True
+  dataset: ./dataset.txt
