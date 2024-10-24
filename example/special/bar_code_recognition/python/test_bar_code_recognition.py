@@ -1,5 +1,5 @@
 from lockzhiner_vision_module.cv2 import VideoCapture
-from lockzhiner_vision_module.vision import QRCodeDetector, visualize
+from lockzhiner_vision_module.vision import Code128Detector, visualize
 from lockzhiner_vision_module.edit import Edit
 import sys
 
@@ -7,7 +7,7 @@ if __name__ == "__main__":
     edit = Edit()
     edit.start_and_accept_connection()
 
-    model = QRCodeDetector()
+    model = Code128Detector()
 
     video_capture = VideoCapture()
     if video_capture.open(0) is False:
