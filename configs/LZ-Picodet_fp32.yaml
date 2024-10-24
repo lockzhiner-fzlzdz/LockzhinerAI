@@ -1,0 +1,32 @@
+config:
+  mean:
+    - 0.406
+    - 0.456
+    - 0.485
+  std:
+    - 0.225
+    - 0.224
+    - 0.229
+
+load_onnx:
+  inputs:
+    - image
+  input_size_list:
+    -
+      - 1
+      - 3
+      - 320
+      - 320
+  outputs:
+    - DequantizeLinear.1705
+    - DequantizeLinear.1707
+    - DequantizeLinear.1619
+    - DequantizeLinear.1621
+    - DequantizeLinear.1533
+    - DequantizeLinear.1535
+    - DequantizeLinear.1445
+    - DequantizeLinear.1447
+
+build:
+  do_quantization: false
+  dataset:
