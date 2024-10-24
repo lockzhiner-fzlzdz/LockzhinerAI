@@ -18,14 +18,14 @@ load_onnx:
       - 320
       - 320
   outputs:
-    - DequantizeLinear.1705
-    - DequantizeLinear.1707
-    - DequantizeLinear.1619
-    - DequantizeLinear.1621
-    - DequantizeLinear.1533
-    - DequantizeLinear.1535
-    - DequantizeLinear.1445
-    - DequantizeLinear.1447
+    - split_0.tmp_1
+    - split_1.tmp_1
+    - split_2.tmp_1
+    - split_3.tmp_1
+    - sigmoid_0.tmp_0
+    - sigmoid_1.tmp_0
+    - sigmoid_2.tmp_0
+    - sigmoid_3.tmp_0
 
 build:
   do_quantization: false
