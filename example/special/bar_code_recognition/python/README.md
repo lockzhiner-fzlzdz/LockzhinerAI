@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块二维码识别 Python 部署指南</h1>
+<h1 align="center">凌智视觉模块条码识别 Python 部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -29,7 +29,7 @@
 
 ## 1 简介
 
-接下来让我们基于 Python 来部署二维码识别案例，在开始本章节前：
+接下来让我们基于 Python 来部署条码识别案例，在开始本章节前：
 
 - 请确保你已经参考 [凌智视觉模块摄像头部署指南](../../../periphery/capture/README.md) 正确下载了凌智视觉模块图片传输助手。
 - 请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
@@ -121,12 +121,13 @@ class CodeResult:
         """
         return self.qr_code_result.text
 
-class QRCodeDetector:
+class Code39Detector:
     """
-    QRCodeDetector 类 - 用于二维码识别的封装类。
+    Code39Detector 类 - 用于 Code39 检测识别的封装类
     """
+
     def __init__(self):
-        self.model = vision.QRCodeDetector()
+        self.model = vision.Code39Detector()
 
     def predict(self, input_mat):
         """
@@ -136,18 +137,60 @@ class QRCodeDetector:
             input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
 
         Returns:
-            list(CodeResult): 预测结果对象列表，每一个预测结果包含了二维码坐标和文本。
+            list(CodeResult): 预测结果对象列表，每一个预测结果包含了条码坐标和文本。
+        """
+        return self.model.predict(input_mat)
+
+
+class Code93Detector:
+    """
+    Code93Detector 类 - 用于 Code93 检测识别的封装类
+    """
+
+    def __init__(self):
+        self.model = vision.Code93Detector()
+
+    def predict(self, input_mat):
+        """
+        进行预测
+
+        Args:
+            input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
+
+        Returns:
+            list(CodeResult): 预测结果对象列表，每一个预测结果包含了条码坐标和文本。
+        """
+        return self.model.predict(input_mat)
+
+
+class Code128Detector:
+    """
+    Code128Detector 类 - 用于 Code128 检测识别的封装类
+    """
+
+    def __init__(self):
+        self.model = vision.Code128Detector()
+
+    def predict(self, input_mat):
+        """
+        进行预测
+
+        Args:
+            input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
+
+        Returns:
+            list(CodeResult): 预测结果对象列表，每一个预测结果包含了条码坐标和文本。
         """
         return self.model.predict(input_mat)
 ```
 
 ## 3 项目介绍
 
-为了方便大家入手，我们做了一个简易的二维码检测识别例程。该程序可以使用摄像头进行端到端推理，并可视化推理结果到凌智视觉模块图片传输助手。
+为了方便大家入手，我们做了一个简易的 Code128 类型的条形码检测和识别例程。该程序可以使用摄像头进行端到端推理，并可视化推理结果到凌智视觉模块图片传输助手。
 
 ```python
 from lockzhiner_vision_module.cv2 import VideoCapture
-from lockzhiner_vision_module.vision import QRCodeDetector, visualize
+from lockzhiner_vision_module.vision import Code128Detector, visualize
 from lockzhiner_vision_module.edit import Edit
 import sys
 
@@ -155,7 +198,7 @@ if __name__ == "__main__":
     edit = Edit()
     edit.start_and_accept_connection()
 
-    model = QRCodeDetector()
+    model = Code128Detector()
 
     video_capture = VideoCapture()
     if video_capture.open(0) is False:
@@ -191,17 +234,17 @@ if __name__ == "__main__":
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
-- 进入存放 **test_qr_code_recognition.py** 脚本文件的目录，将 **test_qr_code_recognition.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_bar_code_recognition.py** 脚本文件的目录，将 **test_bar_code_recognition.py** 上传到 Lockzhiner Vision Module
 
 ![](images/stfp.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_qr_code_recognition.py
+python test_bar_code_recognition.py
 ```
 
-运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印二维码位置和置信度，凌智视觉模块图片传输助手出现可视化的结果
+运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印条码位置和置信度，凌智视觉模块图片传输助手出现可视化的结果
 
 ![alt text](images/qr_code_result.png)
 
