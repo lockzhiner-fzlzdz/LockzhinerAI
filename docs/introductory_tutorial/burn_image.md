@@ -36,7 +36,8 @@
 在开始烧录前，我们需要做一些前期的准备:
 
 * 请准备一张 **64G 容量以下**的 SD 卡，这里我们选用的是 16G 的 SD 卡。请将 SD 卡插入读卡器并正确连接电脑。
-* 请正确下载 Lockzhiner Vision Module 的镜像软件包到你喜欢的位置。
+* 前往 [凌智视觉模块镜像下载地址](https://pan.baidu.com/s/1w28TRzvEVvRURuisywnNZg) 下载镜像，提取码为 772f 
+* 前往 [凌智视觉模块烧录软件下载地址](https://pan.baidu.com/s/1EdzzDu8Yn62GBFaZYe_T3A) 下载烧录软件，提取码为 hk9v
 
 ## 3 开始烧录
 
