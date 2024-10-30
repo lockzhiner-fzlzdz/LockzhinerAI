@@ -5,17 +5,29 @@ import sys
 
 if __name__ == "__main__":
     args = sys.argv
-    if len(args) != 1:
-        print("Need model path. Example: python test_capture.py")
+    if len(args) != 1 and len(args) != 3:
+        print("Need model path. Example: python test_capture.py <width> <height>")
         exit(1)
+
+    width = 640
+    height = 480
+
+    if len(args) == 3:
+        width = int(args[1])
+        height = int(args[2])
+    print(f"Capture width: {width}, height: {height}")
 
     edit = Edit()
     edit.start_and_accept_connection()
 
     video_capture = VideoCapture()
+    video_capture.set_width(width)
+    video_capture.set_height(height)
+
     if video_capture.open(0) is False:
         print("Failed to open capture")
         exit(1)
+
 
     while True:
         read_index = 0
