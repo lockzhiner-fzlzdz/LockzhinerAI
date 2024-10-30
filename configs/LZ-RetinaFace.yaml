@@ -11,7 +11,7 @@ config:
 
 load_onnx:
   inputs:
-    - image
+    - input0
   input_size_list:
     -
       - 1
@@ -21,5 +21,5 @@ load_onnx:
   outputs:
 
 build:
-  do_quantization: false
-  dataset:
+  do_quantization: True
+  dataset: ./dataset.txt
