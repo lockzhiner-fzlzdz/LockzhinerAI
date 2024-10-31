@@ -41,7 +41,6 @@ if __name__ == "__main__":
             for result in results:
                 box = result.box
                 score = result.score
-                label_id = result.label_id
                 print(
                     f"(x,y,w,h,score): [{box.x},{box.y},{box.width},{box.height},{score}]"
                 )
