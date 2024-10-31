@@ -39,6 +39,10 @@
 
 ## 🔄 最新日志
 
+## 🎁 购买链接
+
+- [凌智电子-凌智视觉模块](http://e.tb.cn/h.gB2QDrBQqTk6T5b?tk=9Ypj3ogzhLG)
+
 ## 💡 入门学习教程
 
 这一部分教程旨在为你提供一个系统化的学习路径，帮助你快速上手 Lockzhiner Vision Module。通过一系列详细的教程, 你将学会如何烧录镜像、连接设备、搭建开发环境和编写简单的程序。
@@ -86,6 +90,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 * [凌智视觉模块手写数字识别部署指南](./example/special/digit_handwritten_recognition)
 * [凌智视觉模块二维码检测与识别部署指南](./example/special/qr_code_recognition)
 * [凌智视觉模块条码检测与识别部署指南](./example/special/bar_code_recognition)
+* [凌智视觉模块人脸检测部署指南](example/vision/face_detection)
 <!-- * [人脸佩戴口罩检测部署指南(支持中)]() -->
 
 ## 🐛 Bug反馈
