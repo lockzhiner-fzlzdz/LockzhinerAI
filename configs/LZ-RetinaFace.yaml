@@ -19,6 +19,9 @@ load_onnx:
       - 320
       - 320
   outputs:
+    - output0
+    - classifications
+    - 571
 
 build:
   do_quantization: True

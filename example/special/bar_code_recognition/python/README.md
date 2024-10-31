@@ -44,20 +44,20 @@ class Point:
     @property
     def x(self):
         """
-        获取矩形左上角坐标点的 x 坐标
+        获取坐标点的 x 坐标
 
         Returns:
-            int: 获取矩形左上角坐标点的 x 坐标
+            int: 坐标点的 x 坐标
         """
         return self.rect.x
 
     @property
     def y(self):
         """
-        获取矩形左上角坐标点的 y 坐标
+        获取坐标点的 y 坐标
 
         Returns:
-            int: 获取矩形左上角坐标点的 y 坐标
+            int: 坐标点的 y 坐标
         """
         return self.rect.y
 

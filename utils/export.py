@@ -30,9 +30,9 @@ if __name__ == "__main__":
         yaml_config = yaml.safe_load(file_data)
     print(yaml_config)
 
-    config_inputs = yaml_config["load_onnx"]["inputs"]
+    config_inputs = [str(input_name) for input_name in yaml_config["load_onnx"]["inputs"]]
     config_input_size_list = yaml_config["load_onnx"]["input_size_list"]
-    config_outputs = yaml_config["load_onnx"]["outputs"]
+    config_outputs = [str(output_name) for output_name in yaml_config["load_onnx"]["outputs"]]
 
     # Prune ONNX Model
     print("--> Prune ONNX Model")
@@ -76,7 +76,6 @@ if __name__ == "__main__":
     # Load ONNX model
     print("--> Load ONNX model")
     model_path = "/tmp/slim_prune_onnx_model.onnx"
-    input_size_list = yaml_config["load_onnx"]["input_size_list"]
     ret = model.load_onnx(model=model_path)
     assert ret == 0, "Load model failed!"
     print("done")

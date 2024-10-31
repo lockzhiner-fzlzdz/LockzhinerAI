@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块检测模型 Python 部署指南</h1>
+<h1 align="center">凌智视觉模块人脸检测模型 Python 部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -29,7 +29,7 @@
 
 ## 1 简介
 
-接下来让我们基于 Python 来部署 PaddleDetection 检测模型。在开始本章节前：
+接下来让我们基于 Python 来部署 RetinaFace 人脸检测模型。在开始本章节前：
 
 - 请确保你已经参考 [凌智视觉模块检测模型部署指南](../README.md) 对模型进行了充分训练。
 - 请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
@@ -84,62 +84,86 @@ class Rect:
         """
         return self.rect.height
 
-class DetectionResult:
+class Point:
+    def __init__(self):
+        self.point = cv2.Point()
+
+    @property
+    def x(self):
+        """
+        获取坐标点的 x 坐标
+
+        Returns:
+            int: 坐标点的 x 坐标
+        """
+        return self.rect.x
+
+    @property
+    def y(self):
+        """
+        获取坐标点的 y 坐标
+
+        Returns:
+            int: 坐标点的 y 坐标
+        """
+        return self.rect.y
+
+class FaceDetectionResult:
     """
-    检测结果类，用于封装和处理目标检测结果数据。
+    检测结果类，用于封装和处理人脸检测结果数据。
 
     该类主要提供了一个包装层，用于访问和管理由视觉模块产生的检测结果。
     """
 
     def __init__(self):
-        self.detection_result = vision.DetectionResult()
+        self.face_detection_result = vision.FaceDetectionResult()
 
     @property
     def box(self):
         """
-        获取目标检测模型检测结果的矩形框信息
+        获取人脸检测模型检测结果的矩形框信息
 
         Returns:
             Rect: 矩形框信息
         """
-        return self.detection_result.box
+        return self.face_detection_result.box
 
     @property
     def score(self):
         """
-        获取目标检测模型检测结果的得分信息
+        获取人脸检测模型检测结果的得分信息
 
         Returns:
             float: 得分信息
         """
-        return self.detection_result.score
+        return self.face_detection_result.score
 
     @property
-    def label_id(self):
+    def points(self):
         """
-        获取目标检测模型检测结果的分类标签信息
+        获取人脸检测模型检测结果的人脸关键点信息， 一般共 5 个关键点
 
         Returns:
-            int: 分类标签信息
+            list(cv2.Points): 关键点列表
         """
-        return self.detection_result.label_id
+        return self.face_detection_result.points
 
-class PaddleDet:
+class RetinaFace:
     """
-    PaddleDet 类 - 用于目标检测的 PaddlePaddle 模型封装。
+    RetinaFace 类 - 用于人脸检测的 RetinaFace 模型封装。
 
-    该类封装了 PaddleDet 框架下的目标检测模型，提供了初始化和预测的方法。
+    该类封装了 RetinaFace 框架下的目标检测模型，提供了初始化和预测的方法。
     """
 
     def __init__(self):
         """
         构造函数 - 初始化 PaddleDet 对象。
         """
-        self.model = vision.PaddleDet()
+        self.model = vision.RetinaFace()
 
     def initialize(self, model_path):
         """
-        初始化模型 - 加载预训练的 PaddlePaddle 模型。
+        初始化模型 - 加载预训练的 RetinaFace 模型。
 
         Args:
             model_path (str): 模型文件的路径。
@@ -168,23 +192,18 @@ class PaddleDet:
             input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
 
         Returns:
-            list(DetectionResult): 预测结果对象列表，每一个预测结果包含了矩形框、标签信息和置信度等信息。
+            list(FaceDetectionResult): 预测结果对象列表，每一个预测结果包含了矩形框、人脸关键点和置信度等信息。
         """
         return self.model.predict(input_mat)
-
-
-class Picodet(PaddleDet):
-    def __init__(self):
-        super().__init__()
 ```
 
 ## 3 项目介绍
 
-为了方便大家入手，我们做了一个简易的目标检测例程。该程序可以使用摄像头进行端到端推理。
+为了方便大家入手，我们做了一个简易的人脸检测例程。该程序可以使用摄像头进行端到端推理。
 
 ```python
 from lockzhiner_vision_module.cv2 import VideoCapture
-from lockzhiner_vision_module.vision import PaddleDet, visualize
+from lockzhiner_vision_module.vision import RetinaFace, visualize
 from lockzhiner_vision_module.edit import Edit
 import time
 import sys
@@ -192,15 +211,15 @@ import sys
 if __name__ == "__main__":
     args = sys.argv
     if len(args) != 2:
-        print("Need model path. Example: python test_detection.py LZ-MobileNetV3.rknn")
+        print("Need model path. Example: python test_retina_face.py LZ-RetinaFace.rknn")
         exit(1)
         
     edit = Edit()
     edit.start_and_accept_connection()
 
-    model = PaddleDet()
+    model = RetinaFace()
     if model.initialize(args[1]) is False:
-        print("Failed to initialize PaddleClas")
+        print("Failed to initialize RetinaFace")
         exit(1)
 
     video_capture = VideoCapture()
@@ -228,7 +247,7 @@ if __name__ == "__main__":
                 score = result.score
                 label_id = result.label_id
                 print(
-                    f"(x,y,w,h,score,label_id): [{box.x},{box.y},{box.width},{box.height},{score},{label_id}]"
+                    f"(x,y,w,h,score): [{box.x},{box.y},{box.width},{box.height},{score}]"
                 )
             vis_mat = visualize(mat, results)
             edit.print(vis_mat)
@@ -243,8 +262,8 @@ if __name__ == "__main__":
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
-- 进入存放 **test_detection.py** 脚本文件的目录，将 **test_detection.py** 上传到 Lockzhiner Vision Module
-- 进入存放 **LZ-Picodet.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-Picodet.rknn** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_retina_face.py** 脚本文件的目录，将 **test_retina_face.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **LZ-RetinaFace.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-RetinaFace.rknn** 上传到 Lockzhiner Vision Module
 
 ![](images/stfp_0.png)
 
@@ -253,10 +272,10 @@ if __name__ == "__main__":
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_detection.py LZ-Picodet.rknn
+python test_retina_face.py LZ-RetinaFace.rknn
 ```
 
-运行程序后，屏幕上开始打印矩形框信息，标签信息和置信度，并在一段时间后输出 FPS 值
+运行程序后，屏幕上开始打印矩形框信息和置信度，并在一段时间后输出 FPS 值
 
 ![alt text](result_0.png)
 
