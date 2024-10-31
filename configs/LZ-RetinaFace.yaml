@@ -1,0 +1,28 @@
+config:
+  mean:
+    - -104
+    - -117
+    - -123
+  std:
+    - 1
+    - 1
+    - 1
+  type: "int8"
+
+load_onnx:
+  inputs:
+    - input0
+  input_size_list:
+    -
+      - 1
+      - 3
+      - 320
+      - 320
+  outputs:
+    - output0
+    - classifications
+    - 571
+
+build:
+  do_quantization: True
+  dataset: ./dataset.txt

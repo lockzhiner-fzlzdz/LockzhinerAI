@@ -7,4 +7,15 @@
 build
 lockzhiner_vision_module_sdk*
 opencv-mobile-4.10.0-lockzhiner-vision-module*
+*.pkl
 Temp
+
+# Export
+dataset.txt
+
+# Model
+*.onnx
+*.rknn
+
+# Picture
+*.jpg
