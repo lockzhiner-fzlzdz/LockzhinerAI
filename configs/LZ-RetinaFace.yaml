@@ -1,4 +1,5 @@
 config:
+  # RGB
   mean:
     - -104
     - -117
