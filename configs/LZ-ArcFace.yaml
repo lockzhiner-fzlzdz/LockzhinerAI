@@ -16,8 +16,8 @@ load_onnx:
     -
       - 1
       - 3
-      - 224
-      - 224
+      - 112
+      - 112
   outputs:
     - save_infer_model/scale_0.tmp_1
 
