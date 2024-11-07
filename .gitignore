@@ -14,8 +14,15 @@ Temp
 dataset.txt
 
 # Model
+*.pdiparams
+*.pdiparams.info
+*.pdmodel
 *.onnx
 *.rknn
 
 # Picture
 *.jpg
+
+# Zip
+*.tar
+*.zip
