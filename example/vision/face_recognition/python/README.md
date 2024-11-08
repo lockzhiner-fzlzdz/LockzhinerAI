@@ -100,56 +100,30 @@ class ArcFace:
 为了方便大家入手，我们做了一个简易的人脸识别例程。该程序可以使用摄像头进行端到端推理。
 
 ```python
-from lockzhiner_vision_module.cv2 import VideoCapture
-from lockzhiner_vision_module.vision import RetinaFace, visualize
-from lockzhiner_vision_module.edit import Edit
+from lockzhiner_vision_module.cv2 import imread
+from lockzhiner_vision_module.vision import ArcFace, cosine_similarity
 import time
 import sys
 
 if __name__ == "__main__":
     args = sys.argv
-    if len(args) != 2:
-        print("Need model path. Example: python test_retina_face.py LZ-RetinaFace.rknn")
+    if len(args) != 4:
+        print("Need model path. Example: python test_arc_face.py LZ-ArcFace.rknn image_path_0 image_path_1")
         exit(1)
         
-    edit = Edit()
-    edit.start_and_accept_connection()
-
-    model = RetinaFace()
+    model = ArcFace()
     if model.initialize(args[1]) is False:
-        print("Failed to initialize RetinaFace")
+        print("Failed to initialize ArcFace")
         exit(1)
 
-    video_capture = VideoCapture()
-    if video_capture.open(0) is False:
-        print("Failed to open capture")
-        exit(1)
+    input_mat_0 = imread(args[2])
+    result_0 = model.predict(input_mat_0)
 
-    while True:
-        read_index = 0
-        total_time_ms = 0
-        for i in range(30):
-            ret, mat = video_capture.read()
-            if ret is False:
-                continue
+    input_mat_1 = imread(args[3])
+    result_1 = model.predict(input_mat_1)
 
-            start_time = time.time()
-            results = model.predict(mat)
-            end_time = time.time()
-            total_time_ms += end_time - start_time
-            read_index += 1
 
-            print(f"result size is {len(results)}")
-            for result in results:
-                box = result.box
-                score = result.score
-                label_id = result.label_id
-                print(
-                    f"(x,y,w,h,score): [{box.x},{box.y},{box.width},{box.height},{score}]"
-                )
-            vis_mat = visualize(mat, results)
-            edit.print(vis_mat)
-        print(f"FPS is {1.0 / (total_time_ms/read_index)}")
+    print(f"Similarity is {cosine_similarity(result_0, result_1)}")
 ```
 
 ## 4 上传并测试 Python 程序
@@ -160,8 +134,8 @@ if __name__ == "__main__":
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
-- 进入存放 **test_retina_face.py** 脚本文件的目录，将 **test_retina_face.py** 上传到 Lockzhiner Vision Module
-- 进入存放 **LZ-RetinaFace.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-RetinaFace.rknn** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_arc_face.py** 脚本文件的目录，将 **test_arc_face.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **LZ-ArcFace.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-ArcFace.rknn** 上传到 Lockzhiner Vision Module
 
 ![](images/stfp_0.png)
 
@@ -170,7 +144,7 @@ if __name__ == "__main__":
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_retina_face.py LZ-RetinaFace.rknn
+python test_arc_face.py LZ-ArcFace.rknn image_path_0 image_path_1
 ```
 
 运行程序后，屏幕上开始打印矩形框信息和置信度，并在一段时间后输出 FPS 值
