@@ -1,4 +1,5 @@
 config:
+  # BGR
   mean:
     - 0.406
     - 0.456
