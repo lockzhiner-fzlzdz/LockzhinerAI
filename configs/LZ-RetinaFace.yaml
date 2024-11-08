@@ -1,14 +1,4 @@
-config:
-  # RGB
-  mean:
-    - -104
-    - -117
-    - -123
-  std:
-    - 1
-    - 1
-    - 1
-  type: "int8"
+backend: "rknn"
 
 load_onnx:
   inputs:
@@ -23,6 +13,18 @@ load_onnx:
     - output0
     - classifications
     - 571
+
+config:
+  # RGB
+  mean:
+    - -104
+    - -117
+    - -123
+  std:
+    - 1
+    - 1
+    - 1
+  type: "int8"
 
 build:
   do_quantization: True

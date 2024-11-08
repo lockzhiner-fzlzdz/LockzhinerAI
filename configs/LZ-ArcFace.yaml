@@ -1,14 +1,4 @@
-config:
-  # RGB
-  mean:
-    - 0.485
-    - 0.456
-    - 0.406
-  std:
-    - 0.229
-    - 0.224
-    - 0.225
-  type: "fp32"
+backend: "rknn"
 
 load_onnx:
   inputs:
@@ -21,6 +11,18 @@ load_onnx:
       - 112
   outputs:
     - save_infer_model/scale_0.tmp_1
+
+config:
+  # RGB
+  mean:
+    - 0.485
+    - 0.456
+    - 0.406
+  std:
+    - 0.229
+    - 0.224
+    - 0.225
+  type: "fp32"
 
 build:
   do_quantization: True

@@ -1,14 +1,4 @@
-config:
-  # BGR
-  mean:
-    - 0.406
-    - 0.456
-    - 0.485
-  std:
-    - 0.225
-    - 0.224
-    - 0.229
-  type: "fp32"
+backend: "rknn"
 
 load_onnx:
   inputs:
@@ -28,6 +18,18 @@ load_onnx:
     - split_2.tmp_1
     - sigmoid_3.tmp_0
     - split_3.tmp_1
+
+config:
+  # BGR
+  mean:
+    - 0.406
+    - 0.456
+    - 0.485
+  std:
+    - 0.225
+    - 0.224
+    - 0.229
+  type: "fp32"
 
 build:
   do_quantization: True

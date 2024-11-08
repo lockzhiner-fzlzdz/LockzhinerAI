@@ -1,14 +1,4 @@
-config:
-  # BGR
-  mean:
-    - 0.406
-    - 0.456
-    - 0.485
-  std:
-    - 0.225
-    - 0.224
-    - 0.229
-  type: "fp32"
+backend: "rknn"
 
 load_onnx:
   inputs:
@@ -21,6 +11,18 @@ load_onnx:
       - 224
   outputs:
     - DequantizeLinear.881
+
+config:
+  # BGR
+  mean:
+    - 0.406
+    - 0.456
+    - 0.485
+  std:
+    - 0.225
+    - 0.224
+    - 0.229
+  type: "fp32"
 
 build:
   do_quantization: false
