@@ -1,5 +1,3 @@
-backend: "rknn"
-
 load_onnx:
   inputs:
     - x
