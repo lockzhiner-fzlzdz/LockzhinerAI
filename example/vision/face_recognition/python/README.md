@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块人脸检测模型 Python 部署指南</h1>
+<h1 align="center">凌智视觉模块人脸识别模型 Python 部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -29,141 +29,50 @@
 
 ## 1 简介
 
-接下来让我们基于 Python 来部署 RetinaFace 人脸检测模型。在开始本章节前：
+接下来让我们基于 Python 来部署 ArcFace 人脸识别模型。在开始本章节前：
 
-- 请确保你已经参考 [凌智视觉模块人脸检测模型部署指南](../README.md) 正确下载了凌智视觉模块人脸检测模型。
+- 请确保你已经参考 [凌智视觉模块人脸识别模型部署指南](../README.md) 正确下载了凌智视觉模块人脸识别模型。
 - 请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
 
 ## 2 Python API 文档
 
 ```python
-class Rect:
-    def __init__(self):
-        self.rect = cv2.Rect()
-
-    def empty(self):
-        return self.rect.empty()
-
-    @property
-    def x(self):
-        """
-        获取矩形左上角坐标点的 x 坐标
-
-        Returns:
-            int: 获取矩形左上角坐标点的 x 坐标
-        """
-        return self.rect.x
-
-    @property
-    def y(self):
-        """
-        获取矩形左上角坐标点的 y 坐标
-
-        Returns:
-            int: 获取矩形左上角坐标点的 y 坐标
-        """
-        return self.rect.y
-
-    @property
-    def width(self):
-        """
-        获取矩形的宽
-
-        Returns:
-            int: 获取矩形的宽
-        """
-        return self.rect.width
-
-    @property
-    def height(self):
-        """
-        获取矩形的高
-
-        Returns:
-            int: 获取矩形的高
-        """
-        return self.rect.height
-
-class Point:
-    def __init__(self):
-        self.point = cv2.Point()
-
-    @property
-    def x(self):
-        """
-        获取坐标点的 x 坐标
-
-        Returns:
-            int: 坐标点的 x 坐标
-        """
-        return self.rect.x
-
-    @property
-    def y(self):
-        """
-        获取坐标点的 y 坐标
-
-        Returns:
-            int: 坐标点的 y 坐标
-        """
-        return self.rect.y
-
-class FaceDetectionResult:
+class FaceRecognitionResult:
     """
-    检测结果类，用于封装和处理人脸检测结果数据。
+    人脸识别结果类，用于封装和处理人脸识别结果数据。
 
-    该类主要提供了一个包装层，用于访问和管理由视觉模块产生的检测结果。
+    该类主要提供了一个包装层，用于访问和管理由视觉模块产生的人脸识别结果。
     """
 
     def __init__(self):
-        self.face_detection_result = vision.FaceDetectionResult()
+        self.face_recognition_result = vision.FaceRecognitionResult()
 
     @property
-    def box(self):
+    def feature(self):
         """
-        获取人脸检测模型检测结果的矩形框信息
+        获取人脸识别结果的特征信息
 
         Returns:
-            Rect: 矩形框信息
+            list(float): 特征信息
         """
-        return self.face_detection_result.box
+        return self.face_recognition_result.feature
 
-    @property
-    def score(self):
-        """
-        获取人脸检测模型检测结果的得分信息
-
-        Returns:
-            float: 得分信息
-        """
-        return self.face_detection_result.score
-
-    @property
-    def points(self):
-        """
-        获取人脸检测模型检测结果的人脸关键点信息， 一般共 5 个关键点
-
-        Returns:
-            list(cv2.Points): 关键点列表
-        """
-        return self.face_detection_result.points
-
-class RetinaFace:
+class ArcFace:
     """
-    RetinaFace 类 - 用于人脸检测的 RetinaFace 模型封装。
+    ArcFace 类 - 用于人脸识别的 ArcFace 模型封装。
 
-    该类封装了 RetinaFace 框架下的目标检测模型，提供了初始化和预测的方法。
+    该类封装了 InsightFace 框架下的 ArcFace 人脸识别模型，提供了初始化和预测的方法。
     """
 
     def __init__(self):
         """
         构造函数 - 初始化 PaddleDet 对象。
         """
-        self.model = vision.RetinaFace()
+        self.model = vision.ArcFace()
 
     def initialize(self, model_path):
         """
-        初始化模型 - 加载预训练的 RetinaFace 模型。
+        初始化模型 - 加载预训练的 ArcFace 模型。
 
         Args:
             model_path (str): 模型文件的路径。
@@ -173,17 +82,6 @@ class RetinaFace:
         """
         return self.model.initialize(model_path)
 
-    def set_threshold(self, score_threshold=0.5, nms_threshold=0.3):
-        """
-        设置目标检测阈值
-
-        Args:
-            score_threshold (float): 目标检测得分阈值，默认为 0.5
-            nms_threshold (float): 目标检测 NMS 阈值，默认为 0.3
-
-        """
-        self.model.initialize(score_threshold, nms_threshold)
-
     def predict(self, input_mat):
         """
         进行预测 - 使用加载的模型对输入数据进行分类预测。
@@ -192,14 +90,14 @@ class RetinaFace:
             input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
 
         Returns:
-            list(FaceDetectionResult): 预测结果对象列表，每一个预测结果包含了矩形框、人脸关键点和置信度等信息。
+            FaceRecognitionResult: 人脸识别结果，包含了 128 维度的人脸特征
         """
         return self.model.predict(input_mat)
 ```
 
 ## 3 项目介绍
 
-为了方便大家入手，我们做了一个简易的人脸检测例程。该程序可以使用摄像头进行端到端推理。
+为了方便大家入手，我们做了一个简易的人脸识别例程。该程序可以使用摄像头进行端到端推理。
 
 ```python
 from lockzhiner_vision_module.cv2 import VideoCapture

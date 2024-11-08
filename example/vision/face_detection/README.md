@@ -29,11 +29,11 @@
 
 ## 1 简介
 
-在深度学习中，RetinaFace是一种高效的人脸检测模型，旨在准确识别图像中的人脸及其关键点。该模型结合了特征金字塔网络（FPN）和单阶段检测方法，能够在不同尺度下进行人脸检测，从而提高了对小型和远距离人脸的检测能力。RetinaFace不仅能够检测人脸位置，还能提供人脸的五个关键点（如眼睛、鼻子和嘴巴）的坐标，适用于多种人脸识别和分析应用。
+在深度学习中，RetinaFace 是一种高效的人脸检测模型，旨在准确识别图像中的人脸及其关键点。该模型结合了特征金字塔网络（FPN）和单阶段检测方法，能够在不同尺度下进行人脸检测，从而提高了对小型和远距离人脸的检测能力。RetinaFace 不仅能够检测人脸位置，还能提供人脸的五个关键点（如眼睛、鼻子和嘴巴）的坐标，适用于多种人脸识别和分析应用。
 
 ## 2 运行前的准备
 
-* 请确保你已经下载了 [凌智视觉模块人脸检测模型](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LZ-DigitHandRecog.rknn)
+* 请确保你已经下载了 [凌智视觉模块人脸检测模型](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LZ-RetinaFace.rknn)
 
 ## 3 在凌智视觉模块上部署模型
 
@@ -46,6 +46,6 @@
 
 以下测试数据为模型执行 Predict 函数运行 1000 次耗时的平均时间
 
-| 检测模型 | FPS(帧/s) | 精度(%) |
+| 人脸检测模型 | FPS(帧/s) | 精度(%) |
 |:-------:|:----:|:----:|
 |LZ-RetinaFace|  38   |   -   |
