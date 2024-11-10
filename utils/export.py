@@ -9,19 +9,13 @@ import onnx
 def get_config():
     parser = argparse.ArgumentParser()
     parser.add_argument("--verbose", default="Debug", help="rknntoolkit verbose")
-    parser.add_argument(
-        "--config_path", required=True, help="The path of model config file"
-    )
-    parser.add_argument(
-        "--model_load_path", required=True, help="The path of onnx model file"
-    )
-    parser.add_argument("--target_platform", required=True, help="The target platform")
-    parser.add_argument(
-        "--model_save_path", required=True, help="The path of rknn model save"
+    parser.add_argument("--config_path", required=True, help="The path of model config file")
+    parser.add_argument("--model_load_path", required=True, help="The path of onnx model file")
+    parser.add_argument("--target_platform", required=False, help="The target platform")
+    parser.add_argument("--model_save_path", required=False, help="The path of rknn model save"
     )
     args = parser.parse_args()
     return args
-
 
 if __name__ == "__main__":
     config = get_config()
@@ -30,9 +24,13 @@ if __name__ == "__main__":
         yaml_config = yaml.safe_load(file_data)
     print(yaml_config)
 
-    config_inputs = [str(input_name) for input_name in yaml_config["load_onnx"]["inputs"]]
+    config_inputs = [
+        str(input_name) for input_name in yaml_config["load_onnx"]["inputs"]
+    ]
     config_input_size_list = yaml_config["load_onnx"]["input_size_list"]
-    config_outputs = [str(output_name) for output_name in yaml_config["load_onnx"]["outputs"]]
+    config_outputs = [
+        str(output_name) for output_name in yaml_config["load_onnx"]["outputs"]
+    ]
 
     # Prune ONNX Model
     print("--> Prune ONNX Model")
