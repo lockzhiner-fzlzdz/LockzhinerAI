@@ -19,6 +19,13 @@ dataset.txt
 *.pdmodel
 *.onnx
 *.rknn
+debug*
+*.ncnn.bin
+*.ncnn.param
+*.pnnx.bin
+*.pnnx.param
+LZ-*.py
+
 
 # Picture
 *.jpg
