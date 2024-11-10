@@ -51,7 +51,7 @@ Labelme 是一个 python 语言编写，带有图形界面的图像标注软件�
 
 ### 2.2 标注前的准备
 
-首先，请参考 [摄像头使用指南](../../../periphery/capture) 利用 **Lockzhiner Vision Module 图片获取助手** 拍摄你需要进行标注的图片，如下图所示：
+首先，请参考 [摄像头使用指南](../../periphery/capture) 利用 **Lockzhiner Vision Module 图片获取助手** 拍摄你需要进行标注的图片，如下图所示：
 
 ![](images/capture_images.png)
 
