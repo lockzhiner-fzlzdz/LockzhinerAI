@@ -8,7 +8,7 @@ load_onnx:
       - 224
       - 224
   outputs:
-    - DequantizeLinear.881
+    - Add.53
 
 config:
   # BGR
@@ -23,5 +23,5 @@ config:
   type: "fp32"
 
 build:
-  do_quantization: false
-  dataset:
+  do_quantization: True
+  dataset: ./dataset.txt
