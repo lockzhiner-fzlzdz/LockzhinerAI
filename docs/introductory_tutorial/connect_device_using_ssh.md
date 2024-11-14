@@ -51,7 +51,7 @@ SSH 是一种用于在不安全网络上安全地访问和传输数据的协议�
 
 键盘按下 **Win + Q** 呼出搜索框 -> 输入并点击设置
 
-![](images/connect_device_using_ssh/open_setting.png)
+![](./images/connect_device_using_ssh/open_setting_win11.png)
 
 点击 **网络和 Internet** -> 点击 **以太网**
 
