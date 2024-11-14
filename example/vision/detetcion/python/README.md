@@ -256,7 +256,7 @@ python test_detection.py LZ-Picodet.rknn
 
 运行程序后，屏幕上开始打印矩形框信息，标签信息和置信度，并在一段时间后输出 FPS 值
 
-![alt text](../images/FPS.png)
+![alt text](../images/Fps_and_results.png)
 
 <!-- ## 5 其他 -->
 
