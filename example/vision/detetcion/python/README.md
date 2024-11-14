@@ -253,7 +253,9 @@ if __name__ == "__main__":
 ```bash
 python test_detection.py LZ-Picodet.rknn
 ```
-
+![](../images/start.png)
+连接采集图像软件后即可开启端到端的推理
+![](../images/img.png)
 运行程序后，屏幕上开始打印矩形框信息，标签信息和置信度，并在一段时间后输出 FPS 值
 
 ![alt text](../images/results_and_fps.png)
