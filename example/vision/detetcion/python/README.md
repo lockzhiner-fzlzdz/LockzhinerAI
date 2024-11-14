@@ -254,7 +254,9 @@ if __name__ == "__main__":
 python test_detection.py LZ-Picodet.rknn
 ```
 ![](../images/start.png)
-连接采集图像软件后即可开启端到端的推理
+
+连接凌智视觉模块图片传输助手[凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher.exe)后，选择连接设备
+
 ![](../images/img.png)
 运行程序后，屏幕上开始打印矩形框信息，标签信息和置信度，并在一段时间后输出 FPS 值
 
