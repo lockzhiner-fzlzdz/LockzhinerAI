@@ -94,7 +94,7 @@ Labelme 是一个 python 语言编写，带有图形界面的图像标注软件�
 
 命令执行后将打开 **Labelme** 程序，如下图
 
-![](images/Labelme.png)
+![](./images/labelme_bak.png)
 
 ### 2.3 标注并产出数据集
 
