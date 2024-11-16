@@ -265,19 +265,24 @@ if __name__ == "__main__":
 - 进入存放 **test_retina_face.py** 脚本文件的目录，将 **test_retina_face.py** 上传到 Lockzhiner Vision Module
 - 进入存放 **LZ-RetinaFace.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-RetinaFace.rknn** 上传到 Lockzhiner Vision Module
 
-![](images/stfp_0.png)
+![](../images/upload.png)
 
-![](images/stfp_1.png)
+
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
 python test_retina_face.py LZ-RetinaFace.rknn
 ```
+![](../images/start.png)
+
+连接凌智视觉模块图片传输助手[凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher.exe)后，选择连接设备
+
+![](../images/img.png)
 
 运行程序后，屏幕上开始打印矩形框信息和置信度，并在一段时间后输出 FPS 值
 
-![alt text](result_0.png)
+![alt text](../images/results.png)
 
 <!-- ## 5 其他 -->
 
