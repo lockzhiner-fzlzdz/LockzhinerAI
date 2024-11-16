@@ -73,6 +73,12 @@ Labelme 是一个 python 语言编写，带有图形界面的图像标注软件�
 
 ![](images/flags.png)
 
+> <font color="red">请注意: </font>
+>
+> <font color="red">1. flags.txt 中的标签应该填入真实的检测类别，例如这里我们识别的是"左转、右转、直行、停止、红、绿"，所以依次填入他们的英文</font>
+>
+> <font color="red">2. 遇到英文字符中存在空格的情况请以下划线代替</font>
+
 进入 **Dataset** 文件夹所在的目录，按住键盘`Shift`键后，单击鼠标右键，点击 **在此处打开 Powershell 窗口**。
 
 ![](images/open_powershll.png)
@@ -221,6 +227,10 @@ AI Studio 是基于百度深度学习开源平台飞桨的人工智能学习与�
 找到**项目全局配置项**，配置数据集路径，我这里是 **data293536**，如下图:
 
 ![](images/config_project_2.png)
+
+配置完数据集路径后，我们还需要配置目标检测类别数，这里我们检测 6 个类别的数据，因此将该参数配置为 6，如下图：
+
+![](images/config_project_3.png)
 
 ### 3.8 开始训练
 
