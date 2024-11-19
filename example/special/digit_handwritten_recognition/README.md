@@ -31,6 +31,8 @@
 
 手写数字识别是经常使用到的功能之一。竞品 K210 和 OpenMV 提供了 Mnist 数字识别的案例，但是这些案例基于非真实环境的数据集，因此没办法直接在真实环境中使用，为了解决这个问题，我们基于 [凌智视觉模块分类模型部署指南](../../vision/classification) 训练了凌智视觉模块专用的模型，可以实现实时的数字识别功能。
 
+- 注：为了帮助大家进行二次开发，我们已经在星河社区上开源了[基于凌智视觉模块的手写数字分类数据集](https://aistudio.baidu.com/datasetdetail/295907)
+
 ## 2 运行前的准备
 
 - 请确保你已经下载了 [凌智视觉模块手写数字分类模型](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LZ-DigitHandRecog.rknn)
