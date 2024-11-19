@@ -80,24 +80,28 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 这一部分教程将引导你从零开始训练并部署各种深度学习模型，包括分类模型、检测模型、分割模型和 OCR 模型。通过这些实战教程，你将学习到如何利用 Lockzhiner Vision Module 的高性能计算能力以及借助飞桨生态系统的丰富资源，轻松实现视觉任务的训练和部署。
 
-* [凌智视觉模块分类模型部署指南](./example/vision/classification)
-* [凌智视觉模块检测模型部署指南](./example/vision/detetcion)
+* [凌智视觉模块通用分类模型部署指南](./example/vision/classification)
+* [凌智视觉模块通用检测模型部署指南](./example/vision/detetcion)
 <!-- * [分割模型部署指南(支持中)]() -->
 <!-- * [OCR 模型部署指南(支持中)]() -->
 
 ## 👍 目标分类案例
 
-* [凌智视觉模块手写数字识别部署指南](./example/special/digit_handwritten_recognition)
-* [凌智视觉模块猫狗识别部署指南](example/special/cat_and_dog_classification)
-* [凌智视觉模块花卉识别部署指南](example/special/flower_classfication/)
+* [凌智视觉模块手写数字分类部署指南](./example/special/digit_handwritten_recognition)
+* [凌智视觉模块猫狗分类部署指南](example/special/cat_and_dog_classification)
+* [凌智视觉模块花卉分类部署指南](example/special/flower_classfication/)
 
-## 👍 特色功能教程
+## 👍 目标检测案例
+
+## 👍 条码检测识别案例
+
+* [凌智视觉模块二维码检测与识别部署指南](./example/special/qr_code_recognition)
+* [凌智视觉模块条形码检测与识别部署指南](./example/special/bar_code_recognition)
+
+## 👍 人脸检测识别案例
 
 * [凌智视觉模块人脸检测部署指南](example/vision/face_detection)
 * [凌智视觉模块人脸识别部署指南](example/vision/face_recognition)
-* [凌智视觉模块二维码检测与识别部署指南](./example/special/qr_code_recognition)
-* [凌智视觉模块条码检测与识别部署指南](./example/special/bar_code_recognition)
-<!-- * [人脸佩戴口罩检测部署指南(支持中)]() -->
 
 ## 🐛 Bug反馈
 

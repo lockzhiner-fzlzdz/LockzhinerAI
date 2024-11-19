@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块猫狗分类识别部署指南</h1>
+<h1 align="center">凌智视觉模块猫狗分类部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -33,13 +33,13 @@
 
 ## 2 运行前的准备
 
-- 请确保你已经下载了 [凌智视觉模块猫狗分类识别模型](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.2/LZ-Dog-and-Cat-classfication.rknn)
+- 请确保你已经下载了 [凌智视觉模块猫狗分类模型](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.2/LZ-Dog-and-Cat-classfication.rknn)
 
 ## 3 在凌智视觉模块上部署猫狗分类识别案例
 
 下载模型后，请参考以下教程使用 Python 在凌智视觉模块上部署分类模型例程：
 
-- [凌智视觉模块猫狗分类识别 Python 部署指南](./python)
+- [凌智视觉模块猫狗分类 Python 部署指南](./python)
 
 ## 4 模型性能指标
 
