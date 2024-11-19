@@ -31,6 +31,8 @@
 
 猫狗分类是计算机视觉入门的常见任务，我们基于 [凌智视觉模块分类模型部署指南](../../vision/classification) 训练了凌智视觉模块专用的模型，该模型能够实现对猫狗分类识别。
 
+- 注：为了帮助大家进行二次开发，我们已经在星河社区上开源了[基于凌智视觉模块的猫狗分类数据集](https://aistudio.baidu.com/datasetdetail/304279)
+
 ## 2 运行前的准备
 
 - 请确保你已经下载了 [凌智视觉模块猫狗分类模型](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.2/LZ-Dog-and-Cat-classfication.rknn)

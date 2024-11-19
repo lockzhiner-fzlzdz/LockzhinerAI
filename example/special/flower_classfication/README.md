@@ -31,6 +31,8 @@
 
 花卉的种类繁多，为了应对花卉种类繁多带来的分类挑战，我们基于 [凌智视觉模块分类模型部署指南](../../vision/classification) 训练了凌智视觉模块专用的模型，该模型能够实现对五种常见花卉的精确分类，包括向日葵、蒲公英、雏菊、玫瑰和郁金香。
 
+- 注：为了帮助大家进行二次开发，我们已经在星河社区上开源了[基于凌智视觉模块的花卉分类数据集](https://aistudio.baidu.com/datasetdetail/304284)
+
 ## 2 运行前的准备
 
 - 请确保你已经下载了 [凌智视觉模块花卉分类模型](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.2/LZ-Flower-Classfication.rknn)
