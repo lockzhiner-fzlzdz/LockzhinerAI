@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块手写数字识别 Python 部署指南</h1>
+<h1 align="center">凌智视觉模块手写数字分类 Python 部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -31,7 +31,7 @@
 
 接下来让我们基于 Python 来部署手写数字识别案例，在开始本章节前：
 
-- 请确保你已经参考 [凌智视觉模块手写数字识别部署指南](../README.md) 正确下载了模型。
+- 请确保你已经参考 [凌智视觉模块手写数字分类部署指南](../README.md) 正确下载了模型。
 - 请确保你已经参考 [凌智视觉模块摄像头部署指南](../../../periphery/capture/README.md) 正确下载了凌智视觉模块图片传输助手。
 - 请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
 
