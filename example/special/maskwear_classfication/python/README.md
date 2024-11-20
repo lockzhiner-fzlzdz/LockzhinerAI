@@ -113,7 +113,7 @@ python test_mask_classification.py LZ-Maskwear-Classification.rknn
 ```
 
 运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印标签索引和置信度，凌智视觉模块图片传输助手出现可视化的结果
-
+![](images/img_2.png)
 ![alt text](images/img.png)
 
 <!-- ## 5 其他 -->
