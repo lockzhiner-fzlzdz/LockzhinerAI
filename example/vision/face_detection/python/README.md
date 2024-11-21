@@ -278,7 +278,7 @@ python test_retina_face.py LZ-RetinaFace.rknn
 
 连接凌智视觉模块图片传输助手[凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher.exe)后，选择连接设备
 
-![](../images/img.png)
+![](../images/img-1.png)
 
 运行程序后，屏幕上开始打印矩形框信息和置信度，并在一段时间后输出 FPS 值
 
