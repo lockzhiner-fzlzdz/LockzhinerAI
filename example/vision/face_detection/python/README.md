@@ -280,6 +280,9 @@ python test_retina_face.py LZ-RetinaFace.rknn
 
 ![](../images/img-1.png)
 
+
+
+
 运行程序后，屏幕上开始打印矩形框信息和置信度，并在一段时间后输出 FPS 值
 
 ![alt text](../images/results.png)
