@@ -31,7 +31,7 @@
 
 接下来让我们基于 Python 来部署 RetinaFace 人脸检测模型。在开始本章节前：
 
-- 请确保你已经参考 [凌智视觉模块人脸检测模型部署指南](../README.md) 正确下载了凌智视觉模块人脸检测模型。
+- 请确保你已经参考 [凌智视觉模块人脸检测模型部署指南](../README_BAK.md) 正确下载了凌智视觉模块人脸检测模型。
 - 请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
 
 ## 2 Python API 文档

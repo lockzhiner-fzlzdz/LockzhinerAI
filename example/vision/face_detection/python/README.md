@@ -192,7 +192,7 @@ import sys
 if __name__ == "__main__":
     args = sys.argv
     if len(args) != 2:
-        print("Need model path. Example: python test_detection.py LZ-Face.rknn")
+        print("Need model path. Example: python test_face_detection.py LZ-Face.rknn")
         exit(1)
         
     edit = Edit()
