@@ -7,16 +7,16 @@ import matplotlib.pyplot as plt
 
 
 # 指定图片文件夹路径
-image_root_folder = r'E:\face_mask'
+image_root_folder = r"E:\face_mask"
 
 # 指定输出标签文件夹路径
-output_folder = './Dataset/annotations'
+output_folder = "./Dataset/annotations"
 
 # 指定的输出图片保存路径
-images_folder = './Dataset/images'
+images_folder = "./Dataset/images"
 
 # 标签文本保存
-flags_txt = './Dataset/flags.txt'
+flags_txt = "./Dataset/flags.txt"
 
 # 确保输出文件夹存在
 os.makedirs(output_folder, exist_ok=True)
@@ -25,7 +25,7 @@ os.makedirs(images_folder, exist_ok=True)
 # 动态生成文件夹与标志位的映射关系
 folder_to_flag = {}
 # 存储标签名
-flag_names=[]
+flag_names = []
 
 
 for folder_name in os.listdir(image_root_folder):
@@ -33,11 +33,11 @@ for folder_name in os.listdir(image_root_folder):
     if os.path.isdir(folder_path):
         folder_to_flag[folder_name] = folder_name
     flag_names.append(folder_name)
-with open(flags_txt,'w',encoding='utf-8') as f:
+with open(flags_txt, "w", encoding="utf-8") as f:
     for flag_name in flag_names:
-        f.write(flag_name+'\n')
+        f.write(flag_name + "\n")
     f.close()
-    print('标签文件创建成功')
+    print("标签文件创建成功")
 # 动态生成 flags 字典
 flags = {key: False for key in folder_to_flag.values()}
 
@@ -54,11 +54,17 @@ for folder_name in os.listdir(image_root_folder):
     # 确保是一个文件夹
     if os.path.isdir(folder_path):
         # 获取文件夹中的所有文件，并计算总数
-        files = [f for f in os.listdir(folder_path) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif'))]
+        files = [
+            f
+            for f in os.listdir(folder_path)
+            if f.lower().endswith((".png", ".jpg", ".jpeg", ".bmp", ".gif"))
+        ]
         total_files = len(files)
 
         # 使用 tqdm 包装迭代器，显示进度条
-        for filename in tqdm(files, desc=f'Processing {folder_name}', total=total_files):
+        for filename in tqdm(
+            files, desc=f"Processing {folder_name}", total=total_files
+        ):
             # 构建完整的文件路径
             image_path = os.path.join(folder_path, filename)
 
@@ -66,11 +72,11 @@ for folder_name in os.listdir(image_root_folder):
             counter = folder_counters[folder_name]
 
             # 构建新的文件名
-            new_filename = f'{folder_name}_{counter:04d}.jpg'
+            new_filename = f"{folder_name}_{counter:04d}.jpg"
             new_image_path = os.path.join(images_folder, new_filename)
 
             # 存储文件名构造
-            save_path_name = os.path.join('..\\images\\', new_filename)
+            save_path_name = os.path.join("..\\images\\", new_filename)
 
             # 拷贝图片到 images 文件夹
             shutil.copy(image_path, new_image_path)
@@ -95,15 +101,15 @@ for folder_name in os.listdir(image_root_folder):
                 "imagePath": save_path_name,
                 "imageData": None,
                 "imageHeight": height,
-                "imageWidth": width
+                "imageWidth": width,
             }
 
             # 构建标签文件的路径
-            label_filename = os.path.splitext(new_filename)[0] + '.json'
+            label_filename = os.path.splitext(new_filename)[0] + ".json"
             label_path = os.path.join(output_folder, label_filename)
 
             # 将标签数据写入文件
-            with open(label_path, 'w') as f:
+            with open(label_path, "w") as f:
                 json.dump(label_data, f, indent=4)
 
             # 增加计数器
@@ -123,13 +129,13 @@ categories = list(category_counts.keys())
 counts = list(category_counts.values())
 
 plt.figure(figsize=(10, 6))
-plt.bar(categories, counts, color='skyblue')
-plt.xlabel('Categories')
-plt.ylabel('Number of Images')
-plt.title('Image Count by Category')
+plt.bar(categories, counts, color="skyblue")
+plt.xlabel("Categories")
+plt.ylabel("Number of Images")
+plt.title("Image Count by Category")
 plt.xticks(rotation=45)
 plt.tight_layout()
 
 # 保存柱状图
-plt.savefig('category_counts.png')
+plt.savefig("category_counts.png")
 # plt.show()

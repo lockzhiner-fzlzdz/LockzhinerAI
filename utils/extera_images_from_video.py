@@ -2,6 +2,7 @@ import os
 import cv2
 import matplotlib.pyplot as plt
 
+
 def create_directory_structure(source_root, target_root):
     """创建与源文件夹结构相同的输出文件夹结构"""
     for root, dirs, files in os.walk(source_root):
@@ -9,7 +10,9 @@ def create_directory_structure(source_root, target_root):
         target_path = os.path.join(target_root, relative_path)
         os.makedirs(target_path, exist_ok=True)
 
+
 # interval抽帧间隔
+
 
 def video_capture(video_path, output_root, source_root, interval=10):
     cap = cv2.VideoCapture(video_path)
@@ -32,7 +35,10 @@ def video_capture(video_path, output_root, source_root, interval=10):
             saved_frame_count += 1
         frame_count += 1
     cap.release()
-    print(f"Processed and saved {saved_frame_count} out of {frame_count} frames from {video_path}")
+    print(
+        f"Processed and saved {saved_frame_count} out of {frame_count} frames from {video_path}"
+    )
+
 
 def count_files_in_directories(root_directory):
     """统计每个子目录下的文件数量，忽略根目录"""
@@ -40,36 +46,43 @@ def count_files_in_directories(root_directory):
     for root, dirs, files in os.walk(root_directory):
         relative_path = os.path.relpath(root, root_directory)
         # 忽略根目录
-        if relative_path == '.':
+        if relative_path == ".":
             continue
         counts[relative_path] = len(files)
     return counts
+
 
 def plot_category_counts(category_counts):
     """绘制类别数量的柱状图"""
     categories = list(category_counts.keys())
     counts = list(category_counts.values())
     plt.figure(figsize=(10, 6))
-    plt.bar(categories, counts, color='skyblue')
-    plt.xlabel('Categories')
-    plt.ylabel('Number of Images')
-    plt.title('Image Count per Category')
-    plt.xticks(rotation=45, ha='right')
+    plt.bar(categories, counts, color="skyblue")
+    plt.xlabel("Categories")
+    plt.ylabel("Number of Images")
+    plt.title("Image Count per Category")
+    plt.xticks(rotation=45, ha="right")
     plt.tight_layout()
     plt.show()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     # 源视频文件夹路径
-    video_root = r'C:\Users\Administrator\Desktop\new'
+    video_root = r"C:\Users\Administrator\Desktop\new"
     # 输出图片文件夹根路径
-    output_root = 'face_add'
+    output_root = "face_add"
     if not os.path.exists(output_root):
         os.mkdir(output_root)
     # 创建与视频文件夹结构相同的输出文件夹结构
     create_directory_structure(video_root, output_root)
 
     # 获取所有视频文件
-    video_files = [os.path.join(root, file) for root, _, files in os.walk(video_root) for file in files if file.lower().endswith(('.mp4', '.avi', '.mov', '.mkv'))]
+    video_files = [
+        os.path.join(root, file)
+        for root, _, files in os.walk(video_root)
+        for file in files
+        if file.lower().endswith((".mp4", ".avi", ".mov", ".mkv"))
+    ]
 
     # 处理所有视频文件
     for video_file in video_files:
