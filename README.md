@@ -88,7 +88,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 * [凌智视觉模块手写数字分类部署指南](./example/special/digit_handwritten_recognition)
 * [凌智视觉模块猫狗分类部署指南](example/special/cat_and_dog_classification)
 * [凌智视觉模块花卉分类部署指南](example/special/flower_classfication/)
-* [凌智视觉模块口罩佩戴分类模型部署指南](example/special/maskwear_classfication)
+* [凌智视觉模块口罩佩戴分类部署指南](example/special/maskwear_classfication)
 ### 👍 目标检测案例
 
 目标检测（Object Detection）是深度学习中计算机视觉领域的重要任务之一，旨在识别图像或视频中所有感兴趣的物体，并准确地定位这些物体的边界框（Bounding Box）。与目标分类不同，目标检测不仅需要预测物体的类别，还需要标注它们在图像中的位置。一般来说，目标检测任务的标注过程比较复杂，适合既需要对目标进行分类，有需要对目标进行定位的场景。
