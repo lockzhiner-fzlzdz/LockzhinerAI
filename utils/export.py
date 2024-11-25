@@ -9,13 +9,19 @@ import onnx
 def get_config():
     parser = argparse.ArgumentParser()
     parser.add_argument("--verbose", default="Debug", help="rknntoolkit verbose")
-    parser.add_argument("--config_path", required=True, help="The path of model config file")
-    parser.add_argument("--model_load_path", required=True, help="The path of onnx model file")
+    parser.add_argument(
+        "--config_path", required=True, help="The path of model config file"
+    )
+    parser.add_argument(
+        "--model_load_path", required=True, help="The path of onnx model file"
+    )
     parser.add_argument("--target_platform", required=False, help="The target platform")
-    parser.add_argument("--model_save_path", required=False, help="The path of rknn model save"
+    parser.add_argument(
+        "--model_save_path", required=False, help="The path of rknn model save"
     )
     args = parser.parse_args()
     return args
+
 
 if __name__ == "__main__":
     config = get_config()
@@ -65,9 +71,32 @@ if __name__ == "__main__":
         std_values = yaml_config["config"]["std"]
     else:
         assert False, f"The type({mean_std_type}) is error, need fp32/int8."
+    print(f"mean_values is {mean_values}, std_values is {std_values}")
+
+    quantized_dtype = "w8a8"
+    if "quantized_dtype" in yaml_config["config"]:
+        quantized_dtype = yaml_config["config"]["quantized_dtype"]
+    print(f"quantized_dtype is {quantized_dtype}")
+
+    quantized_algorithm = "normal"
+    if "quantized_algorithm" in yaml_config["config"]:
+        quantized_algorithm = yaml_config["config"]["quantized_algorithm"]
+    print(f"quantized_algorithm is {quantized_algorithm}")
+
+    optimization_level = 3
+    if "optimization_level" in yaml_config["config"]:
+        optimization_level = yaml_config["config"]["optimization_level"]
+    print(f"optimization_level is {optimization_level}")
+
     target_platform = config.target_platform
+    print(f"target_platform is {target_platform}")
     model.config(
-        mean_values=mean_values, std_values=std_values, target_platform=target_platform
+        mean_values=mean_values,
+        std_values=std_values,
+        quantized_dtype=quantized_dtype,
+        quantized_algorithm=quantized_algorithm,
+        optimization_level=optimization_level,
+        target_platform=target_platform,
     )
     print("done")
 
