@@ -82,8 +82,8 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 ### OpenCV 案例
 
-* [OpenCV 圆形检测案例](example/vision/opencv/circle_detection)
-* [OpenCV 边缘检测案例](example/vision/opencv/edge_detection)
+* [OpenCV 圆形检测案例](example/opencv_example/opencv_circle_detection)
+* [OpenCV 边缘检测案例](example/opencv_example/opencv_edge_detection)
 ### 👍 目标分类案例
 
 目标分类（Object Classification）是深度学习中的一项核心任务，旨在为输入图像分配一个或多个类别标签。这是计算机视觉的基础问题之一，主要用于识别和区分图像中的主要物体类别，而不关心物体的位置或数量。一般来说，目标分类任务的标注过程比较轻松，适合不需要知道目标位置的场景。
