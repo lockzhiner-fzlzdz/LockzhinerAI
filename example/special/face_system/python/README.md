@@ -63,7 +63,7 @@ class FaceRecognitionSystem:
             - 加载预训练的 PaddlePaddle 模型
             - 加载预训练的 ArcFace 模型
         Args:
-            face_det_model_path     人脸检测模型文件的路径
+            face_det_model_path,    人脸检测模型文件的路径
             face_rec_model_path,    人脸识别模型文件的路径
             face_det_param_path="", 默认为空，不需填写
             face_rec_param_path="", 默认为空，不需填写
