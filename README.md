@@ -108,7 +108,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 * [凌智视觉模块人脸检测部署指南](example/vision/face_detection)
 * [凌智视觉模块人脸识别部署指南](example/vision/face_recognition)
-
+* [凌智视觉模块人脸识别系统部署指南](example/special/face_system)
 ## 🐛 Bug反馈
 
 如果您遇到问题，您可以前往 [Lockzhiner Vision Module Issues](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/issues) 并点击已完成按钮查看其他用户反馈且我们已经解决的 Bug。
