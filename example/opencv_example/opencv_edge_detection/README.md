@@ -32,7 +32,7 @@
 OpenCV作为计算机图像处理库，提供了丰富的功能。我们在凌智视觉模块上适配了OpenCV的边缘检测算法，并封装了相关函数，使得用户能够快速使用OpenCV的边缘检测算法进行边缘检测。
 
 ## 2 在凌智视觉模块上进行边缘检测案例   
-![OPENCV API 文档](../OpenCV_API.md)
+[OPENCV API 文档](../OpenCV_API.md)
 为了快速上手，我们提供了边缘检测案例
 ```python
 import lockzhiner_vision_module.cv2 as cv2
@@ -90,7 +90,6 @@ python test_canny.py
 ![](./python/images/edges.png)
 阈值操作结果图片
 ![](./python/images/thresholded.png)
-![alt text](./images/build_database.png)
-![alt text](./images/fps.png)
+
 
 
