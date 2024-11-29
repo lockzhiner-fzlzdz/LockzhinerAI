@@ -175,7 +175,7 @@ if __name__ == '__main__':
 
 请使用 Electerm Sftp 依次上传以下文件:
 
-- 进入存放 **test_arc_face[face_system.py](face_system.py).py** 脚本文件的目录，将 **[face_system.py](face_system.py).py** 上传到 Lockzhiner Vision Module
+- 进入存放 **face_system.py** 脚本文件的目录，将 **face_system.py** 上传到 Lockzhiner Vision Module
 - 进入存放 **LZ-ArcFace.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-ArcFace.rknn** 上传到 Lockzhiner Vision Module
 - 进入存放 **LZ-Face.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-Face.rknn** 上传到 Lockzhiner Vision Module
 
