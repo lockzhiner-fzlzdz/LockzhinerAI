@@ -46,7 +46,6 @@ def cvtColor(src, code, dstCn=0):
     返回:
     - 转换后的图像。
     """
-    return cv2.cvtColor(src, code, dstCn)
 
 def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     """
@@ -60,8 +59,6 @@ def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     返回:
     - 模糊后的图像。
     """
-    temp_ksize = convert2size(ksize)
-    return cv2.GaussianBlur(src, temp_ksize, sigmaX, sigmaY, borderType)
 
 def HoughCircles(image, method, dp, minDist, param1, param2, minRadius, maxRadius):
     """
@@ -78,9 +75,6 @@ def HoughCircles(image, method, dp, minDist, param1, param2, minRadius, maxRadiu
     返回:
     - 检测到的圆的数组，每个圆包含三个值：圆心坐标(x, y)和半径。
     """
-    return [cv2.HoughCircles(
-        image, method, dp, minDist, param1, param2, minRadius, maxRadius
-    )]
 
 def circle(img, center, radius, color, thickness=1, lineType=8, shift=0):
     """
@@ -94,9 +88,6 @@ def circle(img, center, radius, color, thickness=1, lineType=8, shift=0):
     - lineType: 线条类型，默认为8连接线。
     - shift: 圆心坐标和半径的缩放比例，默认为0表示无缩放。
     """
-    temp_center = convert2point(center)
-    temp_color = convert2scalar(color)
-    cv2.circle(img, temp_center, radius, temp_color, thickness, lineType, shift)
 
 ```
 

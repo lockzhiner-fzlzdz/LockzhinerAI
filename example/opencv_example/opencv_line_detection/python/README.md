@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块 OpenCV 边缘检测 Python 部署指南</h1>
+<h1 align="center">凌智视觉模块 OpenCV 直线检测 Python 部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -29,13 +29,22 @@
 
 ## 1 简介
 
-在现代计算机视觉应用中，边缘检测是一项基础而重要的任务，它能够帮助系统理解和解析图像中的关键结构信息。边缘检测技术广泛应用于图像分割、目标识别、特征提取等多个领域。
-本指南将详细介绍如何使用 OpenCV 库在凌智视觉模块上部署高效的边缘检测算法，旨在为开发者提供一个清晰、实用的操作步骤。
-
+直线检测是计算机视觉中的一个基本任务，广泛应用于图像处理、机器视觉和自动驾驶等领域。通过检测图像中的直线，可以实现道路边缘识别、物体边界检测等多种应用场景。本指南将详细介绍如何使用 OpenCV 库在凌智视觉模块上部署直线检测功能。
 
 ## 2 Python API 文档
 
 ```python
+def cvtColor(src, code, dstCn=0):
+    """
+    转换图像的颜色空间。
+    参数:
+    - src: 输入图像。
+    - code: 颜色空间转换的代码。
+    - dstCn: 目标图像的通道数，默认为0。
+    返回:
+    - 颜色空间转换后的图像。
+    """
+  
 def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     """
     对图像进行高斯模糊处理。
@@ -49,57 +58,62 @@ def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     - 模糊处理后的图像。
     """
 
-def threshold(src, thresh, maxval, type):
-    """
-    对图像进行阈值处理。
-    参数:
-    - src: 输入图像。
-    - thresh: 阈值。
-    - maxval: 最大值，应用于type所指定的阈值类型。
-    - type: 阈值处理的类型。
-    返回:
-    - 计算得到的阈值。
-    - 阈值处理后的图像。
-    """
-    
 def Canny(img, threshold1, threshold2, apertureSize=3, L2gradient=False):
     """
     使用Canny算法检测图像中的边缘。
     参数:
     - img: 输入图像。
-    - threshold1: 第一个阈值，用于边缘检测。
-    - threshold2: 第二个阈值，用于边缘检测。
+    - threshold1: 第一个阈值，用于直线检测。
+    - threshold2: 第二个阈值，用于直线检测。
     - apertureSize: Sobel算子的孔径大小，默认为3。
     - L2gradient: 一个布尔值，表示是否使用更精确的L2范数进行梯度计算，默认为False。
     返回:
-    - 边缘检测后的图像。
+    - 直线检测后的图像。
     """
+
+def HoughLinesP(image, rho, theta, threshold, minLineLength=0, maxLineGap=0):
+    """
+    使用霍夫变换检测图像中的线段。
+    参数:
+    - image: 输入图像。
+    - rho: 距离的分辨率。
+    - theta: 角度的分辨率。
+    - threshold: 累计器的阈值。
+    - minLineLength: 最小线段长度，默认为0。
+    - maxLineGap: 线段之间的最大间隔，默认为0。
+    返回:
+    - 检测到的线段信息列表。
+    """
+
+
 ```
 
 
-## 3 在凌智视觉模块上进行边缘检测案例   
+## 3 在凌智视觉模块上进行直线检测案例   
 
-为了快速上手，我们提供了边缘检测案例
-**测试图片下载链接：**[边缘检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/car.png)
+为了快速上手，我们提供了直线检测案例
+**测试图片下载链接：**[直线检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/line.png)
 
 ```python
 import lockzhiner_vision_module.cv2 as cv2
+pi = 3.1415926535897932384626433832795
 # 读取图片
-image = cv2.imread('car.png')
-# 检查图像是否成功读取
-if image is None:
-    print("Error: Unable to load image.")
-    exit()
+image = cv2.imread('line.png')
 # 转换为灰度图像
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-# 高斯模糊
-blurred = cv2.GaussianBlur(gray, (3, 3), 0)
-# 阈值操作
-_, thresholded = cv2.threshold(blurred, 100, 255, cv2.THRESH_BINARY)
+# 使用高斯模糊减少噪声
+blurred = cv2.GaussianBlur(gray, (5, 5), 1)
 # 使用 Canny 边缘检测
-edges = cv2.Canny(thresholded, 20, 10)
-# 保存边缘检测结果
-cv2.imwrite('edges.png', edges)
+edges = cv2.Canny(gray, 50, 150)
+# 使用霍夫变换检测直线
+lines = cv2.HoughLinesP(edges, 1, pi / 180, threshold=100, minLineLength=50, maxLineGap=20)
+# 绘制检测到的直线
+if lines is not None:
+    for line in lines[0]:
+        x1, y1, x2, y2 = line
+        cv2.line(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
+cv2.imwrite('img_detected.png', image)
+
 ```
 
 ## 4 上传并测试 Python 程序
@@ -110,34 +124,34 @@ cv2.imwrite('edges.png', edges)
 
 请使用 Electerm Sftp 依次上传以下文件:
 
-- 进入存放 **test_canny.py** 脚本文件的目录，将 **test_canny.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_line.py** 脚本文件的目录，将 **test_line.py** 上传到 Lockzhiner Vision Module
 - 进入存放 **待检测图片** 存放的目录，将 **待检测图片** 上传到 Lockzhiner Vision Module
 
 上传文件
 
-![](./images/img.png)
+![](./images/upload.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_canny.py
+python test_line.py
 ```
 
 运行程序后，屏幕上输出 
 
-![](./images/img_2.png)
+![](./images/run.png)
 
 下载结果
 
-![](./images/img_1.png)
+![](./images/dowmresults.png)
 
-边缘检测原图
+直线检测原图
 
-![](./images/car.png)
+![](./images/line.png)
 
-边缘检测结果图片
+直线检测结果图片
 
-![](./images/edges.png)
+![](./images/line_detected.png)
 
 
 

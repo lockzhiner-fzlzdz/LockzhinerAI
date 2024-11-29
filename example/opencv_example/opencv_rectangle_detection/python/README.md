@@ -46,7 +46,6 @@ def cvtColor(src, code, dstCn=0):
     返回:
     - 转换后的图像。
     """
-    return cv2.cvtColor(src, code, dstCn)
 
 def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     """
@@ -60,8 +59,6 @@ def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     返回:
     - 模糊后的图像。
     """
-    temp_ksize = convert2size(ksize)
-    return cv2.GaussianBlur(src, temp_ksize, sigmaX, sigmaY, borderType)
 
 def threshold(src, thresh, maxval, type):
     """
@@ -75,8 +72,6 @@ def threshold(src, thresh, maxval, type):
     - 计算出的阈值。
     - 阈值处理后的图像。
     """
-    computed_threshold, dst = cv2.threshold(src, thresh, maxval, type)
-    return computed_threshold, dst
 
 def drawContours(img, contours, contourIdx, color, thickness=1, lineType=8, shift=0):
     """
@@ -90,9 +85,7 @@ def drawContours(img, contours, contourIdx, color, thickness=1, lineType=8, shif
     - lineType: 轮廓线的类型。
     - shift: 轮廓坐标的小数位数。
     """
-    temp_color = convert2scalar(color)
-    cv2.drawContours(img, contours, contourIdx, temp_color, thickness, lineType, shift)
-
+ 
 def findContours(image, mode, method, point=cv2.Point()):
     """
     在二值图像中检测轮廓。
@@ -105,9 +98,7 @@ def findContours(image, mode, method, point=cv2.Point()):
     - 检测到的轮廓列表。
     - 轮廓的层次结构。
     """
-    contours, hierarchy = cv2.findContours(image, mode, method, point)
-    return contours, hierarchy
-
+  
 def arcLength(curve, closed):
     """
     计算曲线的长度。
@@ -117,8 +108,6 @@ def arcLength(curve, closed):
     返回:
     - 曲线的长度。
     """
-    return cv2.arcLength(curve, closed)
-
 
 def approxPolyDP(curve, epsilon, closed):
     """
@@ -130,7 +119,6 @@ def approxPolyDP(curve, epsilon, closed):
     返回:
     - 近似后的曲线。
     """
-    return cv2.approxPolyDP(curve, epsilon, closed)
 
 ```
 
