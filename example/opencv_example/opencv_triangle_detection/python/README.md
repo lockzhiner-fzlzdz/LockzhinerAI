@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块 OpenCV 矩形检测 Python 部署指南</h1>
+<h1 align="center">凌智视觉模块 OpenCV 三角形检测 Python 部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -29,8 +29,7 @@
 
 ## 1 简介
 
-在现代计算机视觉应用中，矩形检测是一项基本但重要的任务，广泛应用于物体识别、场景理解、文档扫描等领域。本指南将详细介绍如何使用 OpenCV 库在凌智视觉模块上部署高效的矩形检测算法。 本文将详细介绍如何使用 OpenCV 库在凌智视觉模块上实现高效的矩形检测功能。
-
+在现代计算机视觉应用中，三角形检测是一项基本但重要的任务，广泛应用于物体识别、场景理解、文档扫描等领域。本指南将详细介绍如何使用 OpenCV 库在凌智视觉模块上部署高效的三角形检测算法。 本文将详细介绍如何使用 OpenCV 库在凌智视觉模块上实现高效的三角形检测功能。
 
 ## 2 Python API 文档
 
@@ -98,7 +97,7 @@ def findContours(image, mode, method, point=cv2.Point()):
     - 检测到的轮廓列表。
     - 轮廓的层次结构。
     """
-  
+
 def arcLength(curve, closed):
     """
     计算曲线的长度。
@@ -124,7 +123,8 @@ def approxPolyDP(curve, epsilon, closed):
 
 ## 3 在凌智视觉模块上进行边缘检测案例 
 
-为了方便大家入手，我们提供了 OpenCV 矩形检测的 Python 例程。该程序可以使用摄像头进行端到端推理。
+为了方便大家入手，我们提供了 OpenCV 三角形检测的 Python 例程。该程序可以使用摄像头进行端到端推理。
+**测试图片下载链接：**[三角形检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/triangle.png)
 
 ```python
 from lockzhiner_vision_module.cv2 import VideoCapture
@@ -160,25 +160,30 @@ if __name__ == "__main__":
                 continue
             end_time = time.time()
             # 转换为灰度图像
+            # 转换为灰度图像
             gray = cv2.cvtColor(mat, cv2.COLOR_BGR2GRAY)
-            # 高斯模糊
-            blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-            # 二值化
-            _, binary = cv2.threshold(blurred, 127, 255, cv2.THRESH_BINARY_INV)
-            edges = cv2.Canny(binary, 30, 200)
-            contours, _ = cv2.findContours(edges.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+            blurred = cv2.GaussianBlur(gray, (3, 3), 0)
+            _, thresh = cv2.threshold(blurred, 127, 255, cv2.THRESH_BINARY)
+            edges = cv2.Canny(thresh, 50, 150)
+
+            # 3. 查找轮廓
+            contours, _ = cv2.findContours(edges, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
+            print(f"len:{len(contours)}")
+            # 4. 筛选轮廓
             for contour in contours:
-                # 近似轮廓
-                # 计算轮廓周长
-                epsilon = 0.02 * cv2.arcLength(contour, True)
-                # 将轮廓近似为多边形
-                if epsilon < 15:
+                # 计算轮廓的周长
+                perimeter = cv2.arcLength(contour, True)
+                if perimeter<15:
                     continue
-                approx = cv2.approxPolyDP(contour, epsilon, True)
-                # 如果近似轮廓有4个顶点，则认为是矩形
-                if len(approx) == 4:
-                    cv2.putText(mat, "Rectangle", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+                # 近似轮廓
+                approx = cv2.approxPolyDP(contour, 0.04 * perimeter, True)
+
+                # 如果近似轮廓有3个顶点，则认为它是三角形
+                if len(approx) == 3:
+                    # 5. 绘制结果
+                    cv2.putText(mat, "Triangle", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), )
                     cv2.drawContours(mat, [approx], -1, (0, 255, 0), 2)
+            # cv2.imwrite("blurred.png", blurred)
             edit.print(mat)
             total_time_ms += end_time - start_time
             read_index += 1
@@ -198,20 +203,19 @@ if __name__ == "__main__":
 
 上传文件
 
-![](./images/sftp.png)
+![](./images/uploads.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_rectangle.py 640 480
+python test_trangle.py 640 480
 ```
+
 运行程序后，屏幕上输出 
 
-![](./images/results.png)
+三角形检测结果图片
 
-矩形检测结果图片
-
-![](./images/rectangle_result.png)
+![](./images/triangle-rest.png)
 
 
 

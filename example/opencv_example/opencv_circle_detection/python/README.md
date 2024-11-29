@@ -34,7 +34,8 @@
 
 ## 2 Python API 文档
 
-```markdown
+```python
+
 def cvtColor(src, code, dstCn=0):
     """
     转换图像颜色空间。
@@ -45,7 +46,6 @@ def cvtColor(src, code, dstCn=0):
     返回:
     - 转换后的图像。
     """
-    return cv2.cvtColor(src, code, dstCn)
 
 def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     """
@@ -59,8 +59,6 @@ def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     返回:
     - 模糊后的图像。
     """
-    temp_ksize = convert2size(ksize)
-    return cv2.GaussianBlur(src, temp_ksize, sigmaX, sigmaY, borderType)
 
 def HoughCircles(image, method, dp, minDist, param1, param2, minRadius, maxRadius):
     """
@@ -77,9 +75,6 @@ def HoughCircles(image, method, dp, minDist, param1, param2, minRadius, maxRadiu
     返回:
     - 检测到的圆的数组，每个圆包含三个值：圆心坐标(x, y)和半径。
     """
-    return [cv2.HoughCircles(
-        image, method, dp, minDist, param1, param2, minRadius, maxRadius
-    )]
 
 def circle(img, center, radius, color, thickness=1, lineType=8, shift=0):
     """
@@ -93,49 +88,73 @@ def circle(img, center, radius, color, thickness=1, lineType=8, shift=0):
     - lineType: 线条类型，默认为8连接线。
     - shift: 圆心坐标和半径的缩放比例，默认为0表示无缩放。
     """
-    temp_center = convert2point(center)
-    temp_color = convert2scalar(color)
-    cv2.circle(img, temp_center, radius, temp_color, thickness, lineType, shift)
 
 ```
 
 ## 3 在凌智视觉模块上进行边缘检测案例 
 
 为了方便大家入手，我们提供了 OpenCV 圆形检测的 Python 例程。该程序可以使用摄像头进行端到端推理。
-**测试图片下载链接**：[圆形检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/circle.png)
+
 
 ```python
+from lockzhiner_vision_module.cv2 import VideoCapture
 import lockzhiner_vision_module.cv2 as cv2
-# 读取图像
-image_path = 'circle.png'
-img = cv2.imread(image_path)
+from lockzhiner_vision_module.edit import Edit
+import time
+import sys
+pi = 3.14159265358979323846
+if __name__ == "__main__":
+    args = sys.argv
+    if len(args) != 3:
+        print("Need model path. Example: python test_capture.py width height")
+        exit(1)
 
-if img is None:
-    print("Error: Image not loaded.")
-else:
-    # 转换为灰度图像
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    edit = Edit()
+    edit.start_and_accept_connection()
 
-    # 使用高斯模糊减少噪声
-    blurred = cv2.GaussianBlur(gray, (9, 9), 2)
+    video_capture = VideoCapture()
+    video_capture.set_width(int(args[1]))
+    video_capture.set_height(int(args[2]))
+    if video_capture.open(0) is False:
+        print("Failed to open capture")
+        exit(1)
 
-    # 使用 HoughCircles 检测圆形
-    circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT, dp=1, minDist=50,
-                               param1=50, param2=30, minRadius=0, maxRadius=0)
-    if circles is not None:
-        # 在图像上绘制检测到的圆
-        for i in circles[0]:
-            center = (int(i[0]), int(i[1]))
-            radius = int(i[2])
+    while True:
+        read_index = 0
+        total_time_ms = 0
+        for i in range(30):
+            start_time = time.time()
+            ret, mat = video_capture.read()
+            if ret is False:
+                continue
+            end_time = time.time()
+            # 转换为灰度图像
+            # 转换为灰度图像
+            gray = cv2.cvtColor(mat, cv2.COLOR_BGR2GRAY)
 
-            # 绘制圆心
-            cv2.circle(img, center, 1, (0, 100, 100), 3)
+            # 使用高斯模糊减少噪声
+            blurred = cv2.GaussianBlur(gray, (9, 9), 2)
 
-            # 绘制圆
-            cv2.circle(img, center, radius, (0, 255, 0), 3)
+            # 使用 HoughCircles 检测圆形
+            circles = cv2.HoughCircles(blurred, cv2.HOUGH_GRADIENT, dp=1, minDist=50,
+                                       param1=50, param2=30, minRadius=120, maxRadius=250)
+            # print(circles)
+            if circles is not None:
+                # 在图像上绘制检测到的圆
+                for i in circles[0]:
+                    center = (int(i[0]), int(i[1]))
+                    radius = int(i[2])
+                    cv2.putText(mat, "circle", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+                    # 绘制圆心
+                    cv2.circle(mat, center, 1, (0, 100, 100), 3)
 
-    # # 保存结果图像
-    cv2.imwrite('img_circles.png', img)
+                    # 绘制圆
+                    cv2.circle(mat, center, radius, (0, 255, 0), 3)
+
+            edit.print(mat)
+            total_time_ms += end_time - start_time
+            read_index += 1
+        print(f"FPS is {1.0 / (total_time_ms/read_index)}")
 
 ```
 ## 4 上传并测试 Python 程序
@@ -147,25 +166,24 @@ else:
 请使用 Electerm Sftp 依次上传以下文件:
 
 - 进入存放 **test_hough_circle.py** 脚本文件的目录，将 **test_hough_circle.py** 上传到 Lockzhiner Vision Module
-- 进入存放 **待检测图片** 存放的目录，将 **待检测图片** 上传到 Lockzhiner Vision Module
 
 上传文件
-![](./images/ssh.png)
+![](./images/img_2.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_hough_circle.py
+python test_hough_circle.py 640 480
 ```
 
 运行程序后，屏幕上输出 
-![](./images/img.png)
-下载结果
-![](./images/result.png)
-圆形检测原图
-![](./images/circle.png)
+
+![](./images/img_3.png)
+
+
 圆形检测结果图片
-![](./images/img_circles.png)
+
+![](./images/circle_img.png)
 
 
 
