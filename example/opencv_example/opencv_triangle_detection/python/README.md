@@ -174,7 +174,7 @@ cv2.imwrite('img_rectangle.png', image)
 
 上传文件
 
-![](./images/sftp.png)
+![](./images/uploads.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
@@ -184,19 +184,19 @@ python test_rectangle.py
 
 运行程序后，屏幕上输出 
 
-![](./images/result.png)
+![](./images/run.png)
 
 下载结果
 
-![](./images/dowm_result.png)
+![](./images/dowmresult.png)
 
 矩形检测原图
 
-![](./images/rectangle.png)
+![](./images/triangle.png)
 
 矩形检测结果图片
 
-![](./images/img_rectangle.png)
+![](./images/result_triangle.png)
 
 
 
