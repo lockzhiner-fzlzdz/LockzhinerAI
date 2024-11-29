@@ -136,7 +136,7 @@ def approxPolyDP(curve, epsilon, closed):
 ## 3 在凌智视觉模块上进行边缘检测案例 
 
 为了方便大家入手，我们提供了 OpenCV 三角形检测的 Python 例程。该程序可以使用摄像头进行端到端推理。
-**测试图片下载链接：**[三角形检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/triangle.png）
+**测试图片下载链接：**[三角形检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/triangle.png)
 
 ```python
 import lockzhiner_vision_module.cv2 as cv2
