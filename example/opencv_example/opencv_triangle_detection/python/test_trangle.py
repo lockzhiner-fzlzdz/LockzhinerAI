@@ -1,5 +1,3 @@
-# import cv2
-# import numpy as np
 import lockzhiner_vision_module.cv2 as cv2
 
 def detect_triangles(image_path):
@@ -29,11 +27,6 @@ def detect_triangles(image_path):
         if len(approx) == 3:
             # 5. 绘制结果
             cv2.drawContours(image, [approx], -1, (0, 255, 0), 2)
-
-    # 显示结果
-    # cv2.imshow('Detected Triangles', image)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
     cv2.imwrite('result_triangle.png', image)
 
 # 示例调用

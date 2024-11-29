@@ -140,25 +140,39 @@ def approxPolyDP(curve, epsilon, closed):
 
 ```python
 import lockzhiner_vision_module.cv2 as cv2
-# 读取图像
-image = cv2.imread('rectangle.png')
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-# 高斯模糊
-blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-# 二值化
-_, binary = cv2.threshold(blurred, 127, 255, cv2.THRESH_BINARY_INV)
-edges = cv2.Canny(binary, 30, 200)
-contours, _ = cv2.findContours(edges.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
-for contour in contours:
-    # 近似轮廓
-    # 计算轮廓周长
-    epsilon = 0.02 * cv2.arcLength(contour, True)
-    # 将轮廓近似为多边形
-    approx = cv2.approxPolyDP(contour, epsilon, True)
-    # 如果近似轮廓有4个顶点，则认为是矩形
-    if len(approx) == 4:
-        cv2.drawContours(image, [approx], -1, (0, 255, 0), 2)
-cv2.imwrite('img_rectangle.png', image)
+
+def detect_triangles(image_path):
+    # 1. 读取图像
+    image = cv2.imread(image_path)
+    if image is None:
+        print("Error: Unable to load image.")
+        return
+
+    # 2. 预处理图像
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+    edges = cv2.Canny(blurred, 50, 150)
+
+    # 3. 查找轮廓
+    contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    # 4. 筛选轮廓
+    for contour in contours:
+        # 计算轮廓的周长
+        perimeter = cv2.arcLength(contour, True)
+
+        # 近似轮廓
+        approx = cv2.approxPolyDP(contour, 0.04 * perimeter, True)
+
+        # 如果近似轮廓有3个顶点，则认为它是三角形
+        if len(approx) == 3:
+            # 5. 绘制结果
+            cv2.drawContours(image, [approx], -1, (0, 255, 0), 2)
+    cv2.imwrite('result_triangle.png', image)
+
+# 示例调用
+image_path = 'triangle.png'
+detect_triangles(image_path)
 
 ```
 ## 4 上传并测试 Python 程序
@@ -179,7 +193,7 @@ cv2.imwrite('img_rectangle.png', image)
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_rectangle.py
+python test_trangle.py
 ```
 
 运行程序后，屏幕上输出 
