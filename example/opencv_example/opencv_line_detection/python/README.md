@@ -151,7 +151,7 @@ python test_line.py
 
 直线检测结果图片
 
-![](./images/line_detected.png)
+![](./images/img_detected.png)
 
 
 
