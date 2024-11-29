@@ -35,6 +35,7 @@
 ## 2 Python API 文档
 
 ```python
+
 def cvtColor(src, code, dstCn=0):
     """
     转换图像颜色空间。
