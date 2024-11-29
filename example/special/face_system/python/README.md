@@ -121,7 +121,7 @@ if __name__ == '__main__':
     args = sys.argv
     # 确保提供了足够的参数
     if len(args) != 5:
-        print("Need model path. Example: python face_system.py LZ-Face.rknn LZ-ArcFace.rknn baseDataset_root crop_root")
+        print("Need model path. Example: python face_system.py LZ-Face.rknn LZ-ArcFace.rknn baseDataset crop_root")
         exit(1)
 
     # 初始化面部识别系统
@@ -193,7 +193,7 @@ if __name__ == '__main__':
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python face_system.py LZ-Face.rknn LZ-ArcFace.rknn baseDataset_root crop_root
+python face_system.py LZ-Face.rknn LZ-ArcFace.rknn BaseDataset crop_root
 ```
 
 运行程序后，屏幕上开始打印数据库构建的相关信息，并在一段时间后输出 

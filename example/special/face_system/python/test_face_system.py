@@ -18,9 +18,6 @@ def predict_face(det_model, rec_model, face_mat):
 
     det_result = det_results[0]
     face_roi = det_result.box
-    # print(
-    #     f"(x,y,w,h,score): [{face_roi.x},{face_roi.y},{face_roi.width},{face_roi.height},{det_result.score}]"
-    # )
     crop_mat = input_mat.crop(face_roi)
     if crop_mat.empty():
         return None, None
@@ -55,16 +52,12 @@ if __name__ == '__main__':
         os.makedirs(crop_dataset_path)
     # 构建数据库
     # 临时存储特征向量的字典
-
-    # c++的字典使用，map(std::string,vectoor,rec.result)
-
     face_dict = {}
     # 遍历BaseDataset中的每个文件夹
     for user_folder in os.listdir(base_dataset_path):
         user_path = os.path.join(base_dataset_path, user_folder)
         if os.path.isdir(user_path) is False:
             continue
-
         # 创建对应用户的裁剪文件夹
         user_crop_path = os.path.join(crop_dataset_path, user_folder)
         if not os.path.exists(user_crop_path):
@@ -99,7 +92,7 @@ if __name__ == '__main__':
         ret, input_mat = video_capture.read()
         if ret is False:
             continue
-# 预测
+        # 预测
         result_0, result_1 = predict_face(face_det, face_rec, input_mat)
         if result_0 is None or result_1 is None:
             print(f"Failed to find face on video.")
