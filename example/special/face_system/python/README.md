@@ -179,10 +179,12 @@ if __name__ == '__main__':
 - 进入存放 **LZ-ArcFace.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-ArcFace.rknn** 上传到 Lockzhiner Vision Module
 - 进入存放 **LZ-Face.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-Face.rknn** 上传到 Lockzhiner Vision Module
 
-文件夹结构示意图
+人脸数据库文件夹结构示意图
 
 ![](./images/img_1.png)
-        
+ 
+上传文件
+
 ![](./images/connect.png)
 
 
