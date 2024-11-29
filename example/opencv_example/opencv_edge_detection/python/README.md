@@ -30,12 +30,12 @@
 ## 1 简介
 
 在现代计算机视觉应用中，边缘检测是一项基础而重要的任务，它能够帮助系统理解和解析图像中的关键结构信息。边缘检测技术广泛应用于图像分割、目标识别、特征提取等多个领域。
-本指南将详细介绍如何使用OpenCV库在凌智视觉模块上部署高效的边缘检测算法，旨在为开发者提供一个清晰、实用的操作步骤。
+本指南将详细介绍如何使用 OpenCV 库在凌智视觉模块上部署高效的边缘检测算法，旨在为开发者提供一个清晰、实用的操作步骤。
 
 
 ## 2 Python API 文档
 
-```markdown
+```python
 def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     """
     对图像进行高斯模糊处理。
@@ -48,10 +48,6 @@ def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     返回:
     - 模糊处理后的图像。
     """
-    # 将ksize转换为两个整数的元组
-    temp_ksize = convert2size(ksize)
-    # 使用OpenCV的GaussianBlur函数进行高斯模糊处理
-    return cv2.GaussianBlur(src, temp_ksize, sigmaX, sigmaY, borderType)
 
 def threshold(src, thresh, maxval, type):
     """
@@ -65,10 +61,7 @@ def threshold(src, thresh, maxval, type):
     - 计算得到的阈值。
     - 阈值处理后的图像。
     """
-    # 使用OpenCV的threshold函数进行阈值处理
-    computed_threshold, dst = cv2.threshold(src, thresh, maxval, type)
-    return computed_threshold, dst
-
+    
 def Canny(img, threshold1, threshold2, apertureSize=3, L2gradient=False):
     """
     使用Canny算法检测图像中的边缘。
@@ -81,16 +74,14 @@ def Canny(img, threshold1, threshold2, apertureSize=3, L2gradient=False):
     返回:
     - 边缘检测后的图像。
     """
-    # 使用OpenCV的Canny函数进行边缘检测
-    return cv2.Canny(img, threshold1, threshold2, apertureSize, L2gradient)
-
 ```
 
 
 ## 3 在凌智视觉模块上进行边缘检测案例   
 
 为了快速上手，我们提供了边缘检测案例
-**边缘检测图片下载链接：**[边缘检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/car.png)
+**测试图片下载链接：**[边缘检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/car.png)
+
 ```python
 import lockzhiner_vision_module.cv2 as cv2
 # 读取图片
@@ -110,11 +101,12 @@ edges = cv2.Canny(thresholded, 20, 10)
 # 保存边缘检测结果
 cv2.imwrite('edges.png', edges)
 ```
+
 ## 4 上传并测试 Python 程序
 
 参考 [连接设备指南](../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
 
-![](../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
+![](../../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
 
 请使用 Electerm Sftp 依次上传以下文件:
 
@@ -122,6 +114,7 @@ cv2.imwrite('edges.png', edges)
 - 进入存放 **待检测图片** 存放的目录，将 **待检测图片** 上传到 Lockzhiner Vision Module
 
 上传文件
+
 ![](./images/img.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
@@ -131,15 +124,21 @@ python test_canny.py
 ```
 
 运行程序后，屏幕上输出 
+
 ![](./images/img_2.png)
+
 下载结果
+
 ![](./images/img_1.png)
+
 边缘检测原图
+
 ![](./images/car.png)
+
 边缘检测结果图片
+
 ![](./images/edges.png)
-阈值操作结果图片
-![](./images/thresholded.png)
+
 
 
 

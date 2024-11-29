@@ -32,24 +32,28 @@ if __name__ == "__main__":
             end_time = time.time()
             # 转换为灰度图像
             gray = cv2.cvtColor(mat, cv2.COLOR_BGR2GRAY)
-            # 高斯模糊
-            blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-            # 二值化
-            _, binary = cv2.threshold(blurred, 127, 255, cv2.THRESH_BINARY_INV)
-            edges = cv2.Canny(binary, 30, 200)
-            contours, _ = cv2.findContours(edges.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+            blurred = cv2.GaussianBlur(gray, (3, 3), 0)
+            _, thresh = cv2.threshold(blurred, 127, 255, cv2.THRESH_BINARY)
+            edges = cv2.Canny(thresh, 50, 150)
+
+            # 3. 查找轮廓
+            contours, _ = cv2.findContours(edges, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
+            print(f"len:{len(contours)}")
+            # 4. 筛选轮廓
             for contour in contours:
-                # 近似轮廓
-                # 计算轮廓周长
-                epsilon = 0.02 * cv2.arcLength(contour, True)
-                # 将轮廓近似为多边形
-                if epsilon < 15:
+                # 计算轮廓的周长
+                perimeter = cv2.arcLength(contour, True)
+                if perimeter<15:
                     continue
-                approx = cv2.approxPolyDP(contour, epsilon, True)
-                # 如果近似轮廓有4个顶点，则认为是矩形
-                if len(approx) == 4:
-                    cv2.putText(mat, "Rectangle", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+                # 近似轮廓
+                approx = cv2.approxPolyDP(contour, 0.04 * perimeter, True)
+
+                # 如果近似轮廓有3个顶点，则认为它是三角形
+                if len(approx) == 3:
+                    # 5. 绘制结果
+                    cv2.putText(mat, "Triangle", (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), )
                     cv2.drawContours(mat, [approx], -1, (0, 255, 0), 2)
+            # cv2.imwrite("blurred.png", blurred)
             edit.print(mat)
             total_time_ms += end_time - start_time
             read_index += 1

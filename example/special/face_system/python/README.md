@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块 人脸识别系统 Python 部署指南</h1>
+<h1 align="center">凌智视觉模块人脸识别系统 Python 部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -96,7 +96,7 @@ class FaceRecognitionSystem:
             input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
 
         Returns:
-            FaceFeatureResult: 识别到的用户，余弦相似度分数，检测到的目标框
+            FaceFeatureResults: 识别到的用户，余弦相似度分数，检测到的目标框
         """
         return self.model.predict(input_mat)
 
@@ -121,7 +121,7 @@ if __name__ == '__main__':
     args = sys.argv
     # 确保提供了足够的参数
     if len(args) != 5:
-        print("Need model path. Example: python face_system.py LZ-Face.rknn LZ-ArcFace.rknn baseDataset_root crop_root")
+        print("Need model path. Example: python face_system.py LZ-Face.rknn LZ-ArcFace.rknn baseDataset crop_root")
         exit(1)
 
     # 初始化面部识别系统
@@ -175,28 +175,30 @@ if __name__ == '__main__':
 
 请使用 Electerm Sftp 依次上传以下文件:
 
-- 进入存放 **test_arc_face[face_system.py](face_system.py).py** 脚本文件的目录，将 **[face_system.py](face_system.py).py** 上传到 Lockzhiner Vision Module
+- 进入存放 **face_system.py** 脚本文件的目录，将 **face_system.py** 上传到 Lockzhiner Vision Module
 - 进入存放 **LZ-ArcFace.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-ArcFace.rknn** 上传到 Lockzhiner Vision Module
 - 进入存放 **LZ-Face.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-Face.rknn** 上传到 Lockzhiner Vision Module
-- 上传构建人脸数据库的文件夹
-  - 文件夹结构：
-    - 主目录
-      - 人脸数据库文件夹（即为用户名）
-        - 人脸图片 
+
+人脸数据库文件夹结构示意图
+
+![](./images/img_1.png)
+ 
 上传文件
+
 ![](./images/connect.png)
-文件夹结构示意图
-![](./images/img.png)
+
+
 
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python face_system.py LZ-Face.rknn LZ-ArcFace.rknn baseDataset_root crop_root
+python face_system.py LZ-Face.rknn LZ-ArcFace.rknn BaseDataset crop_root
 ```
 
 运行程序后，屏幕上开始打印数据库构建的相关信息，并在一段时间后输出 
 
 ![alt text](./images/build_database.png)
+
 ![alt text](./images/fps.png)
 
