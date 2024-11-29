@@ -80,6 +80,16 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 这一部分教程将引导你从零开始训练并部署各种深度学习模型，包括分类模型、检测模型、分割模型和 OCR 模型。通过这些实战教程，你将学习到如何利用 Lockzhiner Vision Module 的高性能计算能力以及借助飞桨生态系统的丰富资源，轻松实现视觉任务的训练和部署。
 
+### 👍 OpenCV 案例
+
+OpenCV 是一个开源的计算机视觉库，它提供了一组功能强大的函数，用于处理图像和视频，并进行各种图像处理和计算机视觉任务。它由一系列 C++ 类构成，并提供了 Python 接口。
+
+* [凌智视觉模块 OpenCV 边缘检测案例](example/opencv_example/opencv_edge_detection)
+* [凌智视觉模块 OpenCV 直线检测部署指南](example/opencv_example/opencv_line_detection)
+* [凌智视觉模块 OpenCV 三角形检测部署指南](example/opencv_example/opencv_triangle_detection)
+* [凌智视觉模块 OpenCV 矩形检测部署指南](example/opencv_example/opencv_rectangle_detection)
+* [凌智视觉模块 OpenCV 圆形检测部署指南](example/opencv_example/opencv_circle_detection)
+
 ### 👍 目标分类案例
 
 目标分类（Object Classification）是深度学习中的一项核心任务，旨在为输入图像分配一个或多个类别标签。这是计算机视觉的基础问题之一，主要用于识别和区分图像中的主要物体类别，而不关心物体的位置或数量。一般来说，目标分类任务的标注过程比较轻松，适合不需要知道目标位置的场景。
@@ -88,7 +98,8 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 * [凌智视觉模块手写数字分类部署指南](./example/special/digit_handwritten_recognition)
 * [凌智视觉模块猫狗分类部署指南](example/special/cat_and_dog_classification)
 * [凌智视觉模块花卉分类部署指南](example/special/flower_classfication/)
-* [凌智视觉模块口罩佩戴分类模型部署指南](example/special/maskwear_classfication)
+* [凌智视觉模块口罩佩戴分类部署指南](example/special/maskwear_classfication)
+
 ### 👍 目标检测案例
 
 目标检测（Object Detection）是深度学习中计算机视觉领域的重要任务之一，旨在识别图像或视频中所有感兴趣的物体，并准确地定位这些物体的边界框（Bounding Box）。与目标分类不同，目标检测不仅需要预测物体的类别，还需要标注它们在图像中的位置。一般来说，目标检测任务的标注过程比较复杂，适合既需要对目标进行分类，有需要对目标进行定位的场景。
@@ -108,6 +119,7 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 * [凌智视觉模块人脸检测部署指南](example/vision/face_detection)
 * [凌智视觉模块人脸识别部署指南](example/vision/face_recognition)
+* [凌智视觉模块人脸识别系统部署指南](example/special/face_system)
 
 ## 🐛 Bug反馈
 
