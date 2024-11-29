@@ -80,10 +80,13 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 这一部分教程将引导你从零开始训练并部署各种深度学习模型，包括分类模型、检测模型、分割模型和 OCR 模型。通过这些实战教程，你将学习到如何利用 Lockzhiner Vision Module 的高性能计算能力以及借助飞桨生态系统的丰富资源，轻松实现视觉任务的训练和部署。
 
-### OpenCV 案例
+### 👍 OpenCV 案例
 
-* [OpenCV 圆形检测案例](example/opencv_example/opencv_circle_detection)
-* [OpenCV 边缘检测案例](example/opencv_example/opencv_edge_detection)
+OpenCV 是一个开源的计算机视觉库，它提供了一组功能强大的函数，用于处理图像和视频，并进行各种图像处理和计算机视觉任务。它由一系列C函数和少量C++类构成，并提供了Python接口。
+
+* [凌智视觉模块 OpenCV 圆形检测部署指南](example/opencv_example/opencv_circle_detection)
+* [凌智视觉模块 OpenCV 边缘检测案例](example/opencv_example/opencv_edge_detection)
+
 ### 👍 目标分类案例
 
 目标分类（Object Classification）是深度学习中的一项核心任务，旨在为输入图像分配一个或多个类别标签。这是计算机视觉的基础问题之一，主要用于识别和区分图像中的主要物体类别，而不关心物体的位置或数量。一般来说，目标分类任务的标注过程比较轻松，适合不需要知道目标位置的场景。
