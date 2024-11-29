@@ -1,4 +1,4 @@
-<h1 align="center">凌智视觉模块 OpenCV 矩形检测 Python 部署指南</h1>
+<h1 align="center">凌智视觉模块 OpenCV 三角形检测 Python 部署指南</h1>
 
 发布版本：V0.0.0
 
@@ -29,7 +29,7 @@
 
 ## 1 简介
 
-在现代计算机视觉应用中，矩形检测是一项基本但重要的任务，广泛应用于物体识别、场景理解、文档扫描等领域。本指南将详细介绍如何使用 OpenCV 库在凌智视觉模块上部署高效的矩形检测算法。 本文将详细介绍如何使用 OpenCV 库在凌智视觉模块上实现高效的矩形检测功能。
+在现代计算机视觉应用中，三角形检测是一项基本但重要的任务，广泛应用于物体识别、场景理解、文档扫描等领域。本指南将详细介绍如何使用 OpenCV 库在凌智视觉模块上部署高效的三角形检测算法。 本文将详细介绍如何使用 OpenCV 库在凌智视觉模块上实现高效的三角形检测功能。
 
 ## 2 Python API 文档
 
@@ -135,8 +135,8 @@ def approxPolyDP(curve, epsilon, closed):
 
 ## 3 在凌智视觉模块上进行边缘检测案例 
 
-为了方便大家入手，我们提供了 OpenCV 矩形检测的 Python 例程。该程序可以使用摄像头进行端到端推理。
-**测试图片下载链接：**[矩形检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/rectangle.png)
+为了方便大家入手，我们提供了 OpenCV 三角形检测的 Python 例程。该程序可以使用摄像头进行端到端推理。
+**测试图片下载链接：**[三角形检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/triangle.png）
 
 ```python
 import lockzhiner_vision_module.cv2 as cv2
