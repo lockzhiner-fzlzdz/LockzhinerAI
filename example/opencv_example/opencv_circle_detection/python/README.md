@@ -34,7 +34,7 @@
 
 ## 2 Python API 文档
 
-```markdown
+```python
 def cvtColor(src, code, dstCn=0):
     """
     转换图像颜色空间。
@@ -159,12 +159,19 @@ python test_hough_circle.py
 ```
 
 运行程序后，屏幕上输出 
+
 ![](./images/img.png)
+
 下载结果
+
 ![](./images/result.png)
+
 圆形检测原图
+
 ![](./images/circle.png)
+
 圆形检测结果图片
+
 ![](./images/img_circles.png)
 
 

@@ -35,7 +35,7 @@
 
 ## 2 Python API 文档
 
-```markdown
+```python
 def GaussianBlur(src, ksize, sigmaX, sigmaY=0, borderType=cv2.BORDER_DEFAULT):
     """
     对图像进行高斯模糊处理。
@@ -91,6 +91,7 @@ def Canny(img, threshold1, threshold2, apertureSize=3, L2gradient=False):
 
 为了快速上手，我们提供了边缘检测案例
 **边缘检测图片下载链接：**[边缘检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/car.png)
+
 ```python
 import lockzhiner_vision_module.cv2 as cv2
 # 读取图片
@@ -110,11 +111,12 @@ edges = cv2.Canny(thresholded, 20, 10)
 # 保存边缘检测结果
 cv2.imwrite('edges.png', edges)
 ```
+
 ## 4 上传并测试 Python 程序
 
 参考 [连接设备指南](../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
 
-![](../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
+![](../../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
 
 请使用 Electerm Sftp 依次上传以下文件:
 
@@ -122,6 +124,7 @@ cv2.imwrite('edges.png', edges)
 - 进入存放 **待检测图片** 存放的目录，将 **待检测图片** 上传到 Lockzhiner Vision Module
 
 上传文件
+
 ![](./images/img.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
@@ -131,14 +134,23 @@ python test_canny.py
 ```
 
 运行程序后，屏幕上输出 
+
 ![](./images/img_2.png)
+
 下载结果
+
 ![](./images/img_1.png)
+
 边缘检测原图
+
 ![](./images/car.png)
+
 边缘检测结果图片
+
 ![](./images/edges.png)
+
 阈值操作结果图片
+
 ![](./images/thresholded.png)
 
 

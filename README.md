@@ -82,10 +82,13 @@ Lockzhiner Vision Module 拥有丰富的 IO 接口，其接口图片如下图所
 
 ### 👍 OpenCV 案例
 
-OpenCV 是一个开源的计算机视觉库，它提供了一组功能强大的函数，用于处理图像和视频，并进行各种图像处理和计算机视觉任务。它由一系列C函数和少量C++类构成，并提供了Python接口。
+OpenCV 是一个开源的计算机视觉库，它提供了一组功能强大的函数，用于处理图像和视频，并进行各种图像处理和计算机视觉任务。它由一系列 C++ 类构成，并提供了 Python 接口。
 
-* [凌智视觉模块 OpenCV 圆形检测部署指南](example/opencv_example/opencv_circle_detection)
 * [凌智视觉模块 OpenCV 边缘检测案例](example/opencv_example/opencv_edge_detection)
+* [凌智视觉模块 OpenCV 直线检测部署指南](example/opencv_example/opencv_line_detection)
+* [凌智视觉模块 OpenCV 三角形检测部署指南](example/opencv_example/opencv_triangle_detection)
+* [凌智视觉模块 OpenCV 矩形检测部署指南](example/opencv_example/opencv_rectangle_detection)
+* [凌智视觉模块 OpenCV 圆形检测部署指南](example/opencv_example/opencv_circle_detection)
 
 ### 👍 目标分类案例
 

@@ -34,7 +34,7 @@
 
 ## 2 Python API 文档
 
-```markdown
+```python
 
 def cvtColor(src, code, dstCn=0):
     """
@@ -174,6 +174,7 @@ cv2.imwrite('img_rectangle.png', image)
 - 进入存放 **待检测图片** 存放的目录，将 **待检测图片** 上传到 Lockzhiner Vision Module
 
 上传文件
+
 ![](./images/sftp.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
@@ -183,12 +184,19 @@ python test_rectangle.py
 ```
 
 运行程序后，屏幕上输出 
+
 ![](./images/result.png)
+
 下载结果
+
 ![](./images/dowm_result.png)
+
 矩形检测原图
+
 ![](./images/rectangle.png)
+
 矩形检测结果图片
+
 ![](./images/results.png)
 
 
