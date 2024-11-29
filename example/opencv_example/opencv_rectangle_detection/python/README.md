@@ -211,8 +211,6 @@ python test_rectangle.py
 
 ![](./images/result.png)
 
-下载结果
-
 矩形检测结果图片
 
 ![](./images/rectangle_resu.png)
