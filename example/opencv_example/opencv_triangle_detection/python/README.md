@@ -190,11 +190,11 @@ python test_rectangle.py
 
 ![](./images/dowmresult.png)
 
-矩形检测原图
+三角形检测原图
 
 ![](./images/triangle.png)
 
-矩形检测结果图片
+三角形检测结果图片
 
 ![](./images/result_triangle.png)
 
