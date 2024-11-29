@@ -206,7 +206,6 @@ if __name__ == "__main__":
 ```bash
 python test_rectangle.py
 ```
-
 运行程序后，屏幕上输出 
 
 ![](./images/result.png)
