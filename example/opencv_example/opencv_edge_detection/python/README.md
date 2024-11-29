@@ -90,7 +90,7 @@ def Canny(img, threshold1, threshold2, apertureSize=3, L2gradient=False):
 ## 3 在凌智视觉模块上进行边缘检测案例   
 
 为了快速上手，我们提供了边缘检测案例
-**边缘检测图片下载链接：**[边缘检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/car.png)
+**测试图片下载链接：**[边缘检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/car.png)
 
 ```python
 import lockzhiner_vision_module.cv2 as cv2
