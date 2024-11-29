@@ -197,7 +197,7 @@ python test_rectangle.py
 
 矩形检测结果图片
 
-![](./images/results.png)
+![](./images/img_rectangle.png)
 
 
 
