@@ -149,9 +149,6 @@ python test_canny.py
 
 ![](./images/edges.png)
 
-阈值操作结果图片
-
-![](./images/thresholded.png)
 
 
 
