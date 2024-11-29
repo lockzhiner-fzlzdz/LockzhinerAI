@@ -92,7 +92,6 @@ def HoughLinesP(image, rho, theta, threshold, minLineLength=0, maxLineGap=0):
 ## 3 在凌智视觉模块上进行直线检测案例   
 
 为了快速上手，我们提供了直线检测案例
-**测试图片下载链接：**[直线检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/line.png)
 
 ```python
 from lockzhiner_vision_module.cv2 import VideoCapture
@@ -150,7 +149,7 @@ if __name__ == "__main__":
 
 ## 4 上传并测试 Python 程序
 
-参考 [连接设备指南](../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
+参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
 
 ![](../../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
 
@@ -165,7 +164,7 @@ if __name__ == "__main__":
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_line.py
+python test_line.py 640 480
 ```
 
 运行程序后，屏幕上输出 

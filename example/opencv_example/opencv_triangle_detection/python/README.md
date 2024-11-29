@@ -208,7 +208,7 @@ if __name__ == "__main__":
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_trangle.py
+python test_trangle.py 640 480
 ```
 
 运行程序后，屏幕上输出 

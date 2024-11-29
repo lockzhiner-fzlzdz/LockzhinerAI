@@ -125,7 +125,6 @@ def approxPolyDP(curve, epsilon, closed):
 ## 3 在凌智视觉模块上进行边缘检测案例 
 
 为了方便大家入手，我们提供了 OpenCV 矩形检测的 Python 例程。该程序可以使用摄像头进行端到端推理。
-**测试图片下载链接：**[矩形检测图片](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/rectangle.png)
 
 ```python
 from lockzhiner_vision_module.cv2 import VideoCapture
@@ -204,15 +203,15 @@ if __name__ == "__main__":
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_rectangle.py
+python test_rectangle.py 640 480
 ```
 运行程序后，屏幕上输出 
 
-![](./images/result.png)
+![](./images/results.png)
 
 矩形检测结果图片
 
-![](./images/rectangle_resu.png)
+![](./images/rectangle_result.png)
 
 
 
