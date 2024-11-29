@@ -31,7 +31,6 @@ if __name__ == "__main__":
                 continue
             end_time = time.time()
             # 转换为灰度图像
-            # 转换为灰度图像
             gray = cv2.cvtColor(mat, cv2.COLOR_BGR2GRAY)
             blurred = cv2.GaussianBlur(gray, (3, 3), 0)
             _, thresh = cv2.threshold(blurred, 127, 255, cv2.THRESH_BINARY)
