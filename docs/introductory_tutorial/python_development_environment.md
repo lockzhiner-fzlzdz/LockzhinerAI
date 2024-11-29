@@ -33,7 +33,7 @@ Lockzhiner Vision Module 的 Python 开发不需要像 C++ 一样的交叉编译
 
 ## 2 下载/更新 LockzhinerVisionModule SDK
 
-点击 [Lockzhiner Vision Module SDK 下载链接](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.4/lockzhiner_vision_module_sdk.zip) 下载 Lockzhiner Vision Module SDK。解压到本地后，请使用解压软件解压 SDK，一般我们推荐使用 Bandzip。
+点击 [Lockzhiner Vision Module SDK 下载链接](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.5/lockzhiner_vision_module_sdk.zip) 下载 Lockzhiner Vision Module SDK。解压到本地后，请使用解压软件解压 SDK，一般我们推荐使用 Bandzip。
 
 ![](images/development_environment/python_update_lockzhiner_vision_module_0.png)
 
