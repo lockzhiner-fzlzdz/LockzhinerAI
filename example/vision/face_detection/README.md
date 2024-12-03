@@ -35,6 +35,7 @@
 ## 2 运行前的准备
 
 * 请确保你已经下载了 [凌智视觉模块人脸检测模型](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.3/LZ-Face.rknn)
+* 请确保你已经下载了 [凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher.exe)
 
 ## 3 在凌智视觉模块上部署模型
 

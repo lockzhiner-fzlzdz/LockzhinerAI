@@ -34,6 +34,7 @@
 - 请确保你已经参考 [凌智视觉模块人脸检测模型部署指南](../README.md) 对模型进行了充分训练。
 - 请确保你已经按照 [开发环境搭建指南](../../../../docs/introductory_tutorial/python_development_environment.md) 正确配置了开发环境。
 
+
 ## 2 Python API 文档
 
 ```python
@@ -255,7 +256,7 @@ python test_picodet.py LZ-Face.rknn
 ```
 ![](../images/connect.png)
 
-连接凌智视觉模块图片传输助手[凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher.exe)后，选择连接设备
+连接凌智视觉模块图片传输助手后，选择连接设备
 
 ![](../images/result1.png)
 运行程序后，屏幕上开始打印矩形框信息，标签信息和置信度，并在一段时间后输出 FPS 值
