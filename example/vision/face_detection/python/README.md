@@ -192,7 +192,7 @@ import sys
 if __name__ == "__main__":
     args = sys.argv
     if len(args) != 2:
-        print("Need model path. Example: python test_face_detection.py LZ-Face.rknn")
+        print("Need model path. Example: python test_picodet.py LZ-Face.rknn")
         exit(1)
         
     edit = Edit()
@@ -243,15 +243,15 @@ if __name__ == "__main__":
 
 请使用 Electerm Sftp 依次上传以下两个文件:
 
-- 进入存放 **test_face_detection.py** 脚本文件的目录，将 **test_face_detection.py** 上传到 Lockzhiner Vision Module
-- 进入存放 **LZ-Face.rknn(也可能是其他模型)** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-Face.rknn** 上传到 Lockzhiner Vision Module
+- 进入存放 **test_picodet.py** 脚本文件的目录，将 **test_picodet.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **LZ-Face.rknn** 模型存放的目录（模型存放在训练模型后下载的 output 文件夹内），将 **LZ-Face.rknn** 上传到 Lockzhiner Vision Module
 
 ![](../images/stfp.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_face_detection.py LZ-Face.rknn
+python test_picodet.py LZ-Face.rknn
 ```
 ![](../images/connect.png)
 
