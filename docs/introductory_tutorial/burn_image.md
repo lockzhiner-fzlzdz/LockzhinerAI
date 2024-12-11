@@ -36,16 +36,26 @@
 在开始烧录前，我们需要做一些前期的准备:
 
 * 请准备一张 **64G 容量以下**的 SD 卡，这里我们选用的是 16G 的 SD 卡。请将 SD 卡插入读卡器并正确连接电脑。
-* 前往 [凌智视觉模块镜像下载地址](https://pan.baidu.com/s/1w28TRzvEVvRURuisywnNZg) 下载镜像，提取码为 772f 
-* 前往 [凌智视觉模块烧录软件下载地址](https://pan.baidu.com/s/1EdzzDu8Yn62GBFaZYe_T3A) 下载烧录软件，提取码为 hk9v
+* 前往 [凌智视觉模块镜像下载地址](https://pan.baidu.com/s/1w28TRzvEVvRURuisywnNZg) 下载镜像以及烧写工具，提取码为 772f 
 
-## 3 开始烧录
+注意，前往镜像下载地址下载镜像极其烧录工具时，至少保证下载以下三个文件夹：
 
-使用解压工具（这里选用的是 Bandzip）解压 Lockzhiner Vision Module 的镜像压缩包到你喜欢的位置
+![](./images/burn_image/zip.png)
 
-![](images/burn_image/zip.png)
+使用解压工具（这里选用的是 Bandzip）解压 DriverAssitant_v5.12.zip 和 SocToolKit.zip 到你喜欢的位置
 
-前往解压的压缩包目录，在 download_tools 目录下，打开 SocToolKit.exe 软件，这是一个镜像烧写工具
+![](./images/burn_image/unzip.png)
+
+
+## 3 安装驱动（已经安装可以跳过）
+
+打开 DriverAssitant 安装 USB 驱动程序，此过程无需连接读卡器，安装完成后请重启电脑。
+
+![](./images/burn_image/RKDriver.png)
+
+## 4 开始烧录
+
+打开 SocToolKit.exe 软件，这是一个镜像烧写工具
 
 ![](images/burn_image/tools_dir.jpg)
 
@@ -57,23 +67,22 @@
 
 ![](images/burn_image/select_image_0.png)
 
-弹出的窗口中 **找到 rv1106_img 目录** -> **选择除了 update.img 以外的所有文件** -> **点击打开按钮**
+弹出的窗口中 **找到 nowifi 目录** -> **选择所有文件** -> **点击打开按钮**
 
 ![](images/burn_image/select_image_1.png)
 ![](images/burn_image/select_image_2.png)
 
-> 注意，这里的启动文件**不包括 update.img**
 
 点击创建 SD 卡
 
 ![](images/burn_image/create_sd.png)
 
-## 4 插入 SD 卡
+## 5 插入 SD 卡
 
 将 SD 卡插入 Lockzhiner Vision Module
 
 ![](images/burn_image/insert_sd.png)
 
-## 5 验证是否烧录成功
+## 6 验证是否烧录成功
 
 烧录完成后，请将 SD 卡插入 Lockzhiner Vision Module，并参考 [连接设备指南](./connect_device_using_ssh.md) 来连接设备并输出 Hello World
