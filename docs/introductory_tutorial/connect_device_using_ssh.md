@@ -35,11 +35,9 @@ SSH 是一种用于在不安全网络上安全地访问和传输数据的协议�
 
 [electerm](https://github.com/electerm/electerm) 是一款跨平台的 (linux, mac, win) 开源终端客户端，支持 ssh/sftp 等多种通信方式。我们默认使用 electerm 进行 SSH 和 FTP 通信，当然你也可以自由的选择其他的客户端来完成通信。
 
-前往 [electerm sourceforge](https://sourceforge.net/projects/electerm.mirror/files/) 并点击 **Download Latest Version** 按钮来下载 electerm。
+在开始安装前，请往 [electerm 百度网盘(提取码 772f)](https://sourceforge.net/projects/electerm.mirror/files/) 来下载 electerm。
 
-![](images/connect_device_using_ssh/electerm_sourceforge.png)
-
-打开你下载的软件，一直点击下一步即可完成安装。
+解压你下载的压缩包，打开你 electerm 安装包，一直点击下一步即可完成安装。
 
 ![](images/connect_device_using_ssh/electerm_install.png)
 
