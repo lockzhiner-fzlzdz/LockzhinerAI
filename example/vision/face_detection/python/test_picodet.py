@@ -1,9 +1,8 @@
 from lockzhiner_vision_module.cv2 import imread, imwrite, VideoCapture
-from lockzhiner_vision_module.vision import RetinaFace, visualize
+from lockzhiner_vision_module.vision import PaddleDet, visualize
 from lockzhiner_vision_module.edit import Edit
 import time
 import sys
-
 
 def predict_video(face_det_model, width, height):
     edit = Edit()
@@ -53,7 +52,7 @@ def predict_image(face_det_model, image_path):
             f"(x,y,w,h,score): [{box.x},{box.y},{box.width},{box.height},{score}]"
         )
     imwrite("face_det.png", vis_mat)
-    
+
 
 if __name__ == "__main__":
     args = sys.argv
@@ -61,9 +60,9 @@ if __name__ == "__main__":
         print("Need model path. Example: python test_retina_face.py LZ-RetinaFace.rknn width height")
         exit(1)
 
-    model = RetinaFace()
+    model = PaddleDet()
     if model.initialize(args[1]) is False:
-        print("Failed to initialize RetinaFace")
+        print("Failed to initialize PaddleDet")
         exit(1)
 
     video_width = 640
