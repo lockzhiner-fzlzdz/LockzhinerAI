@@ -193,7 +193,7 @@ if __name__ == '__main__':
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python face_system.py LZ-Face.rknn LZ-ArcFace.rknn BaseDataset crop_root
+python test_face_system.py LZ-Face.rknn LZ-ArcFace.rknn BaseDataset crop_root
 ```
 
 运行程序后，屏幕上开始打印数据库构建的相关信息，并在一段时间后输出 
