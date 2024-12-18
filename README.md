@@ -49,6 +49,7 @@
 
 * [凌智视觉模块烧录镜像指南](./docs/introductory_tutorial/burn_image.md)
 * [凌智视觉模块连接设备指南](./docs/introductory_tutorial/connect_device_using_ssh.md)
+* [凌智视觉模块WiFi配置指南]()
 * [凌智视觉模块 Python 开发环境搭建指南](./docs/introductory_tutorial/python_development_environment.md)
 
 <!-- 
