@@ -266,9 +266,7 @@ int main(int argc, char *argv[]) {
             std::cerr << "Error: Failed to print to edit module." << std::endl;
             break;
         }
-
     }
-
     return EXIT_SUCCESS;
 }
 

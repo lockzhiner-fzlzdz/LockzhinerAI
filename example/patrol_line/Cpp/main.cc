@@ -5,6 +5,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/opencv.hpp>
 
+
 int main(int argc, char *argv[]) {
     // 设置默认摄像头分辨率
     int width = 640;
