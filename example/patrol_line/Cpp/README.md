@@ -31,157 +31,16 @@
 
 接下来让我们基于 Cpp 来部署视觉巡线案例，在开始本章节前：
 
-
+- 你已经按照 [开发环境搭建指南](../../../docs/introductory_tutorial/development_environment.md) 正确配置了开发环境。
+- 点击 [凌智视觉模块图片传输助手下载地址](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/LockzhinerVisionModuleImageFetcher_v0.0.0.exe) 下载凌智视觉模块图片传输助手。
 
 ## 2 Cpp API 文档
-本次项目中的使用的opencv函数API
-```python
-class Point:
-    def __init__(self):
-        self.point = cv2.Point()
+凌智视觉模块使用 opencv-mobile 来读取摄像头数据。关于摄像头读取，请参考传统的 OpenCV 摄像头 API 来实现，需要注意的是:
 
-    @property
-    def x(self):
-        """
-        获取坐标点的 x 坐标
-
-        Returns:
-            int: 坐标点的 x 坐标
-        """
-        return self.rect.x
-
-    @property
-    def y(self):
-        """
-        获取坐标点的 y 坐标
-
-        Returns:
-            int: 坐标点的 y 坐标
-        """
-        return self.rect.y
-
-class CodeResult:
-    """
-    条码识别检测结果类，用于封装和处理条码识别结果数据。
-
-    该类主要提供了一个包装层，用于访问和管理由视觉模块产生的条码识别结果。
-    """
-
-    def __init__(self):
-        self.qr_code_result = vision.CodeResult()
-
-    @property
-    def top_left(self):
-        """
-        获取条码识别结果的左上角坐标
-
-        Returns:
-            Point: 左上角坐标
-        """
-        return self.qr_code_result.top_left
-
-    @property
-    def top_right(self):
-        """
-        获取条码识别结果的右上角坐标
-
-        Returns:
-            Point: 右上角坐标
-        """
-        return self.qr_code_result.top_right
-
-    @property
-    def bottom_left(self):
-        """
-        获取条码识别结果的左下角坐标
-
-        Returns:
-            Point: 左下角坐标
-        """
-        return self.qr_code_result.bottom_left
-
-    @property
-    def bottom_right(self):
-        """
-        获取条码识别结果的右下角坐标
-
-        Returns:
-            Point: 右下角坐标
-        """
-        return self.qr_code_result.bottom_right
-
-    @property
-    def text(self):
-        """
-        获取条码识别结果的文本数据
-
-        Returns:
-            Point: 条码识别结果的文本数据
-        """
-        return self.qr_code_result.text
-
-class Code39Detector:
-    """
-    Code39Detector 类 - 用于 Code39 检测识别的封装类
-    """
-
-    def __init__(self):
-        self.model = vision.Code39Detector()
-
-    def predict(self, input_mat):
-        """
-        进行预测
-
-        Args:
-            input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
-
-        Returns:
-            list(CodeResult): 预测结果对象列表，每一个预测结果包含了条码坐标和文本。
-        """
-        return self.model.predict(input_mat)
-
-
-class Code93Detector:
-    """
-    Code93Detector 类 - 用于 Code93 检测识别的封装类
-    """
-
-    def __init__(self):
-        self.model = vision.Code93Detector()
-
-    def predict(self, input_mat):
-        """
-        进行预测
-
-        Args:
-            input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
-
-        Returns:
-            list(CodeResult): 预测结果对象列表，每一个预测结果包含了条码坐标和文本。
-        """
-        return self.model.predict(input_mat)
-
-
-class Code128Detector:
-    """
-    Code128Detector 类 - 用于 Code128 检测识别的封装类
-    """
-
-    def __init__(self):
-        self.model = vision.Code128Detector()
-
-    def predict(self, input_mat):
-        """
-        进行预测
-
-        Args:
-            input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
-
-        Returns:
-            list(CodeResult): 预测结果对象列表，每一个预测结果包含了条码坐标和文本。
-        """
-        return self.model.predict(input_mat)
-```
+- 受限于运行内存，请使用我们编译的 [OpenCV Mobile](https://gitee.com/LockzhinerAI/opencv-mobile) 库来代替传统的 OpenCV 库
+- LockzhinerVisionModule 只有一个摄像头，因此在打开摄像头时，不管输入什么参数，都只会打开这个摄像头
+- 配置摄像头长宽时，请保证长和宽都是 8 的倍数
+- 在本次项目中使用的opencv函数完全适配标准opencv函数，相关api参考标准opencv函数接口。
 
 ## 3 项目介绍
 
