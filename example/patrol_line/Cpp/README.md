@@ -132,7 +132,7 @@ int main(int argc, char *argv[]) {
 
 ```
 ## 4 编译项目
-在本次项目中为使编译更为简单，可将上文中的Cpp代码直接替换进/LockzhinerVisionModuleWorkSpace/LockzhinerVisionModuleLibrary/example/edit/test_capture.cc中。
+在本次项目中为使编译更为简单，可将上文中的 Cpp 代码直接替换进 /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModuleLibrary/example/edit/test_capture.cc 中。
 后通过下述指令编译整个工程：
 ```bash
 cd /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModuleLibrary
@@ -150,7 +150,7 @@ zip -r -9 lockzhiner_vision_module_sdk.zip lockzhiner_vision_module_sdk
 ## 4 上传并测试
 
 参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
-先将编译文件从Docker中下载到本地。
+先将编译文件从 Docker 中下载到本地。
 
 请使用 Electerm Sftp 上传以下一个文件:
 
@@ -165,6 +165,6 @@ chmod 777 Test-Capture
 ./Test-Capture 
 ```
 
-运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印识别黑线的质心x轴坐标，凌智视觉模块图片传输助手出现可视化的结果
+运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印识别黑线的质心 X 轴坐标，凌智视觉模块图片传输助手出现可视化的结果
 
 ![alt text](images/result.png)
