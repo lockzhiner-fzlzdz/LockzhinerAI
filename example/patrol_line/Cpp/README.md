@@ -131,29 +131,40 @@ int main(int argc, char *argv[]) {
 
 
 ```
-
+## 4 编译项目
+在本次项目中为使编译更为简单，可将上文中的Cpp代码直接替换进/LockzhinerVisionModuleWorkSpace/LockzhinerVisionModuleLibrary/example/edit/test_capture.cc中。
+后通过下述指令编译整个工程：
+```bash
+cd /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModuleLibrary
+rm -rf build && mkdir build && cd build
+export TOOLCHAIN_ROOT_PATH=${PWD}/../../arm-rockchip830-linux-uclibcgnueabihf
+cmake -DCMAKE_TOOLCHAIN_FILE=../toolchains/arm-rockchip830-linux-uclibcgnueabihf.toolchain.cmake \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DENABLE_TESTS=ON \
+      -DCMAKE_INSTALL_PREFIX=${PWD}/lockzhiner_vision_module_sdk \
+      ..
+make -j8 && make install
+zip -r -9 lockzhiner_vision_module_sdk.zip lockzhiner_vision_module_sdk
+```
+编译完成后在/LockzhinerVisionModuleWorkSpace/LockzhinerVisionModuleLibrary/build/lockzhiner_vision_module_sdk/bin/edit中所生成的Test-Capture可执行文件即为所需文件。
 ## 4 上传并测试
 
 参考 [连接设备指南](../../../../docs/introductory_tutorial/connect_device_using_ssh.md) 正确连接 Lockzhiner Vision Module 设备。
+先将编译文件从Docker中下载到本地。
 
-![](../../../../docs/introductory_tutorial/images/connect_device_using_ssh/ssh_success.png)
+请使用 Electerm Sftp 上传以下一个文件:
 
-请使用 Electerm Sftp 依次上传以下两个文件:
-
-- 进入存放 **test_bar_code_recognition.py** 脚本文件的目录，将 **test_bar_code_recognition.py** 上传到 Lockzhiner Vision Module
+- 进入存放 **Test-Capture** 可执行文件的目录，将 **Test-Capture** 上传到 Lockzhiner Vision Module
 
 ![](images/stfp.png)
 
 请使用 Electerm Ssh 并在命令行中执行以下命令:
 
 ```bash
-python test_bar_code_recognition.py
+chmod 777 Test-Capture 
+./Test-Capture 
 ```
 
-运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印条码位置和置信度，凌智视觉模块图片传输助手出现可视化的结果
+运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印识别黑线的质心x轴坐标，凌智视觉模块图片传输助手出现可视化的结果
 
 ![alt text](images/qr_code_result.png)
-
-<!-- ## 5 其他 -->
-
-<!-- 如果你需要使用 C++ 来部署 PaddleClas 请参考[凌智视觉模块分类模型 C++ 部署指南](../cpp/README.md)。 -->
