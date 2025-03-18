@@ -129,7 +129,7 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS;
 }
 
-
+ 
 ```
 ## 4 编译项目
 在本次项目中为使编译更为简单，可将上文中的 Cpp 代码直接替换进 /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModuleLibrary/example/edit/test_capture.cc 中。
