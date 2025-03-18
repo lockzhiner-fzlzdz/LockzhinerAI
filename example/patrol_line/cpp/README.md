@@ -146,6 +146,8 @@ cmake -DCMAKE_TOOLCHAIN_FILE=../toolchains/arm-rockchip830-linux-uclibcgnueabihf
 make -j8 && make install
 zip -r -9 lockzhiner_vision_module_sdk.zip lockzhiner_vision_module_sdk
 ```
+编译后如下图所示:
+![](images/build_result.png)
 编译完成后在/LockzhinerVisionModuleWorkSpace/LockzhinerVisionModuleLibrary/build/lockzhiner_vision_module_sdk/bin/edit中所生成的Test-Capture可执行文件即为所需文件。
 ## 4 上传并测试
 
