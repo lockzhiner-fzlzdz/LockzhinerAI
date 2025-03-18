@@ -167,4 +167,4 @@ chmod 777 Test-Capture
 
 运行程序后，使用凌智视觉模块图片传输助手连接设备，屏幕上开始打印识别黑线的质心x轴坐标，凌智视觉模块图片传输助手出现可视化的结果
 
-![alt text](images/qr_code_result.png)
+![alt text](images/result.png)
