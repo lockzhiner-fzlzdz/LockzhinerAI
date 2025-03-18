@@ -40,7 +40,7 @@
 - 受限于运行内存，请使用我们编译的 [OpenCV Mobile](https://gitee.com/LockzhinerAI/opencv-mobile) 库来代替传统的 OpenCV 库
 - LockzhinerVisionModule 只有一个摄像头，因此在打开摄像头时，不管输入什么参数，都只会打开这个摄像头
 - 配置摄像头长宽时，请保证长和宽都是 8 的倍数
-- 在本次项目中使用的opencv函数完全适配标准opencv函数，相关api参考标准opencv函数接口。
+- 在本次项目中使用的opencv函数完全适配标准 OpenCv 函数，相关 API 参考标准 OpenCV 函数接口。
 
 ## 3 项目介绍
 
