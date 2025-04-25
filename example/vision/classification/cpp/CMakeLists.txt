@@ -2,8 +2,15 @@ cmake_minimum_required(VERSION 3.10)
 
 project(test_classification)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 # 定义项目根目录路径
 set(PROJECT_ROOT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../../..")
+message("PROJECT_ROOT_PATH = " ${PROJECT_ROOT_PATH})
+
+include("${PROJECT_ROOT_PATH}/toolchains/arm-rockchip830-linux-uclibcgnueabihf.toolchain.cmake")
+
 # 定义 OpenCV SDK 路径
 set(OpenCV_ROOT_PATH "${PROJECT_ROOT_PATH}/third_party/opencv-mobile-4.10.0-lockzhiner-vision-module")
 set(OpenCV_DIR "${OpenCV_ROOT_PATH}/lib/cmake/opencv4")
@@ -17,3 +24,4 @@ find_package(LockzhinerVisionModule REQUIRED)
 add_executable(Test-PaddleClas test_paddleclas.cpp)
 target_include_directories(Test-PaddleClas PRIVATE ${LOCKZHINER_VISION_MODULE_INCLUDE_DIRS})
 target_link_libraries(Test-PaddleClas PRIVATE ${OPENCV_LIBRARIES} ${LOCKZHINER_VISION_MODULE_LIBRARIES})
+
