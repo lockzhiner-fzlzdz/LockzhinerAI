@@ -105,7 +105,7 @@ cv::minMaxLoc(src, &minVal, &maxVal, &minLoc, &maxLoc);
 
 ### 3.1 流程图
 
-<img src="./images/ALL.png" width="400" height="900">
+<img src="./images/All.png" width="400" height="900">
 
 ### 3.2 代码解释
 - 读取图像文件

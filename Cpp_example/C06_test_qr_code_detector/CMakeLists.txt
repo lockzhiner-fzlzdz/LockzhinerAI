@@ -25,8 +25,10 @@ find_package(LockzhinerVisionModule REQUIRED)
 
 # 定义 ZXing SDK 路径
 set(ZXing_ROOT_PATH "${PROJECT_ROOT_PATH}/third_party/zxing-cpp-v2.2.1-lockzhiner-vision-module")
+set(ZXing_DIR "${ZXing_ROOT_PATH}/lib/cmake/ZXing")
 set(ZXing_INCLUDE_DIRS "${ZXing_ROOT_PATH}/include")
-set(ZXing_LIBRARIES "${ZXing_ROOT_PATH}/lib/libzxing.a")
+find_package(ZXing REQUIRED)
+set(ZXing_LIBRARIES "${ZXing_LIBS}")
 
 # 基本图像处理示例
 add_executable(Test-qr_code-detector test_qr_code_detector.cc)
