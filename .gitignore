@@ -34,3 +34,4 @@ LZ-*.py
 # Zip
 *.tar
 *.zip
+third_party/
