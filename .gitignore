@@ -28,8 +28,7 @@ LZ-*.py
 
 
 # Picture
-*.png
-*.jpg
+
 
 # Zip
 *.tar
