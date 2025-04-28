@@ -1,18 +1,19 @@
-cmake_minimum_required(VERSION 3.10)
+project(test_edit)
 
-project(patrol_line)
+set(TARGET_INSTALL_DIR "bin/edit")
 
-set(PROJECT_ROOT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../..")
+set(TARGET_LIST "")
+add_executable(Test-Capture test_capture.cc)
+list(APPEND TARGET_LIST Test-Capture)
 
-set(OpenCV_ROOT_PATH "${PROJECT_ROOT_PATH}/third_party/opencv-mobile-4.10.0-lockzhiner-vision-module")
-set(OpenCV_DIR "${OpenCV_ROOT_PATH}/lib/cmake/opencv4")
-find_package(OpenCV REQUIRED)
-set(OPENCV_LIBRARIES "${OpenCV_LIBS}")
+add_executable(Test-FPS test_fps.cc)
+list(APPEND TARGET_LIST Test-FPS)
 
-set(LockzhinerVisionModule_ROOT_PATH "${PROJECT_ROOT_PATH}/third_party/lockzhiner_vision_module_sdk")
-set(LockzhinerVisionModule_DIR "${LockzhinerVisionModule_ROOT_PATH}/lib/cmake/lockzhiner_vision_module")
-find_package(LockzhinerVisionModule REQUIRED)
+# link and include
+foreach(test_project ${TARGET_LIST})
+    target_link_libraries(${test_project} PRIVATE ${CMAKE_PROJECT_NAME})
+endforeach()
 
-add_executable(Test-Capture patrol_line.cc)
-target_include_directories(Test-Capture PRIVATE ${LOCKZHINER_VISION_MODULE_INCLUDE_DIRS})
-target_link_libraries(Test-Capture PRIVATE ${OPENCV_LIBRARIES} ${LOCKZHINER_VISION_MODULE_LIBRARIES})
+# install
+install(TARGETS ${CMAKE_PROJECT_NAME} DESTINATION ${TARGET_INSTALL_DIR})
+install(TARGETS ${TARGET_LIST} DESTINATION ${TARGET_INSTALL_DIR})

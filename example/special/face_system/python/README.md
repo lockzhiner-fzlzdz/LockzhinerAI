@@ -41,6 +41,44 @@
 from ...LockzhinerVisionModule_wapper import vision
 
 
+class FaceRecognitionResult:
+    """
+    人脸识别系统类，用于封装和处理人脸识别系统的结果数据。
+    """
+    def __init__(self):
+        self.face_recognition_result = vision.FaceRecognitionResult()
+    
+    @property
+    def name(self):
+        """
+        获取人脸识别结果的人脸姓名
+
+        Returns:
+            str: 人脸姓名
+        """
+        return self.face_recognition_result.name
+
+    @property
+    def score(self):
+        """
+        获取人脸识别结果的置信度
+
+        Returns:
+            float: 置信度
+        """
+        return self.face_recognition_result.score
+
+    @property
+    def rect(self):
+        """
+        获取人脸检测模型检测结果的矩形框信息
+
+        Returns:
+            Rect: 矩形框信息
+        """
+        return self.face_recognition_result.rect
+
+
 class FaceRecognitionSystem:
     def __init__(self):
         """
@@ -96,7 +134,7 @@ class FaceRecognitionSystem:
             input_mat (cv2.Mat): 输入的图像数据，通常是一个 cv2.Mat 变量。
 
         Returns:
-            FaceFeatureResults: 识别到的用户，余弦相似度分数，检测到的目标框
+            list(FaceRecognitionResult): 识别到的用户，余弦相似度分数，检测到的目标框
         """
         return self.model.predict(input_mat)
 
