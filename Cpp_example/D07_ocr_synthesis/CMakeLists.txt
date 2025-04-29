@@ -1,7 +1,6 @@
-# CMake最低版本要求  
-cmake_minimum_required(VERSION 3.10)  
+cmake_minimum_required(VERSION 3.10)
 
-project(test_qr_code_detector)
+project(ocr_synthesis)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -23,19 +22,23 @@ set(LockzhinerVisionModule_ROOT_PATH "${PROJECT_ROOT_PATH}/third_party/lockzhine
 set(LockzhinerVisionModule_DIR "${LockzhinerVisionModule_ROOT_PATH}/lib/cmake/lockzhiner_vision_module")
 find_package(LockzhinerVisionModule REQUIRED)
 
-# 定义 ZXing SDK 路径
-set(ZXing_ROOT_PATH "${PROJECT_ROOT_PATH}/third_party/zxing-cpp-v2.2.1-lockzhiner-vision-module")
-set(ZXing_INCLUDE_DIRS "${ZXing_ROOT_PATH}/include")
-set(ZXing_LIBRARIES "${ZXing_ROOT_PATH}/lib/libzxing.a")
+# ncnn配置
+set(NCNN_ROOT_DIR "${PROJECT_ROOT_PATH}/third_party/ncnn-20240820-lockzhiner-vision-module")  # 确保third_party层级存在
+message(STATUS "Checking ncnn headers in: ${NCNN_ROOT_DIR}/include/ncnn")
 
-# 基本图像处理示例
-add_executable(Test-qr_code-detector test_qr_code_detector.cc)
-target_include_directories(Test-qr_code-detector PRIVATE
-    ${ZXing_INCLUDE_DIRS}          
-    ${LOCKZHINER_VISION_MODULE_INCLUDE_DIRS}
-)
-target_link_libraries(Test-qr_code-detector PRIVATE ${OPENCV_LIBRARIES} ${LOCKZHINER_VISION_MODULE_LIBRARIES} ${ZXing_LIBRARIES} )
+# 验证头文件存在
+if(NOT EXISTS "${NCNN_ROOT_DIR}/include/ncnn/net.h")
+    message(FATAL_ERROR "ncnn headers not found. Confirm the directory contains ncnn: ${NCNN_ROOT_DIR}")
+endif()
+
+set(NCNN_INCLUDE_DIRS "${NCNN_ROOT_DIR}/include")
+set(NCNN_LIBRARIES "${NCNN_ROOT_DIR}/lib/libncnn.a")
+
+add_executable(Test-OcrLite OcrLite.cc)
+target_include_directories(Test-OcrLite PRIVATE ${LOCKZHINER_VISION_MODULE_INCLUDE_DIRS}  ${NCNN_INCLUDE_DIRS})
+target_link_libraries(Test-OcrLite PRIVATE ${OPENCV_LIBRARIES} ${NCNN_LIBRARIES} ${LOCKZHINER_VISION_MODULE_LIBRARIES})
+
 install(
-    TARGETS Test-qr_code-detector
+    TARGETS Test-OcrLite
     RUNTIME DESTINATION .  
 )
