@@ -152,6 +152,9 @@ C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者
 | D02  | 神经网络类    | Digit Hand Recognition           | [手写数字识别](./Cpp_example/D02_DigitHandRecog/README.md) |
 | D03  | 神经网络类    | Face Recognition System          | [人脸识别系统](./Cpp_example/D03_face_recognition_system/README.md) |
 | D04  | 神经网络类    | Distance                         | [距离检测](./Cpp_example/D04_distance/README.md) |
+| D05  | 神经网络类    | OCR Text Recognition             | [OCR文字识别](./Cpp_example/D05_ocr_text_recognition/README.md) |
+| D06  | 神经网络类    | OCR Text Detection               | [OCR文字检测](./Cpp_example/D06_ocr_text_detection/README.md) |
+| D07  | 神经网络类    | OCR Synthesis                    | [OCR合成示例](./Cpp_example/D07_ocr_synthesis/README.md) |
 
 ## 🐛 Bug反馈
 
