@@ -122,6 +122,14 @@ OpenCV 是一个开源的计算机视觉库，它提供了一组功能强大的�
 * [凌智视觉模块人脸识别部署指南](example/vision/face_recognition)
 * [凌智视觉模块人脸识别系统部署指南](example/special/face_system)
 
+### 👍 OCR 案例
+
+OCR（Optical Character Recognition，光学字符识别）是一种将图像中的文字（印刷体或手写体）转换为可编辑文本的技术。
+
+* [凌智视觉模块 OCR 文字识别](./Cpp_example/D05_ocr_text_recognition/README.md)
+* [凌智视觉模块 OCR 文字检测](./Cpp_example/D06_ocr_text_detection/README.md)
+* [凌智视觉模块 OCR 综合示例](./Cpp_example/D07_ocr_synthesis/README.md)
+
 ## 👍 C++ 开发案例
 C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者进行使用和二次开发。
 * `A01 - A99`: 基础外设类
@@ -154,7 +162,7 @@ C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者
 | D04  | 神经网络类    | Distance                         | [距离检测](./Cpp_example/D04_distance/README.md) |
 | D05  | 神经网络类    | OCR Text Recognition             | [OCR文字识别](./Cpp_example/D05_ocr_text_recognition/README.md) |
 | D06  | 神经网络类    | OCR Text Detection               | [OCR文字检测](./Cpp_example/D06_ocr_text_detection/README.md) |
-| D07  | 神经网络类    | OCR Synthesis                    | [OCR合成示例](./Cpp_example/D07_ocr_synthesis/README.md) |
+| D07  | 神经网络类    | OCR Synthesis                    | [OCR综合示例](./Cpp_example/D07_ocr_synthesis/README.md) |
 
 ## 🐛 Bug反馈
 
