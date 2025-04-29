@@ -51,7 +51,7 @@
 * [凌智视觉模块连接设备指南](./docs/introductory_tutorial/connect_device_using_ssh.md)
 * [凌智视觉模块WiFi配置指南](./docs/introductory_tutorial/wifi_config.md)
 * [凌智视觉模块 Python 开发环境搭建指南](./docs/introductory_tutorial/python_development_environment.md)
-
+* [凌智视觉模块 C++ 开发环境搭建指南](./docs/introductory_tutorial/cpp_development_environment.md)
 <!-- 
 如果你需要开发 Python 程序，请参考以下教程搭建开发环境:
 
@@ -102,7 +102,7 @@ OpenCV 是一个开源的计算机视觉库，它提供了一组功能强大的�
 * [凌智视觉模块口罩佩戴分类部署指南](example/special/maskwear_classfication)
 
 ### 👍 目标检测案例
-
+ 
 目标检测（Object Detection）是深度学习中计算机视觉领域的重要任务之一，旨在识别图像或视频中所有感兴趣的物体，并准确地定位这些物体的边界框（Bounding Box）。与目标分类不同，目标检测不仅需要预测物体的类别，还需要标注它们在图像中的位置。一般来说，目标检测任务的标注过程比较复杂，适合既需要对目标进行分类，有需要对目标进行定位的场景。
 
 * [凌智视觉模块通用检测模型部署指南](./example/vision/detetcion)
@@ -121,6 +121,40 @@ OpenCV 是一个开源的计算机视觉库，它提供了一组功能强大的�
 * [凌智视觉模块人脸检测部署指南](example/vision/face_detection)
 * [凌智视觉模块人脸识别部署指南](example/vision/face_recognition)
 * [凌智视觉模块人脸识别系统部署指南](example/special/face_system)
+
+## 👍 C++ 开发案例
+C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者进行使用和二次开发。
+* `A01 - A99`: 基础外设类
+* `B01 - B99`: OpenCV基础函数类
+* `C01 - C99`: 传统OpenCV识别类
+* `D01 - D99`: 神经网络模型类
+
+例程列表如下所示：
+
+| 编号 | 类别          | 例程名                          | 说明                                        |
+| ---- | ------------- | ------------------------------- | ------------------------------------------- |
+| A01  | 基础外设类    | Capture                         | [图像采集例程](./Cpp_example/A01_capture/README.md) |
+| A02  | 基础外设类    | GPIO                            | [GPIO 控制例程](./Cpp_example/A02_GPIO/README.md) |
+| A03  | 基础外设类    | PWM                             | [PWM 信号控制例程](./Cpp_example/A03_PWM/README.md) |
+| A04  | 基础外设类    | ADC                             | [ADC 传感器数据采集例程](./Cpp_example/A04_ADC/README.md) |
+| A05  | 基础外设类    | USART                           | [串口通信例程](./Cpp_example/A05_USART/README.md) |
+| B01  | OpenCV基础类  | Basic Method                    | [OpenCV 基础操作](./Cpp_example/B01_basic_method/README.md) |
+| B02  | OpenCV基础类  | Image Information Statistics    | [图像信息统计](./Cpp_example/B02_Image_information_statistics/README.md) |
+| B03  | OpenCV基础类  | Draw                            | [绘制图形示例](./Cpp_example/B03_Draw/README.md) |
+| C01  | 传统识别类    | Find Blobs                      | [Blob 检测](./Cpp_example/C01_find_blobs/README.md) |
+| C02  | 传统识别类    | Template Matching               | [单模板匹配](./Cpp_example/C02_TemplateMatching/README.md) |
+| C03  | 传统识别类    | Template Matching More          | [多模板匹配](./Cpp_example/C03_Template_Matching_more/README.md) |
+| C04  | 传统识别类    | Find Contours                   | [轮廓查找](./Cpp_example/C04_find_contours/README.md) |
+| C05  | 传统识别类    | Fine Color and Shape             | [颜色与形状定位](./Cpp_example/C05_Finecolorandshape/README.md) |
+| C06  | 传统识别类    | QR Code Detector                 | [二维码检测](./Cpp_example/C06_test_qr_code_detector/README.md) |
+| C07  | 传统识别类    | Bar Code Detector                | [条形码检测](./Cpp_example/C07_test_bar_codeDetector/README.md) |
+| D01  | 神经网络类    | Test Detection                   | [目标检测模型](./Cpp_example/D01_test_detection/README.md) |
+| D02  | 神经网络类    | Digit Hand Recognition           | [手写数字识别](./Cpp_example/D02_DigitHandRecog/README.md) |
+| D03  | 神经网络类    | Face Recognition System          | [人脸识别系统](./Cpp_example/D03_face_recognition_system/README.md) |
+| D04  | 神经网络类    | Distance                         | [距离检测](./Cpp_example/D04_distance/README.md) |
+| D05  | 神经网络类    | OCR Text Recognition             | [OCR文字识别](./Cpp_example/D05_ocr_text_recognition/README.md) |
+| D06  | 神经网络类    | OCR Text Detection               | [OCR文字检测](./Cpp_example/D06_ocr_text_detection/README.md) |
+| D07  | 神经网络类    | OCR Synthesis                    | [OCR合成示例](./Cpp_example/D07_ocr_synthesis/README.md) |
 
 ## 🐛 Bug反馈
 
