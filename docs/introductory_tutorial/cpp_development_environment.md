@@ -26,6 +26,7 @@
 | **日期**   | **版本** | **作者** | **修改说明** |
 | :--------- | -------- | -------- | ------------ |
 | 2024/09/26 | 0.0.0    | 黄展坤     | 初始版本     |
+|2025/04/29  | 0.0.1    |林铮汉     | 补充部分说明  |
 
 ## 1 简介
 
@@ -41,13 +42,18 @@ Lockzhiner Vision Module 的 C++ 开发依赖 Ubuntu 系统，但是大多数用
 
 ![](images/development_environment/download_docker_by_web.png)
 
+如在下载中有困难，可使用我们提供的百度网盘下载 Docker Destop 安装包
+
+[Docker安装包](https://pan.baidu.com/s/1Z2GYRx3RG6u4a1pDxZAoQg)
+提取码: g5mc
+
 打开安装包，按照以下顺序进行安装并重启电脑
 
 ![](images/development_environment/config_docker.png)
 
 ![](images/development_environment/Snipaste_2024-08-29_09-55-48.png)
 
-重启电脑后，打开 Docker Destop，按顺序点击以下按钮
+重启电脑后，打开 Docker Destop，按顺序点击以下按钮 
 
 ![](images/development_environment/Snipaste_2024-08-29_09-57-28.png)
 
@@ -60,6 +66,14 @@ Lockzhiner Vision Module 的 C++ 开发依赖 Ubuntu 系统，但是大多数用
 安装完成后将会自动打开 Docker Destop，如下图
 
 ![](images/development_environment/docker_destop.png)
+
+如在这一步出现下图所示
+
+![](images/development_environment/docker_stop.png)
+
+请参照如下博客进行WSL的安装和更新
+
+[docker 安装问题解决方案](https://blog.csdn.net/cplvfx/article/details/138033592)
 
 ## 3 创建 Lockzhiner Vision Module 工作目录
 
@@ -162,6 +176,7 @@ exit
 
 ```bash
 apt install -y cmake git wget unzip
+apt install build-essential
 ```
 
 ![](images/development_environment/install_cmake_git.png)
@@ -218,7 +233,8 @@ unzip -qo opencv-mobile-4.10.0-lockzhiner-vision-module.zip -d third_party
 cd /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModule
 rm -rf third_party/lockzhiner_vision_module_sdk
 rm -rf lockzhiner_vision_module_sdk.zip
-wget https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.0/lockzhiner_vision_module_sdk.zip
+# 其中v0.0.6为SDK的版本号，最新版本号请以发行版更新为准。
+wget https://gitee.com/LockzhinerAI/LockzhinerVisionModule/releases/download/v0.0.6/lockzhiner_vision_module_sdk.zip
 unzip -qo lockzhiner_vision_module_sdk.zip -d third_party
 ```
 
@@ -256,4 +272,4 @@ bash install-sh.sh
 
 ## 7 验证开发环境
 
-请参考 [编写第一个 Hello World 程序](../../example/hello_world/README.md) 来验证开发环境是否能够正常使用
+请参考 [编写第一个 Hello World 程序](../../Cpp_example/hello_world/README.md) 来验证开发环境是否能够正常使用
