@@ -130,7 +130,7 @@ OCR（Optical Character Recognition，光学字符识别）是一种将图像中
 * [凌智视觉模块 OCR 文字检测](./Cpp_example/D06_ocr_text_detection/README.md)
 * [凌智视觉模块 OCR 综合示例](./Cpp_example/D07_ocr_synthesis/README.md)
 
-## 👍 C++ 开发案例
+## 🏀 C++ 开发案例
 C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者进行使用和二次开发。
 * `A01 - A99`: 基础外设类
 * `B01 - B99`: OpenCV基础函数类
