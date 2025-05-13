@@ -126,21 +126,21 @@ OpenCV 是一个开源的计算机视觉库，它提供了一组功能强大的�
 
 OCR（Optical Character Recognition，光学字符识别）是一种将图像中的文字（印刷体或手写体）转换为可编辑文本的技术。
 
-* [凌智视觉模块 OCR 文字识别](./Cpp_example/D05_ocr_text_recognition/README.md)
-* [凌智视觉模块 OCR 文字检测](./Cpp_example/D06_ocr_text_detection/README.md)
-* [凌智视觉模块 OCR 综合示例](./Cpp_example/D07_ocr_synthesis/README.md)
+* [凌智视觉模块 OCR 文字识别](cpp_example/D05_ocr_text_recognition/README.md)
+* [凌智视觉模块 OCR 文字检测](cpp_example/D06_ocr_text_detection/README.md)
+* [凌智视觉模块 OCR 综合示例](cpp_example/D07_ocr_synthesis/README.md)
 
 ### 👍 图像分割案例
 
 图像分割是计算机视觉中的关键技术，通过像素级分类将图像划分为多个区域或对象，广泛应用于医学影像、自动驾驶等领域，助力智能分析与场景理解。
 
-* [凌智视觉模块图像分割](./Cpp_example/D08_pp_humanseg/README.md)
+* [凌智视觉模块图像分割](cpp_example/D08_pp_humanseg/README.md)
 
 ### 👍 车牌识别案例
 
 车牌识别基于计算机视觉技术，通过图像处理和深度学习精准定位并提取车牌字符，应用于交通管理、停车场收费及安防系统，提升车辆识别效率与自动化水平。
 
-* [凌智视觉模块车牌识别](./Cpp_example/D09_plate_recognize/README.md)
+* [凌智视觉模块车牌识别](cpp_example/D09_plate_recognize/README.md)
 
 ## 🏀 C++ 开发案例
 C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者进行使用和二次开发。
@@ -153,30 +153,30 @@ C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者
 
 | 编号 | 类别          | 例程名                          | 说明                                        |
 | ---- | ------------- | ------------------------------- | ------------------------------------------- |
-| A01  | 基础外设类    | Capture                         | [图像采集例程](./Cpp_example/A01_capture/README.md) |
-| A02  | 基础外设类    | GPIO                            | [GPIO 控制例程](./Cpp_example/A02_GPIO/README.md) |
-| A03  | 基础外设类    | PWM                             | [PWM 信号控制例程](./Cpp_example/A03_PWM/README.md) |
-| A04  | 基础外设类    | ADC                             | [ADC 传感器数据采集例程](./Cpp_example/A04_ADC/README.md) |
-| A05  | 基础外设类    | USART                           | [串口通信例程](./Cpp_example/A05_USART/README.md) |
-| B01  | OpenCV基础类  | Basic Method                    | [OpenCV 基础操作](./Cpp_example/B01_basic_method/README.md) |
-| B02  | OpenCV基础类  | Image Information Statistics    | [图像信息统计](./Cpp_example/B02_Image_information_statistics/README.md) |
-| B03  | OpenCV基础类  | Draw                            | [绘制图形示例](./Cpp_example/B03_Draw/README.md) |
-| C01  | 传统识别类    | Find Blobs                      | [Blob 检测](./Cpp_example/C01_find_blobs/README.md) |
-| C02  | 传统识别类    | Template Matching               | [单模板匹配](./Cpp_example/C02_TemplateMatching/README.md) |
-| C03  | 传统识别类    | Template Matching More          | [多模板匹配](./Cpp_example/C03_Template_Matching_more/README.md) |
-| C04  | 传统识别类    | Find Contours                   | [轮廓查找](./Cpp_example/C04_find_contours/README.md) |
-| C05  | 传统识别类    | Fine Color and Shape             | [颜色与形状定位](./Cpp_example/C05_Finecolorandshape/README.md) |
-| C06  | 传统识别类    | QR Code Detector                 | [二维码检测](./Cpp_example/C06_test_qr_code_detector/README.md) |
-| C07  | 传统识别类    | Bar Code Detector                | [条形码检测](./Cpp_example/C07_test_bar_codeDetector/README.md) |
-| D01  | 神经网络类    | Test Detection                   | [目标检测模型](./Cpp_example/D01_test_detection/README.md) |
-| D02  | 神经网络类    | Digit Hand Recognition           | [手写数字识别](./Cpp_example/D02_DigitHandRecog/README.md) |
-| D03  | 神经网络类    | Face Recognition System          | [人脸识别系统](./Cpp_example/D03_face_recognition_system/README.md) |
-| D04  | 神经网络类    | Distance                         | [距离检测](./Cpp_example/D04_distance/README.md) |
-| D05  | 神经网络类    | OCR Text Recognition             | [OCR文字识别](./Cpp_example/D05_ocr_text_recognition/README.md) |
-| D06  | 神经网络类    | OCR Text Detection               | [OCR文字检测](./Cpp_example/D06_ocr_text_detection/README.md) |
-| D07  | 神经网络类    | OCR Synthesis                    | [OCR综合示例](./Cpp_example/D07_ocr_synthesis/README.md) |
-| D08  | 神经网络类    | PPHumanSeg                       | [图像分割](./Cpp_example/D08_pp_humanseg/README.md) |
-| D09  | 神经网络类    | Plate Recognition                | [车牌识别](./Cpp_example/D09_plate_recognize/README.md) |
+| A01  | 基础外设类    | Capture                         | [图像采集例程](cpp_example/A01_capture/README.md) |
+| A02  | 基础外设类    | GPIO                            | [GPIO 控制例程](cpp_example/A02_GPIO/README.md) |
+| A03  | 基础外设类    | PWM                             | [PWM 信号控制例程](cpp_example/A03_PWM/README.md) |
+| A04  | 基础外设类    | ADC                             | [ADC 传感器数据采集例程](cpp_example/A04_ADC/README.md) |
+| A05  | 基础外设类    | USART                           | [串口通信例程](cpp_example/A05_USART/README.md) |
+| B01  | OpenCV基础类  | Basic Method                    | [OpenCV 基础操作](cpp_example/B01_basic_method/README.md) |
+| B02  | OpenCV基础类  | Image Information Statistics    | [图像信息统计](cpp_example/B02_Image_information_statistics/README.md) |
+| B03  | OpenCV基础类  | Draw                            | [绘制图形示例](cpp_example/B03_Draw/README.md) |
+| C01  | 传统识别类    | Find Blobs                      | [Blob 检测](cpp_example/C01_find_blobs/README.md) |
+| C02  | 传统识别类    | Template Matching               | [单模板匹配](cpp_example/C02_TemplateMatching/README.md) |
+| C03  | 传统识别类    | Template Matching More          | [多模板匹配](cpp_example/C03_Template_Matching_more/README.md) |
+| C04  | 传统识别类    | Find Contours                   | [轮廓查找](cpp_example/C04_find_contours/README.md) |
+| C05  | 传统识别类    | Fine Color and Shape             | [颜色与形状定位](cpp_example/C05_Finecolorandshape/README.md) |
+| C06  | 传统识别类    | QR Code Detector                 | [二维码检测](cpp_example/C06_test_qr_code_detector/README.md) |
+| C07  | 传统识别类    | Bar Code Detector                | [条形码检测](cpp_example/C07_test_bar_codeDetector/README.md) |
+| D01  | 神经网络类    | Test Detection                   | [目标检测模型](cpp_example/D01_test_detection/README.md) |
+| D02  | 神经网络类    | Digit Hand Recognition           | [手写数字识别](cpp_example/D02_DigitHandRecog/README.md) |
+| D03  | 神经网络类    | Face Recognition System          | [人脸识别系统](cpp_example/D03_face_recognition_system/README.md) |
+| D04  | 神经网络类    | Distance                         | [距离检测](cpp_example/D04_distance/README.md) |
+| D05  | 神经网络类    | OCR Text Recognition             | [OCR文字识别](cpp_example/D05_ocr_text_recognition/README.md) |
+| D06  | 神经网络类    | OCR Text Detection               | [OCR文字检测](cpp_example/D06_ocr_text_detection/README.md) |
+| D07  | 神经网络类    | OCR Synthesis                    | [OCR综合示例](cpp_example/D07_ocr_synthesis/README.md) |
+| D08  | 神经网络类    | PPHumanSeg                       | [图像分割](cpp_example/D08_pp_humanseg/README.md) |
+| D09  | 神经网络类    | Plate Recognition                | [车牌识别](cpp_example/D09_plate_recognize/README.md) |
 
 ## 🐛 Bug反馈
 

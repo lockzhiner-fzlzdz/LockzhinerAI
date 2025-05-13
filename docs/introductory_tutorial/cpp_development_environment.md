@@ -272,4 +272,4 @@ bash install-sh.sh
 
 ## 7 验证开发环境
 
-请参考 [编写第一个 Hello World 程序](../../Cpp_example/hello_world/README.md) 来验证开发环境是否能够正常使用
+请参考 [编写第一个 Hello World 程序](../../cpp_example/hello_world/README.md) 来验证开发环境是否能够正常使用
