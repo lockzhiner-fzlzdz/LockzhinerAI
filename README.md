@@ -130,6 +130,18 @@ OCR（Optical Character Recognition，光学字符识别）是一种将图像中
 * [凌智视觉模块 OCR 文字检测](./Cpp_example/D06_ocr_text_detection/README.md)
 * [凌智视觉模块 OCR 综合示例](./Cpp_example/D07_ocr_synthesis/README.md)
 
+### 👍 图像分割案例
+
+图像分割是计算机视觉中的关键技术，通过像素级分类将图像划分为多个区域或对象，广泛应用于医学影像、自动驾驶等领域，助力智能分析与场景理解。
+
+* [凌智视觉模块图像分割](./Cpp_example/D08_pp_humanseg/README.md)
+
+### 👍 车牌识别案例
+
+车牌识别基于计算机视觉技术，通过图像处理和深度学习精准定位并提取车牌字符，应用于交通管理、停车场收费及安防系统，提升车辆识别效率与自动化水平。
+
+* [凌智视觉模块车牌识别](./Cpp_example/D09_plate_recognize/README.md)
+
 ## 🏀 C++ 开发案例
 C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者进行使用和二次开发。
 * `A01 - A99`: 基础外设类
@@ -163,6 +175,8 @@ C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者
 | D05  | 神经网络类    | OCR Text Recognition             | [OCR文字识别](./Cpp_example/D05_ocr_text_recognition/README.md) |
 | D06  | 神经网络类    | OCR Text Detection               | [OCR文字检测](./Cpp_example/D06_ocr_text_detection/README.md) |
 | D07  | 神经网络类    | OCR Synthesis                    | [OCR综合示例](./Cpp_example/D07_ocr_synthesis/README.md) |
+| D08  | 神经网络类    | PPHumanSeg                       | [图像分割](./Cpp_example/D08_pp_humanseg/README.md) |
+| D09  | 神经网络类    | Plate Recognition                | [车牌识别](./Cpp_example/D09_plate_recognize/README.md) |
 
 ## 🐛 Bug反馈
 
