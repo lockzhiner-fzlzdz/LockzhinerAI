@@ -214,15 +214,35 @@ cd /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModule
 git pull
 ```
 
-### 6.4 下载/更新 OpenCV Mobile 库
+### 6.4 下载/更新库
 
-执行以下命令来安装最新的 OpenCV Mobile 库（会删除旧版本）
+执行以下命令来安装最新的库（会删除旧版本）
 
 ```bash
 cd /LockzhinerVisionModuleWorkSpace/LockzhinerVisionModule
 rm -rf opencv-mobile-4.10.0-lockzhiner-vision-module.zip
-wget https://gitee.com/LockzhinerAI/opencv-mobile/releases/download/v0.0.0/opencv-mobile-4.10.0-lockzhiner-vision-module.zip
+wget https://gitee.com/LockzhinerAI/opencv-mobile/releases/download/v29/opencv-mobile-4.10.0-lockzhiner-vision-module.zip
 unzip -qo opencv-mobile-4.10.0-lockzhiner-vision-module.zip -d third_party
+# 下载 fmt
+rm -rf fmt-11.0.2-lockzhiner-vision-module.zip
+wget https://gitee.com/LockzhinerAI/fmt/releases/download/11.0.2/fmt-11.0.2-lockzhiner-vision-module.zip
+unzip -qo fmt-11.0.2-lockzhiner-vision-module.zip -d third_party
+# 下载 pybind11
+rm -rf pybind11-v2.13.5.zip
+wget https://gitee.com/LockzhinerAI/pybind11/releases/download/v2.13.5/pybind11-v2.13.5.zip
+unzip -qo pybind11-v2.13.5.zip -d third_party
+# 下载 python3.11
+rm -rf python3.11-lockzhiner-vision-module.zip
+wget https://gitee.com/LockzhinerAI/pybind11/releases/download/v2.13.5/python3.11-lockzhiner-vision-module.zip
+unzip -qo python3.11-lockzhiner-vision-module.zip -d third_party
+# 下载 zxing-cpp
+rm -rf zxing-cpp-v2.2.1-lockzhiner-vision-module.zip
+wget https://gitee.com/LockzhinerAI/zxing-cpp/releases/download/v2.2.1/zxing-cpp-v2.2.1-lockzhiner-vision-module.zip
+unzip -qo zxing-cpp-v2.2.1-lockzhiner-vision-module.zip -d third_party
+# 下载 NCNN
+rm -rf ncnn-20240820-lockzhiner-vision-module.zip
+wget https://gitee.com/LockzhinerAI/ncnn/releases/download/20240820/ncnn-20240820-lockzhiner-vision-module.zip
+unzip -qo ncnn-20240820-lockzhiner-vision-module.zip -d third_party
 ```
 
 ### 6.5 下载/更新 LockzhinerVisionModule SDK
