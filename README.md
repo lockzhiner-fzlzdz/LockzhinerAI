@@ -142,6 +142,11 @@ OCR（Optical Character Recognition，光学字符识别）是一种将图像中
 
 * [凌智视觉模块车牌识别](./Cpp_example/D09_plate_recognize/README.md)
 
+### 👍 YOLOv5目标检测
+目标检测（Object Detection）是深度学习中计算机视觉领域的重要任务之一，旨在识别图像或视频中所有感兴趣的物体，并准确地定位这些物体的边界框（Bounding Box）。与目标分类不同，目标检测不仅需要预测物体的类别，还需要标注它们在图像中的位置。一般来说，目标检测任务的标注过程比较复杂，适合既需要对目标进行分类，有需要对目标进行定位的场景。该案例使用YOLOv5进行目标检测。
+
+* [YOLOv5目标检测](./Cpp_example/D10_yolov5//README.md)
+
 ## 🏀 C++ 开发案例
 C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者进行使用和二次开发。
 * `A01 - A99`: 基础外设类
@@ -177,7 +182,7 @@ C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者
 | D07  | 神经网络类    | OCR Synthesis                    | [OCR综合示例](./Cpp_example/D07_ocr_synthesis/README.md) |
 | D08  | 神经网络类    | PPHumanSeg                       | [图像分割](./Cpp_example/D08_pp_humanseg/README.md) |
 | D09  | 神经网络类    | Plate Recognition                | [车牌识别](./Cpp_example/D09_plate_recognize/README.md) |
-
+| D10  | 神经网络类    | YOLOv5                           | [YOLOv5目标检测](./Cpp_example/D10_yolov5//README.md) |
 ## 🐛 Bug反馈
 
 如果您遇到问题，您可以前往 [Lockzhiner Vision Module Issues](https://gitee.com/LockzhinerAI/LockzhinerVisionModule/issues) 并点击已完成按钮查看其他用户反馈且我们已经解决的 Bug。
