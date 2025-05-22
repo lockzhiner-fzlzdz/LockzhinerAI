@@ -206,7 +206,8 @@ C++ 开发案例以A、B、C、D进行不同类别进行分类，方便初学者
 * [PaddleSeg](https://github.com/PaddlePaddle/PaddleSeg)
 * [readerwriterqueue](https://github.com/cameron314/readerwriterqueue)
 * [RKNN Toolkit 2](https://github.com/airockchip/rknn-toolkit2)
-
+* [Chinese-License-Plate-Recognition](https://github.com/Ayers-github/Chinese-License-Plate-Recognition/tree/Chinese-License-Plate-Recognition-ncnn-C%2B%2B)
+* [RKNN Model Zoo](https://github.com/airockchip/rknn_model_zoo)
 ## 😊 致谢
 
 凌智视觉模块(Lockzhiner Vision Module) 离不开社区的支持，特别感谢以下个人（或团体）：
